@@ -6,11 +6,25 @@
     <title>SnoutCounter</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/gh/ncase/nutshell/nutshell.js"></script>
+    <style>
+        .nav-link:hover{
+            text-decoration: underline
+        }
+        @font-face {
+            font-family: 'California Gothic';
+            src: url('assets/fonts/CaliforniaGothic-Regular.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        h1 {
+            font-family: 'California Gothic', sans-serif;
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
         <div class="container">
-            <a class="navbar-brand" href="#"><img src="assets/snoutcounter.png" height="75"></img></a>
+            <a class="navbar-brand" href="#"><img src="assets/images/snoutcounter.png" height="75"></img></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -24,6 +38,9 @@
     </nav>
     <br><br>
     <div class="container">
+        <hr>
+        <h1 class="text-center">At A Glance</h1>
+        <hr>
         <!-- <h1 class="text-center">SnoutCounter</h1> -->
         <p class="text-left" style="margin-left:10%; margin-right:10%">This is the landing page of SnoutCounter, a poll aggregation site compiling polling averages on figure approval, favorability, and electoral intent.</p>
         <p class="text-left" style="margin-left: 10%; margin-right: 10%"><a href="https://en.wikipedia.org/wiki/Fruit">:Methodology (Placeholder)</a></p>
