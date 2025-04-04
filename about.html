@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SnoutCounter</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/gh/ncase/nutshell/nutshell.js"></script>
+    <script type="text/javascript"
+        src="https://d3eoax9i5htok0.cloudfront.net/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    <style>
+        .nav-link:hover{
+            text-decoration: underline
+        }
+        @font-face {
+            font-family: 'California Gothic';
+            src: url('assets/fonts/CaliforniaGothic-Regular.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        h1 {
+            font-family: 'California Gothic', sans-serif;
+        }
+        h2 {
+            font-family: 'California Gothic', sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="#"><img src="assets/images/snoutcounter.png" height="75"></img></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><u>About</u></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <br><br>
+    <div class="container">
+        <!-- <figure class="quote"><blockquote>“Some of these not-empires use snoutcounting to confer legitimacy on leaders in the same way we use the imperial succession,” Kirel answered. “This may tend to minimize the disruption that will arise in the United States as a result of the loss of Roosevelt.”</blockquote></figure>
+        <p class="text-center">- Harry Turtledove, <i>Worldwar: Striking the Balance</i></p> -->
+        <p class="text-left" style="margin-left:10%; margin-right:10%">This is the landing page of SnoutCounter, a poll aggregation site compiling polling averages on figure approval, favorability, and electoral intent.</p>
+        <hr>
+        <h1 class="text-center">Methodology</h1>
+        <hr>
+        <p class="text-left" style="margin-left: 10%; margin-right: 10%">
+            SnoutCounter aggregates polling data via a weighted average. All polls included in the <a href="https://www.natesilver.net/p/trump-approval-ratings-nate-silver-bulletin">Silver Bulletin's dataset of presidential approval polls</a> are included in the aggregation, with the exception of <a href="about.html#bannedpollsters">:banned pollsters</a>. In the case that a poll has surveyed two samples of different population types (for example, one likely voter sample and one registered voter sample), we only use the results of one of these samples being surveyed. "All adult" samples are preferred to registered voter samples, and registered voter samples are preferred to likely voter samples. Our weights are determined by the following four factors:
+        </p>
+        <ul class="text-left" style="margin-left: 10%; margin-right: 10%">
+            <li><b>Sample size</b>: Polls with higher sample size are more likely to beget statistics with accurately estimate the population parameter in question, and generally have less uncertainty than polls with smaller sample sizes. However, sample sizes are subject to diminishing returns - a poll with a sample size of 5000 won't much more accurate than one with a sample size of 3000. I cap sample size at 3000, to avoid polls with particularly large sample sizes from dominating the averages. The weight function I use is the square root of the sample size over the square root of the median sample size of all polls in the dataset - this is similar to the function used by <a href="about.html#538">:538</a> for their averages before they shut down.</li>
+            <li><b>Pollster rating</b>: Not all pollsters are created equal; some are more reliable in producing accurate and precise results than others. I use the <a href="https://www.natesilver.net/p/pollster-ratings-silver-bulletin">Silver Bulletin's pollster ratings</a>, specifically the predictive plus-minus, a measure of how accurate a pollster is expected to be, as the input for the pollster rating weight function. For predictive plus-minus, lower is better. Pollsters with a predictive plus-minus above 0.5 are assigned a flat weight of 0.2; all other pollsters are assigned a weight according to an exponential function.</li>
+            <li><b>Time since poll was conducted</b>: Of course, polls which were conducted more recently are more likely to be reflective of the state of public opinion. I use two different weights for time: an "aggressive" linear function and a "non-aggressive" exponential function. The linear function tends to assign lower weights to older polls than the exponential function. These two functions are then combined - 40% of the weight is determined by the linear function, and the remaining 60% is determined by the exponential function.</li>
+            <li><b>Population type</b>: For approval polls, we want to accurately measure how the entire public is feeling about certain figures and institutions - this means general adult samples are more useful than registered voter and likely voter samples. Thus, polls utilizing registered voter and likely voter samples are assigned 80% and 60% the weight of a poll with a general adult sample, all else held equal.</li>
+        </ul>
+        <p class="text-left" style="margin-left: 10%; margin-right: 10%">From all this, the final weight is calculated as the product of all four of these weights. Weights are then normalized to ensure they sum up to 1. The average is then calculated by taking the weighted average of poll results for each day.</p>
+        <p class="text-left" style="margin-left: 10%; margin-right: 10%">There is one last step before the weighted average is calculated: the house effect adjustment. The house effects provided by the <a href="https://www.natesilver.net/p/pollster-ratings-silver-bulletin">Silver Bulletin</a> are utilized. For each poll, the house effect adjustment is made by simply adding/subtracting half the house effect to the measured approval/disapproval. The weighted standard deviation is also calculated for each day and used to determine <a href="https://en.wikipedia.org/wiki/Confidence_interval">:95% confidence intervals</a>.</a></p>
+        <hr>
+        <h1 class="text-center">Acknowledgments</h1>
+        <hr>
+        <h2 class="text-left" style="margin-left: 10%; margin-right: 10%">Data</h2>
+        <p class="text-left" style="margin-left: 10%; margin-right: 10%">Presidential approval polling and pollster rating data by <a href="https://www.natesilver.net/">Silver Bulletin</a> (see <a href="https://www.natesilver.net/p/trump-approval-ratings-nate-silver-bulletin">here</a> and <a href="https://www.natesilver.net/p/pollster-ratings-silver-bulletin">here</a>).</p>
+        <h2 class="text-left" style="margin-left: 10%; margin-right: 10%">Site Design Tools</h2>
+        <p class="text-left" style="margin-left: 10%; margin-right: 10%">
+            Nutshell by <a href="https://ncase.me/nutshell/">Nicky Case</a>.
+        </p>
+        <p class="text-left" style="margin-left: 10%; margin-right: 10%">
+            California Gothic font by <a href="https://www.mattlag.com/californiagothic/">Matt Lag</a>.
+        </p>
+        <h2 class="text-left" style="margin-left: 10%; margin-right: 10%">Other</h2>
+        <p class="text-left" style="margin-left: 10%; margin-right: 10%">The <a href="https://education.github.com/pack">Github Student Developer Pack</a> for allowing me to do all this, including site hosting, for free.</p>
+
+        <!-- Hidden sections -->
+        <h2 class="text-left" style="margin-left: 10%; margin-right: 10%">:x banned pollsters</h2>
+        <p class="text-left" style="margin-left: 10%; margin-right: 10%">
+            Some polling outfits are banned from use by SnoutCounter for aggregation, often due to either partisanship, methodological misconduct, lack of transparency regarding methodology, or some combination of the three. The following pollsters are banned from SnoutCounter.
+        </p>
+        <ul class="text-left" style="margin-left: 10%; margin-right: 10%">
+            <li>Rasmussen Reports</li>
+            <li>co/efficient</li>
+            <li>TIPP Insights</li>
+            <li>Civiqs</li>
+            <li>Trafalgar Group</li>
+            <li>Strategic Vision LLC</li>
+            <li>Pharos Research Group</li>
+            <li>Research 2000</li>
+            <li>Big Data Poll</li>
+            <li>Overtime Politics</li>
+            <li>Rethink Priorities</li>
+            <li>Blumenthal Research Daily</li>
+            <li>CSP Polling</li>
+            <li>KG Polling</li>
+            <li>OurProgress (The Progress Campaign)</li>
+            <li>TCJ Research</li>
+        </ul>
+
+        <h2 class="text-left" style="margin-left: 10%; margin-right: 10%">:x 538</h2>
+        <p class="text-left" style="margin-left: 10%; margin-right: 10%">RIP :(</p>
+    </div>
+</body>
