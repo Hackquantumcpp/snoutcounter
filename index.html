@@ -10,6 +10,13 @@
     <script type="text/javascript"
         src="https://d3eoax9i5htok0.cloudfront.net/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
     </script>
+    <script>
+        Nutshell.setOptions({
+            startOnLoad: true, // Start Nutshell on load? (default: true)
+            lang: 'en', // Language (default: 'en', which is English)
+            dontEmbedHeadings: true, // If 'true', removes the "embed this as a nutshell" option on headings
+        });
+    </script>
     <style>
         .nav-link:hover{
             text-decoration: underline
@@ -20,9 +27,19 @@
             font-weight: normal;
             font-style: normal;
         }
+        @font-face {
+            font-family: 'Montserrat Light';
+            src: url('assets/fonts/Montserrat-Light.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
         h1 {
             font-family: 'California Gothic', sans-serif;
         }
+        /* iframe {
+            margin-top: 20px;
+            width: 400px;
+        } */
     </style>
 </head>
 <body>
@@ -34,8 +51,8 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#"><u>Home</u></a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><p font-family="Montserrat-Light"><u>Home</u></p></a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html"><p font-family="Montseratt-Light">About</p></a></li>
                 </ul>
             </div>
         </div>
@@ -48,15 +65,53 @@
         <!-- <h1 class="text-center">SnoutCounter</h1> -->
     </div>
     <div style="justify-content: center; align-items: center; display: flex;">
-    <iframe title="Do Americans approve or disapprove of Donald Trump?" aria-label="Interactive line chart" id="datawrapper-chart-ezoju" src="https://datawrapper.dwcdn.net/ezoju/5/" scrolling="no" frameborder="0" style="width: 0; min-width: 75% !important; border: none;" height="523" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}}))}();
+
+    <iframe title="Do Americans approve or disapprove of Donald Trump?" aria-label="Interactive line chart" id="datawrapper-chart-ezoju" src="https://datawrapper.dwcdn.net/ezoju/12/" scrolling="no" frameborder="0" style="width: 0; min-width: 75% !important; border: none;" height="523" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}}))}();
 </script>
 </div>
     <div style="justify-content: center; align-items: center; display: flex;">
     <iframe title="Job Approval Polls" aria-label="Table" id="datawrapper-chart-c21sL" src="https://datawrapper.dwcdn.net/c21sL/4/" scrolling="no" frameborder="0" style="width: 0; min-width: 75% !important; border: none" height="640" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}}))}();
 </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<br><br></div>
+
+<div style="justify-content: center; align-items: center; display: flex;">
+    <iframe title="Do Americans approve or disapprove of Donald Trump's handling of the economy?" aria-label="Interactive line chart" id="datawrapper-chart-iQjHQ" src="https://datawrapper.dwcdn.net/iQjHQ/3/" scrolling="no" frameborder="0" style="width: 0; min-width: 75% !important; border: none;" height="570" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}}))}();
+</script>
+    </script>
 </div>
-<hr>
+
+<div style="justify-content: center; align-items: center; display: flex;">
+    <iframe title="Issue Approval Polls" aria-label="Table" id="datawrapper-chart-s3YFJ" src="https://datawrapper.dwcdn.net/s3YFJ/3/" scrolling="no" frameborder="0" style="width: 0; min-width: 75% !important; border: none;" height="710" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}}))}();
+</script>
+</div>
+
+<!-- <div style="justify-content: center; align-items: center; display: flex;">
+
+<script type="text/javascript">function switchVis(chartId) {
+        document.querySelector('iframe').src = 'https://datawrapper.dwcdn.net/' + chartId;
+    }
+    </script>
+
+
+<select onchange="switchVis(this.value)" style="justify-content: center; align-items: center; display: flex;">
+  <option value="iQjHQ">The economy</option>
+	<option value="atD5I">Immigration</option>
+	<option value="INENs">Inflation/prices</option>
+	<option value="t1QMM">Foreign policy</option>
+</select>
+
+<br><br>
+
+<iframe title="Do Americans approve or disapprove of Donald Trump's handling of the economy?" aria-label="Interactive line chart" id="datawrapper-chart-iQjHQ" src="https://datawrapper.dwcdn.net/iQjHQ/2/" scrolling="no" frameborder="0" style="width: 0; min-width: 75% !important; border: none;" height="523" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}}))}();
+</script>
+
+<script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"])for(var e in a.data["datawrapper-height"]){var t=document.getElementById("datawrapper-chart-"+e)||document.querySelector("iframe[src*='"+e+"']");t&&(t.style.height=a.data["datawrapper-height"][e]+"px")}}))}();
+</script>
+</div> -->
+
+<!-- <hr> -->
 <!-- <footer class="bg-white text-black text-center">
     <p>Acknowledgments: Nutshell by <a href="https://ncase.me/nutshell/">Nicky Case</a>, California Gothic font by <a href="https://www.mattlag.com/californiagothic/">Matt Lag</a></a></p>
 </footer> -->

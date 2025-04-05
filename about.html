@@ -10,6 +10,13 @@
     <script type="text/javascript"
         src="https://d3eoax9i5htok0.cloudfront.net/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
     </script>
+    <script>
+        Nutshell.setOptions({
+            startOnLoad: true, // Start Nutshell on load? (default: true)
+            lang: 'en', // Language (default: 'en', which is English)
+            dontEmbedHeadings: true, // If 'true', removes the "embed this as a nutshell" option on headings
+        });
+    </script>
     <style>
         .nav-link:hover{
             text-decoration: underline
@@ -52,7 +59,7 @@
         <h1 class="text-center">Methodology</h1>
         <hr>
         <p class="text-left" style="margin-left: 10%; margin-right: 10%">
-            SnoutCounter aggregates polling data via a weighted average. All polls included in the <a href="https://www.natesilver.net/p/trump-approval-ratings-nate-silver-bulletin">Silver Bulletin's dataset of presidential approval polls</a> are included in the aggregation, with the exception of <a href="about.html#bannedpollsters">:banned pollsters</a>. In the case that a poll has surveyed two samples of different population types (for example, one likely voter sample and one registered voter sample), we only use the results of one of these samples being surveyed. "All adult" samples are preferred to registered voter samples, and registered voter samples are preferred to likely voter samples. Our weights are determined by the following four factors:
+            SnoutCounter aggregates polling data via a weighted average. All polls included in the relevant dataset are included in the aggregation, with the exception of <a href="about.html#bannedpollsters">:banned pollsters</a>. For overall presidential approval polling, the <a href="https://www.natesilver.net/p/trump-approval-ratings-nate-silver-bulletin">Silver Bulletin's dataset of approval polls</a> are utilized. For approval polling on specific issues (e.g. the economy), I mostly rely on <a href="https://www.realclearpolling.com/polls/approval/donald-trump/issues/economy">RealClearPolling's dataset of issue approval polls</a>, plus some polls collected by <a href="https://bsky.app/profile/usapolling.bsky.social">Polling USA (@usapolling.bsky.social)</a>. In the case that a poll has surveyed two samples of different population types (for example, one likely voter sample and one registered voter sample), we only use the results of one of these samples being surveyed. "All adult" samples are preferred to registered voter samples, and registered voter samples are preferred to likely voter samples. Our weights are determined by the following four factors:
         </p>
         <ul class="text-left" style="margin-left: 10%; margin-right: 10%">
             <li><b>Sample size</b>: Polls with higher sample size are more likely to beget statistics with accurately estimate the population parameter in question, and generally have less uncertainty than polls with smaller sample sizes. However, sample sizes are subject to diminishing returns - a poll with a sample size of 5000 won't much more accurate than one with a sample size of 3000. I cap sample size at 3000, to avoid polls with particularly large sample sizes from dominating the averages. The weight function I use is the square root of the sample size over the square root of the median sample size of all polls in the dataset - this is similar to the function used by <a href="about.html#538">:538</a> for their averages before they shut down.</li>
@@ -66,7 +73,7 @@
         <h1 class="text-center">Acknowledgments</h1>
         <hr>
         <h2 class="text-left" style="margin-left: 10%; margin-right: 10%">Data</h2>
-        <p class="text-left" style="margin-left: 10%; margin-right: 10%">Presidential approval polling and pollster rating data by <a href="https://www.natesilver.net/">Silver Bulletin</a> (see <a href="https://www.natesilver.net/p/trump-approval-ratings-nate-silver-bulletin">here</a> and <a href="https://www.natesilver.net/p/pollster-ratings-silver-bulletin">here</a>).</p>
+        <p class="text-left" style="margin-left: 10%; margin-right: 10%">Presidential approval polling and pollster rating data by <a href="https://www.natesilver.net/">Silver Bulletin</a> (see <a href="https://www.natesilver.net/p/trump-approval-ratings-nate-silver-bulletin">here</a> and <a href="https://www.natesilver.net/p/pollster-ratings-silver-bulletin">here</a>). Issue approval polls from <a href="https://www.realclearpolling.com/">RealClearPolling</a> and <a href="https://bsky.app/profile/usapolling.bsky.social">Polling USA</a>.</p>
         <h2 class="text-left" style="margin-left: 10%; margin-right: 10%">Site Design Tools</h2>
         <p class="text-left" style="margin-left: 10%; margin-right: 10%">
             Nutshell by <a href="https://ncase.me/nutshell/">Nicky Case</a>.
