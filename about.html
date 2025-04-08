@@ -19,7 +19,7 @@
     </script>
     <style>
         .nav-link:hover{
-            text-decoration: underline
+            text-decoration: none;
         }
         @font-face {
             font-family: 'California Gothic';
@@ -33,23 +33,57 @@
         h2 {
             font-family: 'California Gothic', sans-serif;
         }
+        .fancy-underline {
+            position: relative;
+            display: inline-block;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 400;
+            text-decoration: none;
+            color: #333;
+            padding-bottom: 4px;
+            transition: color 0.3s ease;
+        }
+
+        .fancy-underline::after {
+            content: '';
+            position: absolute;
+            width: 0%;
+            height: 2px;
+            left: 0;
+            bottom: 0;
+            background-color: #007bff;
+            transition: width 0.3s ease;
+        }
+
+        .fancy-underline:hover::after {
+            width: 100%;
+        }
+
+        .fancy-underline:hover {
+            color: #007bff;
+        }
     </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
-        <div class="container">
-            <a class="navbar-brand" href="index.html"><img src="assets/images/snoutcounter.png" height="75"></img></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#"><u>About</u></a></li>
-                </ul>
-            </div>
+    <div class="container">
+        <a class="navbar-brand" href="index.html"><img src="assets/images/snoutcounter.png" height="75" alt="Logo"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link fancy-underline" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link fancy-underline" href="#">About</a>
+                </li>
+            </ul>
         </div>
-    </nav>
+    </div>
+</nav>
     <br><br>
     <div class="container">
         <!-- <figure class="quote"><blockquote>“Some of these not-empires use snoutcounting to confer legitimacy on leaders in the same way we use the imperial succession,” Kirel answered. “This may tend to minimize the disruption that will arise in the United States as a result of the loss of Roosevelt.”</blockquote></figure>
