@@ -65,6 +65,44 @@
         .fancy-underline:hover {
             color: #007bff;
         }
+        .tabs {
+            max-width: 80%;
+            margin: 0 auto;
+            background: white;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+
+        .tab-buttons {
+        display: flex;
+        border-bottom: 1px solid #ccc;
+        }
+
+        .tab-buttons button {
+        flex: 1;
+        padding: 12px;
+        border: none;
+        background: none;
+        font-size: 16px;
+        cursor: pointer;
+        border-bottom: 3px solid transparent;
+        transition: 0.3s ease;
+        }
+
+        .tab-buttons button.active {
+        border-bottom: 3px solid #007BFF;
+        font-weight: bold;
+        color: #007BFF;
+        }
+
+        .tab-content {
+            display: none;
+            padding: 20px;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
         
         /* iframe {
             margin-top: 20px;
@@ -93,35 +131,81 @@
     </div>
 </nav>
     <br><br>
-    <div class="container">
-        <hr>
+    <hr>
         <h1 class="text-center">At A Glance</h1>
-        <hr>
-        <!-- <h1 class="text-center">SnoutCounter</h1> -->
+    <hr>
+    <div class="tabs">
+    <div class="tab-buttons">
+      <button class="tab-btn active" onclick="showTab('president', this)">President</button>
+      <button class="tab-btn" onclick="showTab('congress', this)">Congress + SCOTUS</button>
     </div>
+    
+    <div class="tab-content active" id="president">
+        
+        <!-- <h1 class="text-center">SnoutCounter</h1> -->
     <div style="justify-content: center; align-items: center; display: flex;">
 
-    <iframe title="Do Americans approve or disapprove of Donald Trump?" aria-label="Interactive line chart" id="datawrapper-chart-ezoju" src="https://datawrapper.dwcdn.net/ezoju/12/" scrolling="no" frameborder="0" style="width: 0; min-width: 75% !important; border: none;" height="523" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}}))}();
+    <iframe title="Do Americans approve or disapprove of Donald Trump?" aria-label="Interactive line chart" id="datawrapper-chart-ezoju" src="https://datawrapper.dwcdn.net/ezoju/12/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="523" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}}))}();
 </script>
 </div>
     <div style="justify-content: center; align-items: center; display: flex;">
-    <iframe title="Job Approval Polls" aria-label="Table" id="datawrapper-chart-c21sL" src="https://datawrapper.dwcdn.net/c21sL/4/" scrolling="no" frameborder="0" style="width: 0; min-width: 75% !important; border: none" height="640" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}}))}();
+    <iframe title="Job Approval Polls" aria-label="Table" id="datawrapper-chart-c21sL" src="https://datawrapper.dwcdn.net/c21sL/4/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none" height="640" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}}))}();
 </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 <br><br></div>
 
 <div style="justify-content: center; align-items: center; display: flex;">
-    <iframe title="Do Americans approve or disapprove of Donald Trump's handling of the economy?" aria-label="Interactive line chart" id="datawrapper-chart-iQjHQ" src="https://datawrapper.dwcdn.net/iQjHQ/3/" scrolling="no" frameborder="0" style="width: 0; min-width: 75% !important; border: none;" height="570" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}}))}();
+    <iframe title="Do Americans approve or disapprove of Donald Trump's handling of the economy?" aria-label="Interactive line chart" id="datawrapper-chart-iQjHQ" src="https://datawrapper.dwcdn.net/iQjHQ/3/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="570" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}}))}();
 </script>
     </script>
 </div>
 
 <div style="justify-content: center; align-items: center; display: flex;">
-    <iframe title="Issue Approval Polls" aria-label="Table" id="datawrapper-chart-s3YFJ" src="https://datawrapper.dwcdn.net/s3YFJ/3/" scrolling="no" frameborder="0" style="width: 0; min-width: 75% !important; border: none;" height="710" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}}))}();
+    <iframe title="Issue Approval Polls" aria-label="Table" id="datawrapper-chart-s3YFJ" src="https://datawrapper.dwcdn.net/s3YFJ/3/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="710" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}}))}();
 </script>
 </div>
+</div>
 
+<div class="tab-content" id="congress">
+    <div style="justify-content: center; align-items: center; display: flex;">
+        <iframe title="Do Americans approve or disapprove of Congress?" aria-label="Interactive line chart" id="datawrapper-chart-Dp453" src="https://datawrapper.dwcdn.net/Dp453/6/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="523" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}}))}();
+</script>
+    </div> 
+
+    <div style="min-height:524px; width: 0; min-width: 85% !important" id="datawrapper-vis-TlHCb"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/TlHCb/embed.js" charset="utf-8" data-target="#datawrapper-vis-TlHCb"></script><noscript><img src="https://datawrapper.dwcdn.net/TlHCb/full.png" alt="" /></noscript></div>
+     
+    <div style="min-height:643px" id="datawrapper-vis-m3nJ6"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/m3nJ6/embed.js" charset="utf-8" data-target="#datawrapper-vis-m3nJ6"></script><noscript><img src="https://datawrapper.dwcdn.net/m3nJ6/full.png" alt="" /></noscript></div>
+
+<div style="min-height:523px" id="datawrapper-vis-93kHt"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/93kHt/embed.js" charset="utf-8" data-target="#datawrapper-vis-93kHt"></script><noscript><img src="https://datawrapper.dwcdn.net/93kHt/full.png" alt="" /></noscript></div>
+
+<div style="min-height:726px" id="datawrapper-vis-5N5wz"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/5N5wz/embed.js" charset="utf-8" data-target="#datawrapper-vis-5N5wz"></script><noscript><img src="https://datawrapper.dwcdn.net/5N5wz/full.png" alt="" /></noscript></div>
+</div>
+
+</div>
+
+
+
+<script>
+function showTab(tabId, el) {
+    console.log('showTab called with tabId:', tabId, 'and element:', el); // Debugging line
+
+    const contents = document.querySelectorAll('.tab-content');
+    const buttons = document.querySelectorAll('.tab-btn');
+
+    // Hide all tabs
+    contents.forEach(content => content.classList.remove('active'));
+
+    // Remove active class from all buttons
+    buttons.forEach(button => button.classList.remove('active'));
+
+    // Show the clicked tab
+    document.getElementById(tabId).classList.add('active');
+
+    // Highlight the clicked button
+    el.classList.add('active');
+}
+</script>
 <!-- <div style="justify-content: center; align-items: center; display: flex;">
 
 <script type="text/javascript">function switchVis(chartId) {
