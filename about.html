@@ -46,20 +46,25 @@
         ul {
             font-family: 'IBM Plex Sans', sans-serif;
         }
-        a:not(.nav-link):link {
+        a:not(.nav-link):not(.nutshell-link):link {
             color: #E85D20;
         }
-        a:not(.nav-link):visited {
+        a:not(.nav-link):not(.nutshell-link):visited {
             color: #d4433b;
         }
-        a:not(.nav-link):hover {
+        a:not(.nav-link):not(.nutshell-link):hover {
             color: #E85D20;
             background-color: #fcebe6;
         }
-        a:not(.nav-link):active {
+        a:not(.nav-link):not(.nutshell-link):active {
             color: #A1370D;
             border: 1px dashed #A1370D;
         }
+
+        .nutshell-link {
+            color: #1A2B4A;
+        }
+
         .fancy-underline {
             position: relative;
             display: inline-block;
@@ -145,15 +150,15 @@
         <h1 class="text-center">Methodology</h1>
         <hr>
         <p class="text-left" style="margin-left: 10%; margin-right: 10%">
-            SnoutCounter aggregates polling data via a weighted average. All scientific polls conducted by professional pollsters included in the relevant dataset are included in the aggregation, with the exception of polls conducted by <a href="about.html#bannedpollsters">:banned pollsters</a>. All presidential approval polls, both general and issue-specific, are collected manually. I generally check the <a href="https://www.natesilver.net/p/trump-approval-ratings-nate-silver-bulletin">Silver Bulletin</a>, <a href="https://fiftyplusone.news/polls/approval/president">FiftyPlusOne</a>, <a href="https://www.nytimes.com/interactive/polls/donald-trump-approval-rating-polls.html">The New York Times</a>, and <a href="https://bsky.app/profile/usapolling.bsky.social">Polling USA</a> for anything I missed. In the case that a poll has surveyed two samples of different population types (for example, one likely voter sample and one registered voter sample), we only use the results of one of these samples being surveyed. "All adult" samples are preferred to registered voter samples, and registered voter samples are preferred to likely voter samples, for the various job approval averages. When measuring job approval among registered voters, polls that draw from a sample of all adults, but include crosstab results for registered voters, are included - specifically the results for the registered voter sample. Tracking polls in our dataset are dynamically selected and weeded out such that all tracking polls from the same pollster are non-overlapping in fielding dates; I always include the most recent tracking poll from each pollster. Our weights are determined by the following four factors:
+            SnoutCounter aggregates polling data via a weighted average. All scientific polls conducted by professional pollsters included in the relevant dataset are included in the aggregation, with the exception of polls conducted by <a class="nutshell-link" href="about.html#bannedpollsters">:banned pollsters</a>. All presidential approval polls, both general and issue-specific, are collected manually. I generally check the <a href="https://www.natesilver.net/p/trump-approval-ratings-nate-silver-bulletin">Silver Bulletin</a>, <a href="https://fiftyplusone.news/polls/approval/president">FiftyPlusOne</a>, <a href="https://www.nytimes.com/interactive/polls/donald-trump-approval-rating-polls.html">The New York Times</a>, and <a href="https://bsky.app/profile/usapolling.bsky.social">Polling USA</a> for anything I missed. In the case that a poll has surveyed two samples of different population types (for example, one likely voter sample and one registered voter sample), we only use the results of one of these samples being surveyed. "All adult" samples are preferred to registered voter samples, and registered voter samples are preferred to likely voter samples, for the various job approval averages. When measuring job approval among registered voters, polls that draw from a sample of all adults, but include crosstab results for registered voters, are included - specifically the results for the registered voter sample. Tracking polls in our dataset are dynamically selected and weeded out such that all tracking polls from the same pollster are non-overlapping in fielding dates; I always include the most recent tracking poll from each pollster. Our weights are determined by the following four factors:
         </p>
         <ul class="text-left" style="margin-left: 10%; margin-right: 10%">
-            <li><b>Sample size</b>: Polls with higher sample size are more likely to accurately estimate the population parameter in question, and generally have less uncertainty than polls with smaller sample sizes. However, sample sizes are subject to diminishing returns - a poll with a sample size of 5000 won't much more accurate than one with a sample size of 5000. I cap sample size at 5000, to avoid polls with particularly large sample sizes from dominating the averages. The weight function I use is the square root of the sample size over the square root of the median sample size of all polls in the dataset - this is similar to the function used by <a href="about.html#538">:538</a> for their averages before they shut down.</li>
+            <li><b>Sample size</b>: Polls with higher sample size are more likely to accurately estimate the population parameter in question, and generally have less uncertainty than polls with smaller sample sizes. However, sample sizes are subject to diminishing returns - a poll with a sample size of 5000 won't much more accurate than one with a sample size of 5000. I cap sample size at 5000, to avoid polls with particularly large sample sizes from dominating the averages. The weight function I use is the square root of the sample size over the square root of the median sample size of all polls in the dataset - this is similar to the function used by <a class="nutshell-link" href="about.html#538">:538</a> for their averages before they shut down.</li>
             <li><b>Pollster rating</b>: Not all pollsters are created equal; some are more reliable in producing accurate and precise results than others. I use the <a href="https://www.natesilver.net/p/pollster-ratings-silver-bulletin">Silver Bulletin's pollster ratings</a>, specifically the predictive plus-minus, a measure of how accurate a pollster is expected to be, as the input for the pollster rating weight function. For predictive plus-minus, lower is better. Pollsters with a predictive plus-minus above 1 are assigned a flat weight of 0.2, as are pollsters without a predictive plus-minus rating from Silver Bulletin. All other pollsters are assigned a weight according to square root function.</li>
             <li><b>Time since poll was conducted</b>: Of course, polls which were conducted more recently are more likely to be reflective of the state of public opinion. I utilize an exponential function as a weight for recency, with the function being more aggressive with more frequently polled topics (e.g. general approval, versus issue-specific approval).</li>
             <li><b>Multiple polls in short window</b>: If there are multiple polls from the same pollster and sponsor in a two week window, each poll is downweighted, based on the number of polls from that pollster/sponsor in this window. This is to ensure that one pollster/sponsor doesn't dominate the averages just out of frequency, and to counter pollsters who attempt to "flood the zone." The formula utilized for this is borrowed from <a href="https://www.gelliottmorris.com/p/democrats-lead-house-generic-ballot">Strength In Numbers' polling averages</a>; it is calculated as 1 over the square root of the number of polls from the pollster/sponsor pair within a two-week window.</li>
         </ul>
-        <p class="text-left" style="margin-left: 10%; margin-right: 10%">All these weights are combined into a final weight, calculated as the product of these four weights. The weights are normalized to sum to 1. This is then used to calculate a weighted average for each rating or variable we are trying to measure, and for each day. The weighted standard deviation is also calculated for each day and used to determine <a href="https://en.wikipedia.org/wiki/Confidence_interval">:confidence intervals</a>.</a></p>
+        <p class="text-left" style="margin-left: 10%; margin-right: 10%">All these weights are combined into a final weight, calculated as the product of these four weights. The weights are normalized to sum to 1. This is then used to calculate a weighted average for each rating or variable we are trying to measure, and for each day. The weighted standard deviation is also calculated for each day and used to determine <a class="nutshell-link" href="https://en.wikipedia.org/wiki/Confidence_interval">:confidence intervals</a>.</a></p>
         <p class="text-left" style="margin-left: 10%; margin-right: 10;">
             In addition to these weights, I apply four different adjustments to each poll result, each of them calculated by a <a href="https://bookdown.org/steve_midway/DAR/random-effects.html">random effects model</a>. These adjustments are calculated relative to the average calculated from the previous steps. The adjustments are as follows:
         </p>
@@ -170,37 +175,18 @@
         <ul class="text-left" style="margin-left: 10%; margin-right: 10%">
             <li><b>January 8, 2026</b>: Added partisanship downweight.</li>
             <li><b>January 4, 2026</b>: Completely overhauled the methodology for polling averages.</li>
-            <li><b>September 26, 2025</b>: Fixed bug in sample size weights where, in calculation of median sample size, poll sample sizes are capped at 2000 instead of the intended 3000.</li>
-            <li><b>September 18, 2025</b>: Added a new issue to issue-approval poll averages: crime.</li>
-            <li><b>September 16, 2025</b>: 
-                <ul class="text-left">
-                    <li>Polling averages now include an additional weight to account for multiple polls from the same pollster being conducted in a short window.</li>
-                    <li>Unrated pollsters are now assigned a flat pollster quality weight of 0.2 instead of 0.1.</li>
-                </ul>
-            </li>
-            <li><b>July 22, 2025</b>: Added a new issue to issue-approval poll averages: healthcare policy.</li>
-            <li><b>July 21, 2025</b>: Added graphs measuring presidential job approval among registered voters. </li>
-            <li><b>June 23, 2025</b>: Started including polls from pollsters without a Silver Bulletin pollster rating. For these pollsters, a flat pollster quality weight of 0.1 is assigned.</li>
-            <li><b>June 21, 2025</b>: Unbanned McLaughlin, for similar reasons to the recent unbanning of other partisan pollsters. While McLaughlin is a particularly extreme case of partisanship, I am unaware of any significant methodological concerns beyond their bias, which can be rectified via house effect adjustment.</li>
-            <li><b>June 20, 2025</b>: Unbanned OnMessage Inc. and North Star from use by SnoutCounter averages, for similar reasons to the unbanning of Civiqs and co/efficient.</li>
-            <li><b>June 17, 2025</b>: 
-                <ul class="text-left">
-                    <li>Tweaked time weights for presidential approval polling (both overall and issue-specific) to be more aggressive. This should make the averages more responsive.</li>
-                    <li>Unbanned co/efficient and Civiqs from use by SnoutCounter averages. These are both partisan pollsters, whose partisan bias is already largely rectified via house effect adjustment, and there really isn't much wrong with these polling outfits besides the aforementioned partisanship.</li>
-                </ul>
-            </li>
-            <li><b>June 16, 2025</b>: Slightly tweaked population type weighting for generic ballot polling. This would lead to slight decrease in weights for polls utilizing all adult samples.</li>
-            <li><b>June 15, 2025</b>: Added a "Featured Charts" section, so I can show other neat visualizations without cluttering up the main sections.</li>
-            <li><b>May 31, 2025</b>: Modified code for calculating population weights for generic ballot polling averages. As generic ballot polling aims to measure voting intent, it makes more sense to value LV > RV > A.</li>
-            <li><b>May 20, 2025</b>: Added a chart tracking net presidential approval rating.</li>
-            <li><b>May 13, 2025</b>: Added a new issue to issue-approval poll averages: trade and tariffs.</li>
-            <li><b>May 10, 2025</b>: Fixed bug in pipeline function that caused registered voter samples in polls to be chosen over all adult samples.</li>
-            <li><b>April 19, 2025</b>: Added chart showcasing net issue-specific approval ratings.</li>
-            <li><b>April 18, 2025</b>: Adjusted pollster quality weights to be slightly less aggressive, thus lowering the chance that an unduly small number of polls dominate the averages.</li>
-            <li><b>April 17, 2025</b>: Adjusted the linear time weight to be somewhat more aggressive. This helps averages be more responsive and less sluggish, especially the Congressional and SCOTUS approval averages.</li>
         </ul>
+        <p class="text-left" style="margin-left: 10%; margin-right: 10%">
+            <a class="nutshell-link" href="about.html#preoverhaulupdates">:Click to expand</a> for a log of updates prior to the methodological overhaul conducted in January 2026.
+        </p>
         <h2 class="text-left" style="margin-left: 10%; margin-right: 10%">Data Download</h2>
-        <p class="text-left" style="margin-left: 10%; margin-right: 10%">The polling data used for general presidential approval are available to download at <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vSj1f5S4BKqd_0T83atnX5WIXMhwd326O-jg5vXNjvylt8DIWNW07rXmMUy9wGEz5ZVDlfLbea_hrd9/pub?output=csv">this link</a>, while data for issue-specific presidential approval are available to download at <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vR7cOF5NSArcxNxYjzDjjTnFNmG-l0zM8WqabuCqNmwKke7VTEMKjR1BamqigAFeRCvbhCylaspQpTG/pub?gid=0&single=true&output=csv">this link</a>.</p>
+        <p class="text-left" style="margin-left: 10%; margin-right: 10%">
+            You can download the polling data used in SnoutCounter averages at the links below.
+        </p> 
+        <ul class="text-left" style="margin-left: 10%; margin-right: 10%">
+           <li><a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vSj1f5S4BKqd_0T83atnX5WIXMhwd326O-jg5vXNjvylt8DIWNW07rXmMUy9wGEz5ZVDlfLbea_hrd9/pub?output=csv">Presidential approval (general)</a></li> 
+           <li><a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vR7cOF5NSArcxNxYjzDjjTnFNmG-l0zM8WqabuCqNmwKke7VTEMKjR1BamqigAFeRCvbhCylaspQpTG/pub?gid=0&single=true&output=csv">Presidential approval (issue-specific)</a></li>
+        </ul>
         <hr>
         <h1 class="text-center">Acknowledgments & Support</h1>
         <hr>
@@ -253,6 +239,39 @@
 
         <h2 class="text-left" style="margin-left: 10%; margin-right: 10%">:x 538</h2>
         <p class="text-left" style="margin-left: 10%; margin-right: 10%">RIP :(</p>
+
+        <h2 class="text-left" style="margin-left: 10%; margin-right: 10%">:x pre overhaul updates</h2>
+        <ul class="text-left" style="margin-left: 10%; margin-right: 10%">
+            <li><b>September 26, 2025</b>: Fixed bug in sample size weights where, in calculation of median sample size, poll sample sizes are capped at 2000 instead of the intended 3000.</li>
+            <li><b>September 18, 2025</b>: Added a new issue to issue-approval poll averages: crime.</li>
+            <li><b>September 16, 2025</b>: 
+                <ul class="text-left">
+                    <li>Polling averages now include an additional weight to account for multiple polls from the same pollster being conducted in a short window.</li>
+                    <li>Unrated pollsters are now assigned a flat pollster quality weight of 0.2 instead of 0.1.</li>
+                </ul>
+            </li>
+            <li><b>July 22, 2025</b>: Added a new issue to issue-approval poll averages: healthcare policy.</li>
+            <li><b>July 21, 2025</b>: Added graphs measuring presidential job approval among registered voters. </li>
+            <li><b>June 23, 2025</b>: Started including polls from pollsters without a Silver Bulletin pollster rating. For these pollsters, a flat pollster quality weight of 0.1 is assigned.</li>
+            <li><b>June 21, 2025</b>: Unbanned McLaughlin, for similar reasons to the recent unbanning of other partisan pollsters. While McLaughlin is a particularly extreme case of partisanship, I am unaware of any significant methodological concerns beyond their bias, which can be rectified via house effect adjustment.</li>
+            <li><b>June 20, 2025</b>: Unbanned OnMessage Inc. and North Star from use by SnoutCounter averages, for similar reasons to the unbanning of Civiqs and co/efficient.</li>
+            <li><b>June 17, 2025</b>: 
+                <ul class="text-left">
+                    <li>Tweaked time weights for presidential approval polling (both overall and issue-specific) to be more aggressive. This should make the averages more responsive.</li>
+                    <li>Unbanned co/efficient and Civiqs from use by SnoutCounter averages. These are both partisan pollsters, whose partisan bias is already largely rectified via house effect adjustment, and there really isn't much wrong with these polling outfits besides the aforementioned partisanship.</li>
+                </ul>
+            </li>
+            <li><b>June 16, 2025</b>: Slightly tweaked population type weighting for generic ballot polling. This would lead to slight decrease in weights for polls utilizing all adult samples.</li>
+            <li><b>June 15, 2025</b>: Added a "Featured Charts" section, so I can show other neat visualizations without cluttering up the main sections.</li>
+            <li><b>May 31, 2025</b>: Modified code for calculating population weights for generic ballot polling averages. As generic ballot polling aims to measure voting intent, it makes more sense to value LV > RV > A.</li>
+            <li><b>May 20, 2025</b>: Added a chart tracking net presidential approval rating.</li>
+            <li><b>May 13, 2025</b>: Added a new issue to issue-approval poll averages: trade and tariffs.</li>
+            <li><b>May 10, 2025</b>: Fixed bug in pipeline function that caused registered voter samples in polls to be chosen over all adult samples.</li>
+            <li><b>April 19, 2025</b>: Added chart showcasing net issue-specific approval ratings.</li>
+            <li><b>April 18, 2025</b>: Adjusted pollster quality weights to be slightly less aggressive, thus lowering the chance that an unduly small number of polls dominate the averages.</li>
+            <li><b>April 17, 2025</b>: Adjusted the linear time weight to be somewhat more aggressive. This helps averages be more responsive and less sluggish, especially the Congressional and SCOTUS approval averages.</li>
+
+        </ul>
     </div>
 <hr>
 <footer class="bg-white text-black text-center">
