@@ -27,16 +27,41 @@
             font-weight: normal;
             font-style: normal;
         }
+        @font-face{
+            font-family: 'IBM Plex Sans';
+            src: url('assets/fonts/IBMPlexSans-VariableFont_wdth,wght.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
         h1 {
             font-family: 'California Gothic', sans-serif;
         }
         h2 {
             font-family: 'California Gothic', sans-serif;
         }
+        p {
+            font-family: 'IBM Plex Sans', sans-serif;
+        }
+        ul {
+            font-family: 'IBM Plex Sans', sans-serif;
+        }
+        a:link {
+            color: #E85D20;
+        }
+        a:visited {
+            color: #d4433b;
+        }
+        a:hover {
+            color: #E85D20;
+            background-color: #fcebe6;
+        }
+        a:active {
+            color: #A1370D;
+        }
         .fancy-underline {
             position: relative;
             display: inline-block;
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'IBM Plex Sans', sans-serif;
             font-weight: 400;
             text-decoration: none;
             color: #333;
@@ -57,10 +82,12 @@
 
         .fancy-underline:hover::after {
             width: 100%;
+            background-color: none;
         }
 
         .fancy-underline:hover {
             color: #007bff;
+            background-color: none;
         }
     </style>
 </head>
@@ -163,6 +190,9 @@
         </p>
         <p class="text-left" style="margin-left: 10%; margin-right: 10%">
             California Gothic font by <a href="https://www.mattlag.com/californiagothic/">Matt Lag</a>.
+        </p>
+        <p class="text-left" style="margin-left: 10%; margin-right: 10%;">
+            IBM Plex Sans font can be found at <a href="https://fonts.google.com/specimen/IBM+Plex+Sans">Google Fonts</a>.
         </p>
 
         <h2 class="text-left" style="margin-left: 10%; margin-right: 10%">Support</h2>
