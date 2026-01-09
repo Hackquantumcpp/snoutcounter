@@ -91,6 +91,26 @@
             color: #007bff;
             background-color: none;
         }
+
+        .fancy-box{
+            position: relative;
+            display: inline-block;
+            font-family: 'IBM Plex Sans', sans-serif;
+            font-weight: 400;
+            text-decoration: none;
+            color: #333;
+            padding: 8px;
+        }
+        .fancy-box:hover {
+            color: #ed5d55;
+            border: 1px solid #ed5d55;
+            border-radius: 8px;
+        }
+        .fancy-box:active {
+            color: #ed5d55;
+            border: 1px double #ed5d55;
+            border-radius: 8px;
+        }
     </style>
 </head>
 <body>
@@ -104,10 +124,10 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a class="nav-link fancy-underline" href="index.html">HOME</a>
+                    <a class="nav-link fancy-box" href="index.html">HOME</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link fancy-underline" href="#">ABOUT</a>
+                    <a class="nav-link fancy-box" href="#">ABOUT</a>
                 </li>
             </ul>
         </div>
