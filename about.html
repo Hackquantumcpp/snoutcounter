@@ -46,17 +46,17 @@
         ul {
             font-family: 'IBM Plex Sans', sans-serif;
         }
-        a:not(.nav-link):not(.nutshell-link):link {
+        a:not(.nav-link):not(.nutshell-link):not(.wiki-nutshell):link {
             color: #E85D20;
         }
-        a:not(.nav-link):not(.nutshell-link):visited {
+        a:not(.nav-link):not(.nutshell-link):not(.wiki-nutshell):visited {
             color: #d4433b;
         }
-        a:not(.nav-link):not(.nutshell-link):hover {
+        a:not(.nav-link):not(.nutshell-link):not(.wiki-nutshell):hover {
             color: #E85D20;
             background-color: #fcebe6;
         }
-        a:not(.nav-link):not(.nutshell-link):active {
+        a:not(.nav-link):not(.nutshell-link):not(.wiki-nutshell):active {
             color: #A1370D;
             border: 1px dashed #A1370D;
             text-decoration: none;
@@ -64,6 +64,15 @@
 
         .nutshell-link {
             color: #1A2B4A;
+        }
+
+        .wiki-nutshell::after {
+            color: #1A2B4A;
+            content: "W";
+            font-family: serif;
+            font-size: 0.7em;
+            vertical-align: super;
+            margin-left: 0.1em;
         }
 
         .fancy-underline {
@@ -159,9 +168,9 @@
             <li><b>Time since poll was conducted</b>: Of course, polls which were conducted more recently are more likely to be reflective of the state of public opinion. I utilize an exponential function as a weight for recency, with the function being more aggressive with more frequently polled topics (e.g. general approval, versus issue-specific approval).</li>
             <li><b>Multiple polls in short window</b>: If there are multiple polls from the same pollster and sponsor in a two week window, each poll is downweighted, based on the number of polls from that pollster/sponsor in this window. This is to ensure that one pollster/sponsor doesn't dominate the averages just out of frequency, and to counter pollsters who attempt to "flood the zone." The formula utilized for this is borrowed from <a href="https://www.gelliottmorris.com/p/democrats-lead-house-generic-ballot">Strength In Numbers' polling averages</a>; it is calculated as 1 over the square root of the number of polls from the pollster/sponsor pair within a two-week window.</li>
         </ul>
-        <p class="text-left" style="margin-left: 10%; margin-right: 10%">All these weights are combined into a final weight, calculated as the product of these four weights. The weights are normalized to sum to 1. This is then used to calculate a weighted average for each rating or variable we are trying to measure, and for each day. The weighted standard deviation is also calculated for each day and used to determine <a class="nutshell-link" href="https://en.wikipedia.org/wiki/Confidence_interval">:confidence intervals</a>.</a></p>
+        <p class="text-left" style="margin-left: 10%; margin-right: 10%">All these weights are combined into a final weight, calculated as the product of these four weights. The weights are normalized to sum to 1. This is then used to calculate a weighted average for each rating or variable we are trying to measure, and for each day. The weighted standard deviation is also calculated for each day and used to determine <a class="wiki-nutshell" href="https://en.wikipedia.org/wiki/Confidence_interval">:confidence intervals</a>.</a></p>
         <p class="text-left" style="margin-left: 10%; margin-right: 10;">
-            In addition to these weights, I apply four different adjustments to each poll result, each of them calculated by a <a href="https://bookdown.org/steve_midway/DAR/random-effects.html">random effects model</a>. These adjustments are calculated relative to the average calculated from the previous steps. The adjustments are as follows:
+            In addition to these weights, I apply four different adjustments to each poll result, each of them calculated by a <a class="wiki-nutshell" href="https://en.wikipedia.org/wiki/Random_effects_model">:random effects model</a>. These adjustments are calculated relative to the average calculated from the previous steps. The adjustments are as follows:
         </p>
         <ul class="text-left" style="margin-left: 10%; margin-right: 10%">
             <li><b>House effect adjustment</b>: Many pollsters have unique biases stemming from differences in fielding, weighting, question wording, etc, that may not be captured by other adjustments calculated. Thus, I calculate the "house effect" of each pollster. Like all other adjustments, house effects are calculated relative to the weighted average of all polls, rather than the biases of each pollster relative to election results - this is because systematic, industry-wide polling bias (and, by corollary, the biases of many pollsters relative to actual results) are not predictable and change from cycle to cycle.</li>
