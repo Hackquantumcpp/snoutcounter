@@ -176,10 +176,11 @@
             <li><b>Partisanship adjustment</b>: Some pollsters are very explicitly partisan in nature, often working with certain political parties or groups affiliated with political parties, consistently polling for candidates of one party, and/or being funded by a certain party or partisan group. For these pollsters, a partisanship adjustment is applied to correct for potential biases introduced by strong partisan affiliation. As an additional measure to counteract partisanship, I employ a <b>partisanship downweight</b> - all else held equal, a poll conducted by a partisan pollster is given 70% of the weight of a poll conducted by a non-partisan pollster.</li>
         </ul>
         <p class="text-left" style="margin-left: 10%; margin-right: 10%">
-            These adjustments are summed to get the total adjustment for each poll, which is then halved and added/subtracted to measured approvals/disapprovals or two-party horse race estimates. After these adjustments are applied, the weighted average and confidence intervals are recalculated to get the final average for each rating/variable.
+            These adjustments are summed to get the total adjustment for each poll, which is then added to measured approvals/disapprovals or two-party horse race estimates. After these adjustments are applied, the weighted average and confidence intervals are recalculated to get the final average for each rating/variable.
         </p>
         <h2 class="text-left" style="margin-left: 10%; margin-right: 10%">Updates</h2>
         <ul class="text-left" style="margin-left: 10%; margin-right: 10%">
+            <li><b>February 2, 2026</b>: Modified mixed effects model used for calculating adjustments. Instead of calculating and applying adjustments to the net/spread, adjustments are calculated for and applied to each individual target feature (i.e. for generic ballot, Democrats and Republicans each have an individual adjustment).</li>
             <li><b>January 20, 2026</b>: Fixed bug in model which caused different population screens of the same poll to not be chosen properly.</li>
             <li><b>January 16, 2026</b>: Added new, updated generic ballot averages, with new methodology (as part of the methodological overhaul).</li>
             <li><b>January 14, 2026</b>: Updated pollster ratings with new 2026 ratings, as per Silver Bulletin.</li>
