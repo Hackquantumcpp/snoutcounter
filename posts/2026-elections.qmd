@@ -11,9 +11,10 @@ format:
     toc-location: right
 categories:
   - Polling Averages
+  - 2026 Elections
 ---
 
-This page serves as the home for SnoutCounter's generic ballot averages, tracking electoral intent for what is set to be one of the most contentious midterm elections in recent history. This average will update regularly over the course of the year. As the midterms approach, I will also be constructing and releasing a predictive model for the House, Senate, and governor's races. 
+This page serves as the home for SnoutCounter's generic ballot averages, tracking electoral intent for what is set to be one of the most contentious midterm elections in recent history. This average will update regularly over the course of the year. As the midterms approach, I will also be constructing and releasing a predictive model for the House, Senate, and governor's races.
 
 You can read how our polling averages work [here](poll-avg-methodology.qmd). You can find the underlying polling data and model code at the [GitHub repo](https://github.com/Hackquantumcpp/snoutcounter-backend).
 
@@ -22,4 +23,3 @@ You can read how our polling averages work [here](poll-avg-methodology.qmd). You
 
 <iframe title="Generic Ballot Polls" aria-label="Table" id="datawrapper-chart-5N5wz" src="https://datawrapper.dwcdn.net/5N5wz/242/" scrolling="no" frameborder="0" style="width: 0; min-width: 900px !important; border: none;" height="752" data-external="1"></iframe><script type="text/javascript">window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}});</script>
 ```
-
