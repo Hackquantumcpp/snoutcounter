@@ -1,6 +1,8 @@
 project:
   type: website
   output-dir: docs
+  plausible-analytics:
+    path: _plausible_snippet.html
 
 website:
   title: "SnoutCounter"
