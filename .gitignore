@@ -1,0 +1,6 @@
+.env
+/.quarto/
+/_site/
+.Rproj.user/
+.Rhistory
+.RData

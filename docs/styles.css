@@ -1,0 +1,11 @@
+/* css styles */
+p {
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+ul {
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+.navbar-brand img {
+  max-height: 50px !important;
+  width: auto;
+}

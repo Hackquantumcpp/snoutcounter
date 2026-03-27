@@ -1,0 +1,4 @@
+format:
+  html:
+    footnotes-hover: true
+    reference-location: margin

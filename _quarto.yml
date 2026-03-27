@@ -1,0 +1,51 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "SnoutCounter"
+  favicon: "assets/images/snoutcounter-favicon.ico"
+  site-url: https://snoutcounter.works
+  repo-url: https://github.com/Hackquantumcpp/snoutcounter/
+  description: Statistical modeling and poll aggregation
+  page-footer:
+    center:
+      - text: "About"
+        href: about.qmd
+      - text: "License"
+        href: https://github.com/Hackquantumcpp/snoutcounter/blob/main/LICENSE
+      - text: "Ko-Fi"
+        href: https://ko-fi.com/hackquantumcpp
+      - icon: rss
+        href: index.xml
+      - icon: github
+        href: https://github.com/Hackquantumcpp/snoutcounter/tree/main
+  navbar:
+    title: false
+    logo: "assets/images/snoutcounter.png"
+    logo-href: /index.html
+    right:
+      - href: index.qmd
+        text: Home
+      - href: about.qmd
+        text: About
+      - icon: github
+        menu:
+          - text: Model code
+            href: https://github.com/Hackquantumcpp/snoutcounter-backend/tree/main
+          - text: Website code
+            href: https://github.com/Hackquantumcpp/snoutcounter/tree/main
+      
+
+format:
+  html:
+    theme:
+      - cosmo
+      - brand
+    css: styles.css
+    toc: true
+    toc-location: right
+    include-in-header: header.html
+
+editor: visual
+
