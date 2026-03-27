@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="Polling average to track who is on their way to the governor’s mansion">
 
-<title>SnoutCounter</title>
+<title>Tracking the 2026 California governor primary – SnoutCounter</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -26,26 +27,24 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./assets/images/snoutcounter-favicon.ico" rel="icon">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-a0f9fd0d421825b736dc1bbcbcba2219.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../assets/images/snoutcounter-favicon.ico" rel="icon">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-a0f9fd0d421825b736dc1bbcbcba2219.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -73,35 +72,6 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-title','listing-author','listing-date','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
 <!-- Privacy-friendly analytics by Plausible -->
 
 <script async="" src="https://plausible.io/js/pa-xsWSTFm39O9SSkI9MGgt2.js"></script>
@@ -132,38 +102,9 @@ ul.task-list li input[type="checkbox"] {
 
 </script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="styles.css">
-<link rel="alternate" type="application/rss+xml" title="SnoutCounter" href="index.xml" data-external="1"></head>
+<link rel="stylesheet" href="../styles.css">
+</head>
 
 <body class="nav-fixed quarto-light">
 
@@ -172,9 +113,9 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    <img src="./assets/images/snoutcounter.png" alt="" class="navbar-logo light-content">
-    <img src="./assets/images/snoutcounter.png" alt="" class="navbar-logo dark-content">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../assets/images/snoutcounter.png" alt="" class="navbar-logo light-content">
+    <img src="../assets/images/snoutcounter.png" alt="" class="navbar-logo dark-content">
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -184,11 +125,11 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
+    <a class="nav-link" href="../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -220,152 +161,87 @@ window.Quarto = {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(4)</span></div><div class="category" data-category="MjAyNiUyMEVsZWN0aW9ucw==">2026 Elections <span class="quarto-category-count">(2)</span></div><div class="category" data-category="TWV0aG9kb2xvZ3k=">Methodology <span class="quarto-category-count">(1)</span></div><div class="category" data-category="UG9sbGluZyUyMEF2ZXJhZ2Vz">Polling Averages <span class="quarto-category-count">(3)</span></div><div class="category" data-category="U3RhdGlzdGljcw==">Statistics <span class="quarto-category-count">(1)</span></div></div></div>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#average-and-polls" id="toc-average-and-polls" class="nav-link active" data-scroll-target="#average-and-polls">Average and Polls</a></li>
+  <li><a href="#methodology" id="toc-methodology" class="nav-link" data-scroll-target="#methodology">Methodology</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content" id="quarto-document-content">
 
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Tracking the 2026 California governor primary</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">Polling Averages</div>
+    <div class="quarto-category">2026 Elections</div>
+  </div>
+  </div>
 
-
-
-
-
-
-
-<div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
-<div class="listing-actions-group">
-   <div class="input-group input-group-sm quarto-listing-sort">
-    <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
-    <select id="listing-listing-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-listing'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
-      <option value="" disabled="" selected="" hidden="">Order By</option>
-      <option value="index" data-direction="asc">Default</option>
-      <option value="listing-title" data-direction="asc">
-        Title
-      </option>
-      <option value="listing-date-sort" data-direction="asc">
-        Date - Oldest
-      </option>
-      <option value="listing-date-sort" data-direction="desc">
-        Date - Newest
-      </option>
-      <option value="listing-author" data-direction="asc">
-        Author
-      </option>
-    </select>
+<div>
+  <div class="description">
+    Polling average to track who is on their way to the governor’s mansion
   </div>
 </div>
-<div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="UG9sbGluZyUyMEF2ZXJhZ2VzJTJDMjAyNiUyMEVsZWN0aW9ucw==" data-listing-file-modified-sort="1774591513406" data-listing-reading-time-sort="1" data-listing-word-count-sort="143">
-<a href="./posts/2026-elections.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./assets/blog-images/Capitol_Building_Full_View.jpg" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-2026 Midterm Elections Portal
-</h5>
-<div class="listing-categories">
 
-<div class="listing-category" onclick="window.quartoListingCategory('UG9sbGluZyUyMEF2ZXJhZ2Vz'); return false;">Polling Averages</div>
 
-<div class="listing-category" onclick="window.quartoListingCategory('MjAyNiUyMEVsZWN0aW9ucw=='); return false;">2026 Elections</div>
+<div class="quarto-title-meta">
 
-</div>
-<div class="card-text listing-description delink">
-<p>Polling averages for the 2026 midterms</p>
-</div>
-<div class="card-attribution card-text-small start">
-<div class="listing-author">
+    
+  
+    <div>
+    <div class="quarto-title-meta-heading">Modified</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date-modified">March 27, 2026</p>
+    </div>
+  </div>
+    
+  </div>
+  
 
-</div>
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="1" data-categories="UG9sbGluZyUyMEF2ZXJhZ2VzJTJDMjAyNiUyMEVsZWN0aW9ucw==" data-listing-file-modified-sort="1774645188251" data-listing-reading-time-sort="8" data-listing-word-count-sort="1589">
-<a href="./posts/ca-gov-primary-2026.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./assets/blog-images/State_flag_of_California_-_June_2025_-_Sarah_Stierch.jpg" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Tracking the 2026 California governor primary
-</h5>
-<div class="listing-categories">
 
-<div class="listing-category" onclick="window.quartoListingCategory('UG9sbGluZyUyMEF2ZXJhZ2Vz'); return false;">Polling Averages</div>
+</header>
 
-<div class="listing-category" onclick="window.quartoListingCategory('MjAyNiUyMEVsZWN0aW9ucw=='); return false;">2026 Elections</div>
 
-</div>
-<div class="card-text listing-description delink">
-<p>Polling average to track who is on their way to the governor’s mansion</p>
-</div>
-<div class="card-attribution card-text-small start">
-<div class="listing-author">
+<p>With incumbent governor Gavin Newsom unable to run for a third term due to term limits, this year’s California governor’s top-two primary race has become rather competitive. The sheer amount of Democrats in the race has prompted <a href="https://fairvote.org/democrats-could-be-locked-out-of-race-for-california-governor/">some concern</a> that the Democratic candidates would act as spoilers for each other, vaulting a Republican to the governor’s mansion. In the midst of all this, I have decided to release my averages tracking electoral intent in the race. I will regularly update this average until June 2 (the date of the gubernatorial primary election) rolls around.</p>
+<p>You can read how I compute my average in the <a href="#methodology">methodology section below</a>. You can also find the underlying polling dataset and model source code at the <a href="https://github.com/Hackquantumcpp/snoutcounter-backend">GitHub repo</a>.</p>
+<section id="average-and-polls" class="level1">
+<h1>Average and Polls</h1>
+<iframe title="Who is going to win the 2026 California gubernatorial primary?" aria-label="Line chart" id="datawrapper-chart-emANK" src="https://datawrapper.dwcdn.net/emANK/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="499" data-external="1"></iframe><script type="text/javascript">window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}});</script>
 
-</div>
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="2" data-categories="UG9sbGluZyUyMEF2ZXJhZ2Vz" data-listing-file-modified-sort="1774582893637" data-listing-reading-time-sort="2" data-listing-word-count-sort="247">
-<a href="./posts/president-approval.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Presidential Approval Portal
-</h5>
-<div class="listing-categories">
+<iframe title="2026 California Gubernatorial Primary Polls" aria-label="Table" id="datawrapper-chart-rmXtD" src="https://datawrapper.dwcdn.net/rmXtD/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="808" data-external="1"></iframe><script type="text/javascript">window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}});</script>
+</section>
+<section id="methodology" class="level1">
+<h1>Methodology</h1>
+<p>All professional polls measuring electoral intent in the California gubernatorial primary are used, with the exception of those conducted by banned pollsters - see <a href="../posts/poll-avg-methodology.html">here</a> for a list of pollsters excluded from use in SnoutCounter’s averages. I generally check <a href="https://fiftyplusone.news/polls/approval/president">FiftyPlusOne</a>, <a href="https://www.nytimes.com/interactive/polls/donald-trump-approval-rating-polls.html">The New York Times</a>, and Twitter/Bluesky poll collectors (<a href="https://bsky.app/profile/usapolling.bsky.social">Polling USA</a>, <a href="https://xcancel.com/iapolls2022">Interactive Polls</a>, <a href="https://xcancel.com/PollTracker2024/">Politics &amp; Poll Tracker</a>) for new polls and to check what I missed. In the case that a poll has surveyed two samples of different population types (for example, one likely voter sample and one registered voter sample), we only use the results of one of these samples being surveyed. Likely voter samples are preferred to register voter samples are preferred to “all adult” samples. Tracking polls in our dataset are dynamically selected and weeded out such that all tracking polls from the same pollster are non-overlapping in fielding dates; I always include the most recent tracking poll from each pollster.</p>
+<p>I aggregate polls via a weighted average. The following factors are utilized to determine weights:</p>
+<ul>
+<li><strong>Sample size</strong>: Polls with higher sample size are more likely to accurately estimate the population parameter in question, and generally have less uncertainty than polls with smaller sample sizes. However, sample sizes are subject to diminishing returns - a poll with a sample size of 3000 won’t much more accurate than one with a sample size of 2000. I cap sample size at 2000, to avoid polls with particularly large sample sizes from dominating the averages. I additionally <a href="https://en.wikipedia.org/wiki/Winsorizing">winsorize</a> the sample sizes to counter the effect of extreme outlier sample sizes on the sample size weight. Some polls do not reveal their sample sizes; in these cases I assume that the sample size for that poll is equal to the median sample size for all California gubernatorial primary polls conducted by that pollster. If there are no other governor primary polls conducted by that pollster, I set the sample size equal to the median sample size for all governor primary polls utilizing the same mode; if there are no polls with the same mode, I simply set the sample size equal to the median sample size for all California governor primary polls. The weight function I use is the square root of the sample size over the square root of the median sample size of all polls in the dataset.</li>
+<li><strong>Pollster rating</strong>: Not all pollsters are created equal; some are more reliable in producing accurate and precise results than others. I use the <a href="https://www.natesilver.net/p/pollster-ratings-silver-bulletin">Silver Bulletin’s pollster ratings</a>, specifically the predictive plus-minus, a measure of how accurate a pollster is expected to be, as the input for the pollster rating weight function. For predictive plus-minus, lower is better. Pollsters with a predictive plus-minus above 1 are assigned a flat weight of 0.2, as are pollsters without a predictive plus-minus rating from Silver Bulletin. All other pollsters are assigned a weight according to a square root function.</li>
+<li><strong>Time since poll was conducted</strong>: Of course, polls which were conducted more recently are more likely to be reflective of the state of public opinion. I utilize an exponential function as a weight for recency.</li>
+<li><strong>Multiple polls in short window</strong>: If there are multiple polls from the same pollster and sponsor in a two week window, each poll is downweighted, based on the number of polls from that pollster/sponsor in this window. This is to ensure that one pollster/sponsor doesn’t dominate the averages just out of frequency, and to counter pollsters who attempt to “flood the zone.” The formula utilized for this is borrowed from <a href="https://www.gelliottmorris.com/p/democrats-lead-house-generic-ballot">Strength In Numbers’ polling averages</a>; it is calculated as 1 over the square root of the number of polls from the pollster within a two-week window.</li>
+<li><strong>Partisan-sponsored and internal polls</strong>: A large portion of California governor polls have either been commissioned by a partisan organization or are internal polls commissioned by one of the candidates in the race. Despite the media hullabaloo that tends to surround internal polls, they actually tend to be <a href="https://www.natesilver.net/p/why-you-should-mostly-ignore-internal"><em>less</em> accurate</a> than publicly released polls. I downweight both partisan and internal polls accordingly to prevent them from having an excessive impact on the average. All else held equal, partisan polls are assigned 70% of the weight of a non-partisan poll, and internal polls are assigned 50% of the weight of a publicly released poll.</li>
+</ul>
+<p>After calculating these weights, I compute the weighted average for each candidate. However, we aren’t done here - I apply a series of adjustments to each poll result, calculated by a <a href="https://www.bayesrulesbook.com/chapter-17">multilevel regression model</a>. I use the previously calculated weighted average as a regressor in this model. The adjustments calculated and applied are as follows:</p>
+<ul>
+<li><strong>House effect adjustment</strong>: Many pollsters have unique biases stemming from differences in fielding, weighting, question wording, etc, that may not be captured by other adjustments calculated. Thus, I calculate the “house effect” of each pollster. Like all other adjustments, house effects are calculated relative to the weighted average of all polls, rather than the biases of each pollster relative to election results - this is because systematic, industry-wide polling bias (and, by corollary, the biases of many pollsters relative to actual results) are not predictable and change from cycle to cycle.</li>
+<li><strong>Mode effects adjustment</strong>: The choice of how a pollster chooses to field will often have a significant effect on the results of the poll, as different fielding methods will often reach different audiences and different types of people. For example, online panels often reach a younger demographic compared to live phone surveys, and probability panels often present significantly different results compared to non-probability based methods. I correct for this by introducing an adjustment for methodology.</li>
+<li><strong>Likely voter adjustment</strong>: Each polling average is trying to measure approval or horse-race standings for a specific population, but often we will have multiple surveys polling different populations for the same measurable variable. To address this, I calculate three population adjustments - likely voter, registered voter, and all adult sample adjustments - and adjust the results of polls surveying different populations towards the likely voter population.</li>
+<li><strong>Partisanship adjustment</strong>: Some pollsters are very explicitly partisan in nature, often working with certain political parties or groups affiliated with political parties, consistently polling for candidates of one party, and/or being funded by a certain party or partisan group. For these pollsters, a partisanship adjustment is applied to correct for potential biases introduced by strong partisan affiliation.</li>
+<li><strong>Candidate sponsor adjustment</strong>: Similar to the partisanship adjustment, for internal polls I adjust for the candidate that has commissioned the poll, to correct for the biases that these polls may present.</li>
+<li><strong>Minor candidates adjustment</strong>: I track the major candidates in my averages, but they are not the only candidates who are participating in the race. More marginal candidates, such as Tony Thurmond, Betty Yee, Butch Ware, Leo Zacky, and others have also filed for the race, and have taken their own (very small) slice of the electorate. Not all polls include these candidates as possible options, so I adjust for their absence in polls that exclude these candidates. As these candidates will most likely show up on the ballot come June and win a small slice of the vote share, I apply the adjustment to polls that exclude these candidates, the post-adjustment topline of each of these polls essentially being equivalent to what the toplines would most likely look like <em>if</em> these candidates were included in that specific poll.</li>
+<li><del><strong>Drop-in and drop-out adjustments</strong>: The California gubernatorial primary has been a rather chaotic race to keep track of, with major and minor candidates alike dropping out and in of the race continuously over the course of the past year. Thus, I adjust for the inclusion and exclusion of candidates that have “dropped in” or “dropped out” of the race in various polls.</del> Applying the drop-in and drop-out adjustments seem to produce rather funky and anomalous effects in the poll averages, which imply associated methodologial issues; thus I will be excluding these adjustments from the overall computation of my average.</li>
+</ul>
+<p>These adjustments are summed to get the total adjustment for each poll, which is then added to measured candidate polling estimates. After these adjustments are applied, the weighted average is recalculated to get the final average for each rating/variable. Confidence intervals are also computed in order to measure and represent uncertainty in the average for each candidate.</p>
 
-<div class="listing-category" onclick="window.quartoListingCategory('UG9sbGluZyUyMEF2ZXJhZ2Vz'); return false;">Polling Averages</div>
 
-</div>
-<div class="card-text listing-description delink">
-<p>Polling averages measuring Trump’s approval</p>
-</div>
-<div class="card-attribution card-text-small start">
-<div class="listing-author">
+</section>
 
-</div>
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="3" data-categories="TWV0aG9kb2xvZ3klMkNTdGF0aXN0aWNz" data-listing-date-sort="1774508400000" data-listing-file-modified-sort="1774641324307" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="11" data-listing-word-count-sort="2161">
-<a href="./posts/poll-avg-methodology.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Methodology for Our Polling Averages
-</h5>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('TWV0aG9kb2xvZ3k='); return false;">Methodology</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('U3RhdGlzdGljcw=='); return false;">Statistics</div>
-
-</div>
-<div class="card-text listing-description delink">
-<p>How we calculate (most of) our polling averages</p>
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-
-</div>
-<div class="listing-date">
-Mar 26, 2026
-</div>
-</div>
-</div>
-</div></a>
-</div>
-</div>
-<div class="listing-no-matching d-none">No matching items</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -775,7 +651,7 @@ Mar 26, 2026
     <div class="nav-footer-center">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
-    <a class="nav-link" href="./about.html">
+    <a class="nav-link" href="../about.html">
 <p>About</p>
 </a>
   </li>  
@@ -790,7 +666,7 @@ Mar 26, 2026
 </a>
   </li>  
     <li class="nav-item compact">
-    <a class="nav-link" href="./index.xml">
+    <a class="nav-link" href="../index.xml">
       <i class="bi bi-rss" role="img">
 </i> 
     </a>
