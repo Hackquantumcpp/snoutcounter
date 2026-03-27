@@ -1,19 +1,15 @@
 project:
   type: website
   output-dir: docs
-  plausible-analytics: |
-  <script async src="https://plausible.io/js/pa-xsWSTFm39O9SSkI9MGgt2.js"></script>
-<script>
-  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
-  plausible.init()
-</script>
 
 website:
   title: "SnoutCounter"
   favicon: "assets/images/snoutcounter-favicon.ico"
-  site-url: https://snoutcounter.works
-  repo-url: https://github.com/Hackquantumcpp/snoutcounter/
+  site-url: "https://snoutcounter.works"
+  repo-url: "https://github.com/Hackquantumcpp/snoutcounter/"
   description: Statistical modeling and poll aggregation
+  plausible-analytics:
+    path: _plausible_snippet.html
   page-footer:
     center:
       - text: "About"

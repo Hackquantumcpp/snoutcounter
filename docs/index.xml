@@ -9,7 +9,7 @@
 <link>https://snoutcounter.works/</link>
 <atom:link href="https://snoutcounter.works/index.xml" rel="self" type="application/rss+xml"/>
 <description>Statistical modeling and poll aggregation</description>
-<generator>quarto-1.7.32</generator>
+<generator>quarto-1.9.36</generator>
 <lastBuildDate>Thu, 26 Mar 2026 07:00:00 GMT</lastBuildDate>
 <item>
   <title>Methodology for Our Polling Averages</title>
@@ -129,7 +129,7 @@
  ]]></description>
   <category>Polling Averages</category>
   <guid>https://snoutcounter.works/posts/2026-elections.html</guid>
-  <pubDate>Fri, 27 Mar 2026 05:05:06 GMT</pubDate>
+  <pubDate>Fri, 27 Mar 2026 05:55:49 GMT</pubDate>
   <media:content url="https://snoutcounter.works/assets/blog-images/Capitol_Building_Full_View.jpg" medium="image" type="image/jpeg"/>
 </item>
 <item>
@@ -166,7 +166,7 @@
  ]]></description>
   <category>Polling Averages</category>
   <guid>https://snoutcounter.works/posts/president-approval.html</guid>
-  <pubDate>Fri, 27 Mar 2026 05:05:06 GMT</pubDate>
+  <pubDate>Fri, 27 Mar 2026 05:55:49 GMT</pubDate>
 </item>
 </channel>
 </rss>
