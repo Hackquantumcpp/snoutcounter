@@ -4,7 +4,7 @@ title: "About"
 
 SnoutCounter is an independent statistical modeling site primarily focused on poll aggregation and election modeling for the United States, though I may also use this site to host other data science and mathematical modeling projects unrelated to elections or politics. I am physics and data science student at the University of California, Berkeley, and an enthusiast for anything quantitative - whether it be astronomy or monetary policy.
 
-This site is built with [Quarto](https://quarto.org/) and hosted with [GitHub Pages](https://pages.github.com/). You can find the source code for all poll aggregation models hosted on SnoutCounter, as well as the polling data itself, in the [snoutcounter-backend](https://github.com/Hackquantumcpp/snoutcounter-backend) GitHub repo, and you can find the code for this site in the [snoutcounter](https://github.com/Hackquantumcpp/snoutcounter). This site utilizes [Plausible Analytics](https://plausible.io/), a privacy-friendly analytics tool which does not use cookies or engage in cross-site tracking and is GDPR-compliant.
+This site is built with [Quarto](https://quarto.org/) and hosted with [GitHub Pages](https://pages.github.com/). You can find the source code for all poll aggregation models hosted on SnoutCounter, as well as the polling data itself, in the [snoutcounter-backend](https://github.com/Hackquantumcpp/snoutcounter-backend) GitHub repo, and you can find the code for this site in the [snoutcounter](https://github.com/Hackquantumcpp/snoutcounter) repo. This site utilizes [Plausible Analytics](https://plausible.io/), a privacy-friendly analytics tool which does not use cookies or engage in cross-site tracking and is GDPR-compliant.
 
 # Site Credits
 
