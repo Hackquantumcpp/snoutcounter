@@ -48,7 +48,7 @@
 <li><strong>Minor candidates adjustment</strong>: I track the major candidates in my averages, but they are not the only candidates who are participating in the race. More marginal candidates, such as Tony Thurmond, Betty Yee, Butch Ware, Leo Zacky, and others have also filed for the race, and have taken their own (very small) slice of the electorate. Not all polls include these candidates as possible options, so I adjust for their absence in polls that exclude these candidates. As these candidates will most likely show up on the ballot come June and win a small slice of the vote share, I apply the adjustment to polls that exclude these candidates, the post-adjustment topline of each of these polls essentially being equivalent to what the toplines would most likely look like <em>if</em> these candidates were included in that specific poll.</li>
 <li><del><strong>Drop-in and drop-out adjustments</strong>: The California gubernatorial primary has been a rather chaotic race to keep track of, with major and minor candidates alike dropping out and in of the race continuously over the course of the past year. Thus, I adjust for the inclusion and exclusion of candidates that have “dropped in” or “dropped out” of the race in various polls.</del> Applying the drop-in and drop-out adjustments seem to produce rather funky and anomalous effects in the poll averages, which imply associated methodologial issues; thus I will be excluding these adjustments from the overall computation of my average.</li>
 </ul>
-<p>These adjustments are summed to get the total adjustment for each poll, which is then added to measured candidate polling estimates. After these adjustments are applied, the weighted average is recalculated to get the final average for each rating/variable. 95% confidence intervals are also computed in order to measure and represent uncertainty in the average for each candidate; they are computed as mean <img src="https://latex.codecogs.com/png.latex?%5Cpm"> 1.96*std.</p>
+<p>These adjustments are summed to get the total adjustment for each poll, which is then added to measured candidate polling estimates. After these adjustments are applied, the weighted average is recalculated to get the final average for each rating/variable. 95% confidence intervals are also computed in order to measure and represent uncertainty in the average for each candidate; they are computed as <img src="https://latex.codecogs.com/png.latex?%5Cbar%7Bx%7D%5Cpm%201.96s_x">, where <img src="https://latex.codecogs.com/png.latex?%5Cbar%7Bx%7D"> is the weighted polling average and <img src="https://latex.codecogs.com/png.latex?s_x"> is the weighted standard deviation.</p>
 
 
 </section>
@@ -149,6 +149,10 @@
 <li><strong>April 18, 2025</strong>: Adjusted pollster quality weights to be slightly less aggressive, thus lowering the chance that an unduly small number of polls dominate the averages.</li>
 <li><strong>April 17, 2025</strong>: Adjusted the linear time weight to be somewhat more aggressive. This helps averages be more responsive and less sluggish, especially the Congressional and SCOTUS approval averages.</li>
 </ul>
+</section>
+<section id="data-download" class="level1">
+<h1>Data Download</h1>
+<p>All polling data and averages can be downloaded at the <a href="https://github.com/Hackquantumcpp/snoutcounter-backend">GitHub repo</a>. Polling data can be found <a href="https://github.com/Hackquantumcpp/snoutcounter-backend/tree/main/data">here</a>, while averages can be found <a href="https://github.com/Hackquantumcpp/snoutcounter-backend/tree/main/averages">here</a>.</p>
 
 
 </section>
@@ -180,7 +184,7 @@
   <category>Polling Averages</category>
   <category>2026 Elections</category>
   <guid>https://snoutcounter.works/posts/2026-elections.html</guid>
-  <pubDate>Sat, 28 Mar 2026 20:07:32 GMT</pubDate>
+  <pubDate>Mon, 30 Mar 2026 03:46:56 GMT</pubDate>
   <media:content url="https://snoutcounter.works/assets/blog-images/Capitol_Building_Full_View.jpg" medium="image" type="image/jpeg"/>
 </item>
 <item>
@@ -217,7 +221,7 @@
  ]]></description>
   <category>Polling Averages</category>
   <guid>https://snoutcounter.works/posts/president-approval.html</guid>
-  <pubDate>Sat, 28 Mar 2026 20:07:32 GMT</pubDate>
+  <pubDate>Mon, 30 Mar 2026 03:46:56 GMT</pubDate>
   <media:content url="https://snoutcounter.works/assets/blog-images/Donald_Trump_takes_the_oath_of_office_(2025)_(alternate).jpg" medium="image" type="image/jpeg"/>
 </item>
 </channel>

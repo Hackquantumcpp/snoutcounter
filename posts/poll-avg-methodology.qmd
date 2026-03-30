@@ -2,6 +2,7 @@
 title: "Methodology for Our Polling Averages"
 description: "How we calculate (most of) our polling averages"
 date: "3/26/2026"
+date-modified: "3/29/2026"
 execute:
   echo: false
 format: html
@@ -87,3 +88,7 @@ The following updates were made before the methodological overhaul in January 20
 -   **April 19, 2025**: Added chart showcasing net issue-specific approval ratings.
 -   **April 18, 2025**: Adjusted pollster quality weights to be slightly less aggressive, thus lowering the chance that an unduly small number of polls dominate the averages.
 -   **April 17, 2025**: Adjusted the linear time weight to be somewhat more aggressive. This helps averages be more responsive and less sluggish, especially the Congressional and SCOTUS approval averages.
+
+# Data Download
+
+All polling data and averages can be downloaded at the [GitHub repo](https://github.com/Hackquantumcpp/snoutcounter-backend). Polling data can be found [here](https://github.com/Hackquantumcpp/snoutcounter-backend/tree/main/data), while averages can be found [here](https://github.com/Hackquantumcpp/snoutcounter-backend/tree/main/averages).
