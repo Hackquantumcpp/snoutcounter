@@ -5,7 +5,11 @@ date: "3/26/2026"
 date-modified: "3/30/2026"
 execute:
   echo: false
-format: html
+format:
+  html:
+    code-links:
+      - text: Model Code
+        repo: https://github.com/Hackquantumcpp/snoutcounter-backend
 categories:
   - Methodology
   - Statistics
