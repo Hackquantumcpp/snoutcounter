@@ -75,6 +75,7 @@
 
 
 <p>Here you can find the methodology for (most of) SnoutCounter’s polling averages. Some polling averages deviate from this substantially - in those cases the methodology will be listed on the same post as the average.</p>
+<p>The source code for all poll aggregation models can be found at the <a href="https://github.com/Hackquantumcpp/snoutcounter-backend">GitHub repo</a>. If you find a bug in the code, or have useful feedback to report, then feel free to do so by opening an issue on GitHub.</p>
 <section id="methodology" class="level1 page-columns page-full">
 <h1>Methodology</h1>
 <p>SnoutCounter aggregates polls via a weighted average. I include all professional polls, with the exceptions of those conducted by pollsters that have been banned from usage in SnoutCounter averages. The following pollsters are excluded from usage in our averages due to methodological misconduct, lack of transparency, or other reasons:</p>
@@ -190,7 +191,7 @@
   <category>Polling Averages</category>
   <category>2026 Elections</category>
   <guid>https://snoutcounter.works/posts/2026-elections.html</guid>
-  <pubDate>Mon, 30 Mar 2026 19:23:06 GMT</pubDate>
+  <pubDate>Mon, 30 Mar 2026 19:40:57 GMT</pubDate>
   <media:content url="https://snoutcounter.works/assets/blog-images/Capitol_Building_Full_View.jpg" medium="image" type="image/jpeg"/>
 </item>
 <item>
@@ -227,7 +228,7 @@
  ]]></description>
   <category>Polling Averages</category>
   <guid>https://snoutcounter.works/posts/president-approval.html</guid>
-  <pubDate>Mon, 30 Mar 2026 19:23:06 GMT</pubDate>
+  <pubDate>Mon, 30 Mar 2026 19:40:57 GMT</pubDate>
   <media:content url="https://snoutcounter.works/assets/blog-images/Donald_Trump_takes_the_oath_of_office_(2025)_(alternate).jpg" medium="image" type="image/jpeg"/>
 </item>
 </channel>
