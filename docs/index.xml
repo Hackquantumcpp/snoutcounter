@@ -45,10 +45,16 @@
 <li><strong>Likely voter adjustment</strong>: Each polling average is trying to measure approval or horse-race standings for a specific population, but often we will have multiple surveys polling different populations for the same measurable variable. To address this, I calculate three population adjustments - likely voter, registered voter, and all adult sample adjustments - and adjust the results of polls surveying different populations towards the likely voter population.</li>
 <li><strong>Partisanship adjustment</strong>: Some pollsters are very explicitly partisan in nature, often working with certain political parties or groups affiliated with political parties, consistently polling for candidates of one party, and/or being funded by a certain party or partisan group. For these pollsters, a partisanship adjustment is applied to correct for potential biases introduced by strong partisan affiliation.</li>
 <li><strong>Candidate sponsor adjustment</strong>: Similar to the partisanship adjustment, for internal polls I adjust for the candidate that has commissioned the poll, to correct for the biases that these polls may present.</li>
-<li><strong>Minor candidates adjustment</strong>: I track the major candidates in my averages, but they are not the only candidates who are participating in the race. More marginal candidates, such as Tony Thurmond, Betty Yee, Butch Ware, Leo Zacky, and others have also filed for the race, and have taken their own (very small) slice of the electorate. Not all polls include these candidates as possible options, so I adjust for their absence in polls that exclude these candidates. As these candidates will most likely show up on the ballot come June and win a small slice of the vote share, I apply the adjustment to polls that exclude these candidates, the post-adjustment topline of each of these polls essentially being equivalent to what the toplines would most likely look like <em>if</em> these candidates were included in that specific poll.</li>
+<li><del><strong>Minor candidates adjustment</strong>: I track the major candidates in my averages, but they are not the only candidates who are participating in the race. More marginal candidates, such as Tony Thurmond, Betty Yee, Butch Ware, Leo Zacky, and others have also filed for the race, and have taken their own (very small) slice of the electorate. Not all polls include these candidates as possible options, so I adjust for their absence in polls that exclude these candidates. As these candidates will most likely show up on the ballot come June and win a small slice of the vote share, I apply the adjustment to polls that exclude these candidates, the post-adjustment topline of each of these polls essentially being equivalent to what the toplines would most likely look like <em>if</em> these candidates were included in that specific poll.</del> After some further exploratory analysis, I have made the determination that polling on minor candidates is insufficient, and thus this adjustment may unduly skew the averages. Therefore I have disabled this unless and until further polling on minor candidates is conducted.</li>
 <li><del><strong>Drop-in and drop-out adjustments</strong>: The California gubernatorial primary has been a rather chaotic race to keep track of, with major and minor candidates alike dropping out and in of the race continuously over the course of the past year. Thus, I adjust for the inclusion and exclusion of candidates that have “dropped in” or “dropped out” of the race in various polls.</del> Applying the drop-in and drop-out adjustments seem to produce rather funky and anomalous effects in the poll averages, which imply associated methodologial issues; thus I will be excluding these adjustments from the overall computation of my average.</li>
 </ul>
 <p>These adjustments are summed to get the total adjustment for each poll, which is then added to measured candidate polling estimates. After these adjustments are applied, the weighted average is recalculated to get the final average for each rating/variable. 95% confidence intervals are also computed in order to measure and represent uncertainty in the average for each candidate; they are computed as <img src="https://latex.codecogs.com/png.latex?%5Cbar%7Bx%7D%5Cpm%201.96s_x">, where <img src="https://latex.codecogs.com/png.latex?%5Cbar%7Bx%7D"> is the weighted polling average and <img src="https://latex.codecogs.com/png.latex?s_x"> is the weighted standard deviation.</p>
+</section>
+<section id="updates" class="level1">
+<h1>Updates</h1>
+<ul>
+<li><strong>March 30, 2026</strong>: Disabled the minor candidates adjustment due to insufficient polling data on these candidates.</li>
+</ul>
 
 
 </section>
@@ -184,7 +190,7 @@
   <category>Polling Averages</category>
   <category>2026 Elections</category>
   <guid>https://snoutcounter.works/posts/2026-elections.html</guid>
-  <pubDate>Mon, 30 Mar 2026 03:46:56 GMT</pubDate>
+  <pubDate>Mon, 30 Mar 2026 19:23:06 GMT</pubDate>
   <media:content url="https://snoutcounter.works/assets/blog-images/Capitol_Building_Full_View.jpg" medium="image" type="image/jpeg"/>
 </item>
 <item>
@@ -221,7 +227,7 @@
  ]]></description>
   <category>Polling Averages</category>
   <guid>https://snoutcounter.works/posts/president-approval.html</guid>
-  <pubDate>Mon, 30 Mar 2026 03:46:56 GMT</pubDate>
+  <pubDate>Mon, 30 Mar 2026 19:23:06 GMT</pubDate>
   <media:content url="https://snoutcounter.works/assets/blog-images/Donald_Trump_takes_the_oath_of_office_(2025)_(alternate).jpg" medium="image" type="image/jpeg"/>
 </item>
 </channel>
