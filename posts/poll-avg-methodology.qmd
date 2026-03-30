@@ -9,7 +9,8 @@ format:
   html:
     code-links:
       - text: Model Code
-        repo: https://github.com/Hackquantumcpp/snoutcounter-backend
+        icon: github
+        href: https://github.com/Hackquantumcpp/snoutcounter-backend
 categories:
   - Methodology
   - Statistics
