@@ -2,7 +2,7 @@
 title: "Methodology for Our Polling Averages"
 description: "How we calculate (most of) our polling averages"
 date: "3/26/2026"
-date-modified: "3/30/2026"
+date-modified: "3/31/2026"
 execute:
   echo: false
 format:
