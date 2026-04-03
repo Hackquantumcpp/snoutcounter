@@ -3,7 +3,7 @@ title: "Tracking the 2026 California governor primary"
 description: "Polling average to track who is on their way to the governor's mansion"
 image: "../assets/blog-images/State_flag_of_California_-_June_2025_-_Sarah_Stierch.jpg"
 date: "3/27/2026"
-date-modified: "3/31/2026"
+date-modified: "4/3/2026"
 execute:
   echo: false
 format:
