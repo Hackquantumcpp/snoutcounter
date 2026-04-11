@@ -127,7 +127,7 @@
 <li><strong>January 8, 2026</strong>: Added partisanship downweight.</li>
 <li><strong>January 4, 2026</strong>: Completely overhauled the methodology for polling averages.</li>
 </ul>
-<p>The following updates were made before the methodological overhaul in January 2026, thus the corresponding update notes may lack the context behind them.</p>
+<p>The following updates were made before the methodological overhaul in January 2026.</p>
 <ul>
 <li><strong>September 26, 2025</strong>: Fixed bug in sample size weights where, in calculation of median sample size, poll sample sizes are capped at 2000 instead of the intended 3000.</li>
 <li><strong>September 18, 2025</strong>: Added a new issue to issue-approval poll averages: crime.</li>
@@ -191,7 +191,7 @@
   <category>Polling Averages</category>
   <category>2026 Elections</category>
   <guid>https://snoutcounter.works/posts/2026-elections.html</guid>
-  <pubDate>Thu, 09 Apr 2026 21:54:07 GMT</pubDate>
+  <pubDate>Sat, 11 Apr 2026 00:13:29 GMT</pubDate>
   <media:content url="https://snoutcounter.works/assets/blog-images/Capitol_Building_Full_View.jpg" medium="image" type="image/jpeg"/>
 </item>
 <item>
@@ -228,7 +228,7 @@
  ]]></description>
   <category>Polling Averages</category>
   <guid>https://snoutcounter.works/posts/president-approval.html</guid>
-  <pubDate>Thu, 09 Apr 2026 21:54:07 GMT</pubDate>
+  <pubDate>Sat, 11 Apr 2026 00:13:29 GMT</pubDate>
   <media:content url="https://snoutcounter.works/assets/blog-images/Donald_Trump_takes_the_oath_of_office_(2025)_(alternate).jpg" medium="image" type="image/jpeg"/>
 </item>
 </channel>
