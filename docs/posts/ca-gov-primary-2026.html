@@ -241,7 +241,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">April 11, 2026</p>
+      <p class="date-modified">April 12, 2026</p>
     </div>
   </div>
     
@@ -269,7 +269,7 @@ window.Quarto = {
 <li><strong>Pollster rating</strong>: Not all pollsters are created equal; some are more reliable in producing accurate and precise results than others. I use the <a href="https://www.natesilver.net/p/pollster-ratings-silver-bulletin">Silver Bulletin’s pollster ratings</a>, specifically the predictive plus-minus, a measure of how accurate a pollster is expected to be, as the input for the pollster rating weight function. For predictive plus-minus, lower is better. Pollsters with a predictive plus-minus above 1 are assigned a flat weight of 0.2, as are pollsters without a predictive plus-minus rating from Silver Bulletin. All other pollsters are assigned a weight according to a square root function.</li>
 <li><strong>Time since poll was conducted</strong>: Of course, polls which were conducted more recently are more likely to be reflective of the state of public opinion. I utilize an exponential function as a weight for recency.</li>
 <li><strong>Multiple polls in short window</strong>: If there are multiple polls from the same pollster and sponsor in a two week window, each poll is downweighted, based on the number of polls from that pollster/sponsor in this window. This is to ensure that one pollster/sponsor doesn’t dominate the averages just out of frequency, and to counter pollsters who attempt to “flood the zone.” The formula utilized for this is borrowed from <a href="https://www.gelliottmorris.com/p/democrats-lead-house-generic-ballot">Strength In Numbers’ polling averages</a>; it is calculated as 1 over the square root of the number of polls from the pollster within a two-week window.</li>
-<li><strong>Partisan-sponsored and internal polls</strong>: A large portion of California governor polls have either been commissioned by a partisan organization or are internal polls commissioned by one of the candidates in the race. Despite the media hullabaloo that tends to surround internal polls, they actually tend to be <a href="https://www.natesilver.net/p/why-you-should-mostly-ignore-internal"><em>less</em> accurate</a> than publicly released polls. I downweight both partisan and internal polls accordingly to prevent them from having an excessive impact on the average. All else held equal, partisan polls are assigned 70% of the weight of a non-partisan poll, and internal polls are assigned 50% of the weight of a publicly released poll.</li>
+<li><strong>Partisan-sponsored and internal polls</strong>: A large portion of California governor polls have either been commissioned by a partisan organization or are internal polls commissioned by one of the candidates in the race. Despite the media hullabaloo that tends to surround internal polls, they actually tend to be <a href="https://www.natesilver.net/p/why-you-should-mostly-ignore-internal"><em>less</em> accurate</a> than publicly released polls. I downweight both partisan and internal polls accordingly to prevent them from having an excessive impact on the average. All else held equal, partisan polls are assigned 80% of the weight of a non-partisan poll, and internal polls are assigned 50% of the weight of a publicly released poll.</li>
 </ul>
 <p>After calculating these weights, I compute the weighted average for each candidate. However, we aren’t done here - I apply a series of adjustments to each poll result, calculated by a <a href="https://www.bayesrulesbook.com/chapter-17">multilevel regression model</a>. I use the previously calculated weighted average as a regressor in this model. The adjustments calculated and applied are as follows:</p>
 <ul>
@@ -286,6 +286,7 @@ window.Quarto = {
 <section id="updates" class="level1">
 <h1>Updates</h1>
 <ul>
+<li><strong>April 12, 2026</strong>: Slightly modified partisan downweight. Now, all else held equal, partisan polls have 80% of the weight of non-partisan polls. Before, they had 70%.</li>
 <li><strong>March 30, 2026</strong>: Disabled the minor candidates adjustment due to insufficient polling data on these candidates.</li>
 </ul>
 

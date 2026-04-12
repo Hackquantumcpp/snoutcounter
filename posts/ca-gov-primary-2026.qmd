@@ -3,7 +3,7 @@ title: "Tracking the 2026 California governor primary"
 description: "Polling average to track who is on their way to the governor's mansion"
 image: "../assets/blog-images/State_flag_of_California_-_June_2025_-_Sarah_Stierch.jpg"
 date: "3/27/2026"
-date-modified: "4/11/2026"
+date-modified: "4/12/2026"
 execute:
   echo: false
 format:
@@ -36,7 +36,7 @@ I aggregate polls via a weighted average. The following factors are utilized to 
 -   **Pollster rating**: Not all pollsters are created equal; some are more reliable in producing accurate and precise results than others. I use the [Silver Bulletin's pollster ratings](https://www.natesilver.net/p/pollster-ratings-silver-bulletin), specifically the predictive plus-minus, a measure of how accurate a pollster is expected to be, as the input for the pollster rating weight function. For predictive plus-minus, lower is better. Pollsters with a predictive plus-minus above 1 are assigned a flat weight of 0.2, as are pollsters without a predictive plus-minus rating from Silver Bulletin. All other pollsters are assigned a weight according to a square root function.
 -   **Time since poll was conducted**: Of course, polls which were conducted more recently are more likely to be reflective of the state of public opinion. I utilize an exponential function as a weight for recency.
 -   **Multiple polls in short window**: If there are multiple polls from the same pollster and sponsor in a two week window, each poll is downweighted, based on the number of polls from that pollster/sponsor in this window. This is to ensure that one pollster/sponsor doesn't dominate the averages just out of frequency, and to counter pollsters who attempt to "flood the zone." The formula utilized for this is borrowed from [Strength In Numbers' polling averages](https://www.gelliottmorris.com/p/democrats-lead-house-generic-ballot); it is calculated as 1 over the square root of the number of polls from the pollster within a two-week window.
--   **Partisan-sponsored and internal polls**: A large portion of California governor polls have either been commissioned by a partisan organization or are internal polls commissioned by one of the candidates in the race. Despite the media hullabaloo that tends to surround internal polls, they actually tend to be [*less* accurate](https://www.natesilver.net/p/why-you-should-mostly-ignore-internal) than publicly released polls. I downweight both partisan and internal polls accordingly to prevent them from having an excessive impact on the average. All else held equal, partisan polls are assigned 70% of the weight of a non-partisan poll, and internal polls are assigned 50% of the weight of a publicly released poll.
+-   **Partisan-sponsored and internal polls**: A large portion of California governor polls have either been commissioned by a partisan organization or are internal polls commissioned by one of the candidates in the race. Despite the media hullabaloo that tends to surround internal polls, they actually tend to be [*less* accurate](https://www.natesilver.net/p/why-you-should-mostly-ignore-internal) than publicly released polls. I downweight both partisan and internal polls accordingly to prevent them from having an excessive impact on the average. All else held equal, partisan polls are assigned 80% of the weight of a non-partisan poll, and internal polls are assigned 50% of the weight of a publicly released poll.
 
 After calculating these weights, I compute the weighted average for each candidate. However, we aren't done here - I apply a series of adjustments to each poll result, calculated by a [multilevel regression model](https://www.bayesrulesbook.com/chapter-17). I use the previously calculated weighted average as a regressor in this model. The adjustments calculated and applied are as follows:
 
@@ -52,4 +52,5 @@ These adjustments are summed to get the total adjustment for each poll, which is
 
 # Updates
 
+- **April 12, 2026**: Slightly modified partisan downweight. Now, all else held equal, partisan polls have 80% of the weight of non-partisan polls. Before, they had 70%.
 - **March 30, 2026**: Disabled the minor candidates adjustment due to insufficient polling data on these candidates.
