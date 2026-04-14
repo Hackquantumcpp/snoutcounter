@@ -2,7 +2,7 @@
 title: "2026 Midterm Elections Portal"
 description: "Polling averages for the 2026 midterms"
 image: "../assets/blog-images/Capitol_Building_Full_View.jpg"
-date-modified: "4/13/2026"
+date-modified: "4/14/2026"
 execute:
   echo: false
 format:
