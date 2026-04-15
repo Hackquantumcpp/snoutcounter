@@ -2,7 +2,7 @@
 title: "Methodology for Our Polling Averages"
 description: "How we calculate (most of) our polling averages"
 date: "3/26/2026"
-date-modified: "4/12/2026"
+date-modified: "4/15/2026"
 execute:
   echo: false
 format:
@@ -64,8 +64,8 @@ These adjustments are summed to get the total adjustment for each poll, which is
 
 # Updates
 
--   **April 12, 2026**: Slightly modified partisan downweight. Now, all else held equal, partisan polls have 80% of the weight of non-partisan polls. Before, they had 70%. 
--   **April 11, 2026**: Modified population adjustment for generic ballot average such that it measures electoral intent among likely voters rather than registered voters. The original rationale for measuring intent among registered voters was that, this early (i.e. before Labor Day, when election season is considered as formally having begun), likely voter screens may not accurately capture the electorate in the midterms, and thus measuring electoral preference among registered voters may be more appropriate. However, various polls practice different methods of implementing the likely voter screen - some simply ask voters how likely they are to vote in November, while others utilize statistical models to determine who is more or less likely to vote in the midterms. The aforementioned rationale applies more to polls with the former screen compared to the latter screen. Thus, to be agnostic to screen, the generic ballot average measures electoral intent among likely voters for the whole time period, rather than just the time period after Labor Day. This should improve accuracy and power of the model. 
+-   **April 12, 2026**: Slightly modified partisan downweight. Now, all else held equal, partisan polls have 80% of the weight of non-partisan polls. Before, they had 70%.
+-   **April 11, 2026**: Modified population adjustment for generic ballot average such that it measures electoral intent among likely voters rather than registered voters. The original rationale for measuring intent among registered voters was that, this early (i.e. before Labor Day, when election season is considered as formally having begun), likely voter screens may not accurately capture the electorate in the midterms, and thus measuring electoral preference among registered voters may be more appropriate. However, various polls practice different methods of implementing the likely voter screen - some simply ask voters how likely they are to vote in November, while others utilize statistical models to determine who is more or less likely to vote in the midterms. The aforementioned rationale applies more to polls with the former screen compared to the latter screen. Thus, to be agnostic to screen, the generic ballot average measures electoral intent among likely voters for the whole time period, rather than just the time period after Labor Day. This should improve accuracy and power of the model.
 -   **February 14, 2026**: Unbanned TIPP Insights from use in SnoutCounter averages. TIPP was initially banned due to an [incident](https://threadreaderapp.com/thread/1844824902198554628.html?utm_campaign=topunroll) during the 2024 election cycle where the likely voter model introduced by TIPP in a Pennsylvania poll cut out the vast majority of respondents from Philadelphia, thus leading to results more favorable to Trump in the topline. This was viewed with suspicion by both myself and [other poll watchers and analysts](https://xcancel.com/lxeagle17/status/1844581842034491471), as it was equivalent to a particularly egregious under-sampling of a heavily Democratic area with significant influence over PA election results, thus as a precautionary measure I banned TIPP from use in my averages. As far as I know, however, there haven't been any subsequent methodological incidents in TIPP's polling. Thus, I made the decision to allow TIPP polls to be included in our averages. As with all methodological changes, poll averages have been retroactively recalculated to account for this.
 -   **February 8, 2026**: Optimized models to run faster. Also, modified mixed effects model by eliminating the global intercept term.
 -   **February 2, 2026**: Modified mixed effects model used for calculating adjustments. Instead of calculating and applying adjustments to the net/spread, adjustments are calculated for and applied to each individual target feature (e.g. for generic ballot, Democrats and Republicans each have an individual adjustment).
@@ -102,4 +102,7 @@ The following updates were made before the methodological overhaul in January 20
 
 # Data Download
 
-All polling data and averages can be downloaded at the [GitHub repo](https://github.com/Hackquantumcpp/snoutcounter-backend). Polling data can be found [here](https://github.com/Hackquantumcpp/snoutcounter-backend/tree/main/data), while averages can be found [here](https://github.com/Hackquantumcpp/snoutcounter-backend/tree/main/averages).
+All polling data and averages can be downloaded at the [GitHub repo](https://github.com/Hackquantumcpp/snoutcounter-backend). You can find the data in the following links:
+
+- Polling data: [here](https://github.com/Hackquantumcpp/snoutcounter-backend/tree/main/data)
+- Poll averages: [here](https://github.com/Hackquantumcpp/snoutcounter-backend/tree/main/averages).

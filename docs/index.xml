@@ -162,7 +162,11 @@
 </section>
 <section id="data-download" class="level1">
 <h1>Data Download</h1>
-<p>All polling data and averages can be downloaded at the <a href="https://github.com/Hackquantumcpp/snoutcounter-backend">GitHub repo</a>. Polling data can be found <a href="https://github.com/Hackquantumcpp/snoutcounter-backend/tree/main/data">here</a>, while averages can be found <a href="https://github.com/Hackquantumcpp/snoutcounter-backend/tree/main/averages">here</a>.</p>
+<p>All polling data and averages can be downloaded at the <a href="https://github.com/Hackquantumcpp/snoutcounter-backend">GitHub repo</a>. You can find the data in the following links:</p>
+<ul>
+<li>Polling data: <a href="https://github.com/Hackquantumcpp/snoutcounter-backend/tree/main/data">here</a></li>
+<li>Poll averages: <a href="https://github.com/Hackquantumcpp/snoutcounter-backend/tree/main/averages">here</a>.</li>
+</ul>
 
 
 </section>
@@ -194,7 +198,7 @@
   <category>Polling Averages</category>
   <category>2026 Elections</category>
   <guid>https://snoutcounter.works/posts/2026-elections.html</guid>
-  <pubDate>Tue, 14 Apr 2026 22:03:33 GMT</pubDate>
+  <pubDate>Wed, 15 Apr 2026 21:05:49 GMT</pubDate>
   <media:content url="https://snoutcounter.works/assets/blog-images/Capitol_Building_Full_View.jpg" medium="image" type="image/jpeg"/>
 </item>
 <item>
@@ -231,7 +235,7 @@
  ]]></description>
   <category>Polling Averages</category>
   <guid>https://snoutcounter.works/posts/president-approval.html</guid>
-  <pubDate>Tue, 14 Apr 2026 22:03:33 GMT</pubDate>
+  <pubDate>Wed, 15 Apr 2026 21:05:49 GMT</pubDate>
   <media:content url="https://snoutcounter.works/assets/blog-images/Donald_Trump_takes_the_oath_of_office_(2025)_(alternate).jpg" medium="image" type="image/jpeg"/>
 </item>
 </channel>
