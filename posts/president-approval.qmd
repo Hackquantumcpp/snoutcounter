@@ -2,7 +2,7 @@
 title: "Presidential Approval Portal"
 description: "Polling averages measuring Trump's approval"
 image: "../assets/blog-images/Donald_Trump_takes_the_oath_of_office_(2025)_(alternate).jpg"
-date-modified: "4/15/2026"
+date-modified: "4/16/2026"
 execute:
   echo: false
 format:
