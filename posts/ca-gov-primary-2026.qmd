@@ -3,7 +3,7 @@ title: "Tracking the 2026 California governor primary"
 description: "Polling average to track who is on their way to the governor's mansion"
 image: "../assets/blog-images/State_flag_of_California_-_June_2025_-_Sarah_Stierch.jpg"
 date: "3/27/2026"
-date-modified: "4/21/2026"
+date-modified: "4/22/2026"
 execute:
   echo: false
 format:
@@ -28,7 +28,7 @@ You can read how I compute my average in the [methodology section below](#method
 
 # Methodology {#methodology}
 
-All professional polls measuring electoral intent in the California gubernatorial primary are used, with the exception of those conducted by banned pollsters - see [here](poll-avg-methodology.qmd) for a list of pollsters excluded from use in SnoutCounter's averages. I generally check [FiftyPlusOne](https://fiftyplusone.news/polls/governor/nonpartisan-primary/california), [The New York Times](https://www.nytimes.com/interactive/polls/california-governor-election-polls-2026.html), and Twitter/Bluesky poll collectors ([Polling USA](https://bsky.app/profile/usapolling.bsky.social), [Interactive Polls](https://xcancel.com/iapolls2022), [Politics & Poll Tracker](https://xcancel.com/PollTracker2024/)) for new polls and to check what I missed. In the case that a poll has surveyed two samples of different population types (for example, one likely voter sample and one registered voter sample), we only use the results of one of these samples being surveyed. Likely voter samples are preferred to register voter samples are preferred to "all adult" samples. Tracking polls in our dataset are dynamically selected and weeded out such that all tracking polls from the same pollster are non-overlapping in fielding dates; I always include the most recent tracking poll from each pollster.
+All professional polls measuring electoral intent in the California gubernatorial primary are used, with the exception of those conducted by banned pollsters - see [here](poll-avg-methodology.qmd) for a list of pollsters excluded from use in SnoutCounter's averages. I generally check [FiftyPlusOne](https://fiftyplusone.news/polls/governor/nonpartisan-primary/california), [The New York Times](https://www.nytimes.com/interactive/polls/california-governor-election-polls-2026.html), and Twitter/Bluesky poll collectors ([Polling USA](https://bsky.app/profile/usapolling.bsky.social), [Interactive Polls](https://xcancel.com/iapolls2022), [Politics & Poll Tracker](https://xcancel.com/PollTracker2024/)) for new polls and to check what I missed. In the case that a poll has surveyed two samples of different population types (for example, one likely voter sample and one registered voter sample), we only use the results of one of these samples being surveyed. Likely voter samples are preferred to registered voter samples are preferred to "all adult" samples. Tracking polls in our dataset are dynamically selected and weeded out such that all tracking polls from the same pollster are non-overlapping in fielding dates; I always include the most recent tracking poll from each pollster.
 
 I aggregate polls via a weighted average. The following factors are utilized to determine weights:
 
