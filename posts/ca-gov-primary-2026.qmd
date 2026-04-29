@@ -52,5 +52,6 @@ These adjustments are summed to get the total adjustment for each poll, which is
 
 # Updates
 
+- **April 29, 2026**: Fixed major bug in code where the recency weight was not part of the product that was used to compute the total weight for each poll. This is a pretty major bug, and I apologize for failing to catch it up until now.
 - **April 12, 2026**: Slightly modified partisan downweight. Now, all else held equal, partisan polls have 80% of the weight of non-partisan polls. Before, they had 70%.
 - **March 30, 2026**: Disabled the minor candidates adjustment due to insufficient polling data on these candidates.
