@@ -204,7 +204,7 @@
   <category>Polling Averages</category>
   <category>2026 Elections</category>
   <guid>https://snoutcounter.works/posts/2026-elections.html</guid>
-  <pubDate>Fri, 12 Jun 2026 20:29:21 GMT</pubDate>
+  <pubDate>Fri, 12 Jun 2026 20:33:04 GMT</pubDate>
   <media:content url="https://snoutcounter.works/assets/blog-images/Capitol_Building_Full_View.jpg" medium="image" type="image/jpeg"/>
 </item>
 <item>
@@ -233,7 +233,7 @@
 
 <iframe title="Trump's Net Issue-Specific Approval Ratings" aria-label="Line chart" id="datawrapper-chart-ybMn7" src="https://datawrapper.dwcdn.net/ybMn7/282/" scrolling="no" frameborder="0" style="width: 0; min-width: 900px !important; border: none;" height="574" data-external="1"></iframe><script type="text/javascript">window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}});</script>
 
-<iframe title="Do Americans approve or disapprove of Donald Trump's handling of the war in Iran?" aria-label="Line chart" id="datawrapper-chart-sgsYQ" src="https://datawrapper.dwcdn.net/sgsYQ/50/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="599" data-external="1"></iframe><script type="text/javascript">(function(){function e(){window.addEventListener(`message`,function(e){if(e.data[`datawrapper-height`]!==void 0){var t=document.querySelectorAll(`iframe`);for(var n in e.data[`datawrapper-height`])for(var r=0,i;i=t[r];r++)if(i.contentWindow===e.source){var a=e.data[`datawrapper-height`][n]+`px`;i.style.height=a}}})}e()})();</script>
+<iframe title="Do Americans approve or disapprove of Donald Trump's handling of the war in Iran?" aria-label="Line chart" id="datawrapper-chart-sgsYQ" src="https://datawrapper.dwcdn.net/sgsYQ/50/" scrolling="no" frameborder="0" style="width: 0; min-width: 900px !important; border: none;" height="599" data-external="1"></iframe><script type="text/javascript">(function(){function e(){window.addEventListener(`message`,function(e){if(e.data[`datawrapper-height`]!==void 0){var t=document.querySelectorAll(`iframe`);for(var n in e.data[`datawrapper-height`])for(var r=0,i;i=t[r];r++)if(i.contentWindow===e.source){var a=e.data[`datawrapper-height`][n]+`px`;i.style.height=a}}})}e()})();</script>
 
 <iframe title="Issue Approval Polls" aria-label="Table" id="datawrapper-chart-s3YFJ" src="https://datawrapper.dwcdn.net/s3YFJ/314/" scrolling="no" frameborder="0" style="width: 0; min-width: 900px !important; border: none;" height="907" data-external="1"></iframe><script type="text/javascript">window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}});</script>
 
@@ -243,7 +243,7 @@
  ]]></description>
   <category>Polling Averages</category>
   <guid>https://snoutcounter.works/posts/president-approval.html</guid>
-  <pubDate>Fri, 12 Jun 2026 20:29:21 GMT</pubDate>
+  <pubDate>Fri, 12 Jun 2026 20:33:04 GMT</pubDate>
   <media:content url="https://snoutcounter.works/assets/blog-images/Donald_Trump_takes_the_oath_of_office_(2025)_(alternate).jpg" medium="image" type="image/jpeg"/>
 </item>
 </channel>
