@@ -2,7 +2,7 @@
 title: "Methodology for Our Polling Averages"
 description: "How we calculate (most of) our polling averages"
 date: "3/26/2026"
-date-modified: "5/26/2026"
+date-modified: "6/12/2026"
 execute:
   echo: false
 format:
@@ -64,10 +64,11 @@ These adjustments are summed to get the total adjustment for each poll, which is
 
 # Updates
 
--   **May 26, 2026**: 
-      - Modified recency weights for generic ballot to make the trendline smoother and avoid over-reactivity.
-      - For generic ballot, polls that don't reveal their sample size will utilize the median sample size of all generic ballot polls conducted by that pollster. If there are no other generic ballot polls conducted by that pollster that reveal their sample size, I assign the sample size to the median sample size for all generic ballot polls utilizing the same mode as the poll in question; if there is no such poll, I will utilize the median sample size for all generic ballot pollsters. 
-      - Released historical generic ballot averages.
+-   **June 12, 2026**: Added Iran war approval averages.
+-   **May 26, 2026**:
+    -   Modified recency weights for generic ballot to make the trendline smoother and avoid over-reactivity.
+    -   For generic ballot, polls that don't reveal their sample size will utilize the median sample size of all generic ballot polls conducted by that pollster. If there are no other generic ballot polls conducted by that pollster that reveal their sample size, I assign the sample size to the median sample size for all generic ballot polls utilizing the same mode as the poll in question; if there is no such poll, I will utilize the median sample size for all generic ballot pollsters.
+    -   Released historical generic ballot averages.
 -   **April 12, 2026**: Slightly modified partisan downweight. Now, all else held equal, partisan polls have 80% of the weight of non-partisan polls. Before, they had 70%.
 -   **April 11, 2026**: Modified population adjustment for generic ballot average such that it measures electoral intent among likely voters rather than registered voters. The original rationale for measuring intent among registered voters was that, this early (i.e. before Labor Day, when election season is considered as formally having begun), likely voter screens may not accurately capture the electorate in the midterms, and thus measuring electoral preference among registered voters may be more appropriate. However, various polls practice different methods of implementing the likely voter screen - some simply ask voters how likely they are to vote in November, while others utilize statistical models to determine who is more or less likely to vote in the midterms. The aforementioned rationale applies more to polls with the former screen compared to the latter screen. Thus, to be agnostic to screen, the generic ballot average measures electoral intent among likely voters for the whole time period, rather than just the time period after Labor Day. This should improve accuracy and power of the model.
 -   **February 14, 2026**: Unbanned TIPP Insights from use in SnoutCounter averages. TIPP was initially banned due to an [incident](https://threadreaderapp.com/thread/1844824902198554628.html?utm_campaign=topunroll) during the 2024 election cycle where the likely voter model introduced by TIPP in a Pennsylvania poll cut out the vast majority of respondents from Philadelphia, thus leading to results more favorable to Trump in the topline. This was viewed with suspicion by both myself and [other poll watchers and analysts](https://xcancel.com/lxeagle17/status/1844581842034491471), as it was equivalent to a particularly egregious under-sampling of a heavily Democratic area with significant influence over PA election results, thus as a precautionary measure I banned TIPP from use in my averages. As far as I know, however, there haven't been any subsequent methodological incidents in TIPP's polling. Thus, I made the decision to allow TIPP polls to be included in our averages. As with all methodological changes, poll averages have been retroactively recalculated to account for this.
