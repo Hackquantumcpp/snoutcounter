@@ -24,7 +24,7 @@ The source code for all poll aggregation models can be found at the [GitHub repo
 
 SnoutCounter aggregates polls via a weighted average. I include all professional polls, with the exceptions of those conducted by pollsters that have been banned from usage in SnoutCounter averages. The following pollsters are excluded from usage in our averages due to methodological misconduct, lack of transparency, or other reasons:
 
--   Rasmussen Reports
+-   Rasmussen Reports (for all cycles after 2014, the last cycle where [Scott W. Rasmussen](https://en.wikipedia.org/wiki/Scott_Rasmussen) was president)
 -   Trafalgar Group
 -   ActiVote
 

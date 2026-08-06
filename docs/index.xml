@@ -80,7 +80,7 @@
 <h1>Methodology</h1>
 <p>SnoutCounter aggregates polls via a weighted average. I include all professional polls, with the exceptions of those conducted by pollsters that have been banned from usage in SnoutCounter averages. The following pollsters are excluded from usage in our averages due to methodological misconduct, lack of transparency, or other reasons:</p>
 <ul>
-<li>Rasmussen Reports</li>
+<li>Rasmussen Reports (for all cycles after 2014, the last cycle where <a href="https://en.wikipedia.org/wiki/Scott_Rasmussen">Scott W. Rasmussen</a> was president)</li>
 <li>Trafalgar Group</li>
 <li>ActiVote</li>
 </ul>
@@ -204,7 +204,7 @@
   <category>Polling Averages</category>
   <category>2026 Elections</category>
   <guid>https://snoutcounter.works/posts/2026-elections.html</guid>
-  <pubDate>Mon, 03 Aug 2026 20:03:07 GMT</pubDate>
+  <pubDate>Thu, 06 Aug 2026 19:01:15 GMT</pubDate>
   <media:content url="https://snoutcounter.works/assets/blog-images/Capitol_Building_Full_View.jpg" medium="image" type="image/jpeg"/>
 </item>
 <item>
@@ -243,7 +243,7 @@
  ]]></description>
   <category>Polling Averages</category>
   <guid>https://snoutcounter.works/posts/president-approval.html</guid>
-  <pubDate>Mon, 03 Aug 2026 20:03:07 GMT</pubDate>
+  <pubDate>Thu, 06 Aug 2026 19:01:15 GMT</pubDate>
   <media:content url="https://snoutcounter.works/assets/blog-images/Donald_Trump_takes_the_oath_of_office_(2025)_(alternate).jpg" medium="image" type="image/jpeg"/>
 </item>
 </channel>
