@@ -118,6 +118,7 @@
 <section id="updates" class="level1">
 <h1>Updates</h1>
 <ul>
+<li><strong>August 19, 2026</strong>: The Public Sentiment Institute, a new pollster on the block, has been marked as a Republican-affiliated partisan pollster due to the <a href="https://x.com/MaxNordau/status/2066526459020120127?s=20">recent revelation</a> that one of TPSI’s polls on the Florida GOP gubernatorial election was clandestinely paid for by James Fishback’s campaign. This casts TPSI’s other polls in doubt, as we now can’t know whether they were truly independent, non-partisan polls or if they were commissioned by a partisan sponsor or as an internal for a campaign; thus I have marked all TPSI polls in my database as Republican partisan polls to be safe.</li>
 <li><strong>June 12, 2026</strong>: Added Iran war approval averages.</li>
 <li><strong>May 26, 2026</strong>:
 <ul>
@@ -204,7 +205,7 @@
   <category>Polling Averages</category>
   <category>2026 Elections</category>
   <guid>https://snoutcounter.works/posts/2026-elections.html</guid>
-  <pubDate>Tue, 18 Aug 2026 17:22:00 GMT</pubDate>
+  <pubDate>Wed, 19 Aug 2026 18:42:10 GMT</pubDate>
   <media:content url="https://snoutcounter.works/assets/blog-images/Capitol_Building_Full_View.jpg" medium="image" type="image/jpeg"/>
 </item>
 <item>
@@ -243,7 +244,7 @@
  ]]></description>
   <category>Polling Averages</category>
   <guid>https://snoutcounter.works/posts/president-approval.html</guid>
-  <pubDate>Tue, 18 Aug 2026 17:22:00 GMT</pubDate>
+  <pubDate>Wed, 19 Aug 2026 18:42:10 GMT</pubDate>
   <media:content url="https://snoutcounter.works/assets/blog-images/Donald_Trump_takes_the_oath_of_office_(2025)_(alternate).jpg" medium="image" type="image/jpeg"/>
 </item>
 </channel>

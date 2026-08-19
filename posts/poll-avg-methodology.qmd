@@ -2,7 +2,7 @@
 title: "Methodology for Our Polling Averages"
 description: "How we calculate (most of) our polling averages"
 date: "3/26/2026"
-date-modified: "6/12/2026"
+date-modified: "8/19/2026"
 execute:
   echo: false
 format:
@@ -64,6 +64,7 @@ These adjustments are summed to get the total adjustment for each poll, which is
 
 # Updates
 
+-   **August 19, 2026**: The Public Sentiment Institute, a new pollster on the block, has been marked as a Republican-affiliated partisan pollster due to the [recent revelation](https://x.com/MaxNordau/status/2066526459020120127?s=20) that one of TPSI's polls on the Florida GOP gubernatorial election was clandestinely paid for by James Fishback's campaign. This casts TPSI's other polls in doubt, as we now can't know whether they were truly independent, non-partisan polls or if they were commissioned by a partisan sponsor or as an internal for a campaign; thus I have marked all TPSI polls in my database as Republican partisan polls to be safe.
 -   **June 12, 2026**: Added Iran war approval averages.
 -   **May 26, 2026**:
     -   Modified recency weights for generic ballot to make the trendline smoother and avoid over-reactivity.
