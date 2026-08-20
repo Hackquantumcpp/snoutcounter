@@ -2,7 +2,7 @@
 title: "Methodology for Our Polling Averages"
 description: "How we calculate (most of) our polling averages"
 date: "3/26/2026"
-date-modified: "8/19/2026"
+date-modified: "8/20/2026"
 execute:
   echo: false
 format:
@@ -22,14 +22,12 @@ The source code for all poll aggregation models can be found at the [GitHub repo
 
 # Methodology
 
-SnoutCounter aggregates polls via a weighted average. I include all professional polls, with the exceptions of those conducted by pollsters that have been banned from usage in SnoutCounter averages. I do not consider synthetic polls (i.e. "polls" with AI respondents) as legitimate professional polls, and thus any poll with synthetic responses are excluded from usage in my averages. The following pollsters are excluded from usage in our averages due to methodological misconduct, lack of transparency, or other reasons:
+SnoutCounter aggregates polls via a weighted average. I include all professional polls, with the exceptions of those conducted by pollsters that have been banned from usage in SnoutCounter averages. I also prohibit the usage of any and all pollsters that [fake data](https://aapor.org/announcements/aapor-responds-to-fabricated-polling-data/), whether it is topline data or the raw respondent data itself. This includes pollsters and polls that include synthetic (AI-generated) responses. The following pollsters are excluded from usage in our averages due to methodological misconduct, lack of transparency, or other reasons:
 
 -   Rasmussen Reports (for all cycles after 2014, the last cycle where [Scott W. Rasmussen](https://en.wikipedia.org/wiki/Scott_Rasmussen) was president)
 -   Trafalgar Group
 -   ActiVote
--   Median Strategies[^1]
-
-[^1]: Median Strategies is not actually a legitimate pollster, but rather a company that released fake polls as part of what they called a "social experiment." They technically don't count as a pollster for the purposes of this list, but I include them anyway as a banned pollster for posterity.
+-   The Public Sentiment Institute
 
 Additionally, the following pollsters have been assigned an "F" quality rating from Silver Bulletin and thus are also excluded:
 
@@ -52,9 +50,9 @@ All polls are inputted manually. I generally check the [Silver Bulletin](https:/
 -   **Time since poll was conducted**: Of course, polls which were conducted more recently are more likely to be reflective of the state of public opinion. I utilize an exponential function as a weight for recency, with the function being more aggressive with more frequently polled topics (e.g. general approval, versus issue-specific approval).
 -   **Multiple polls in short window**: If there are multiple polls from the same pollster and sponsor in a two week window, each poll is downweighted, based on the number of polls from that pollster/sponsor in this window. This is to ensure that one pollster/sponsor doesn't dominate the averages just out of frequency, and to counter pollsters who attempt to "flood the zone." The formula utilized for this is borrowed from [Strength In Numbers' polling averages](https://www.gelliottmorris.com/p/democrats-lead-house-generic-ballot); it is calculated as 1 over the square root of the number of polls from the pollster within a two-week window.
 
-All these weights are combined into a final weight, calculated as the product of these four weights. The weights are normalized to sum to 1. This is then used to calculate a weighted average for each rating or variable we are trying to measure, and for each day. The weighted standard deviation is also calculated for each day and used to determine [confidence intervals](https://en.wikipedia.org/wiki/Confidence_interval).[^2]
+All these weights are combined into a final weight, calculated as the product of these four weights. The weights are normalized to sum to 1. This is then used to calculate a weighted average for each rating or variable we are trying to measure, and for each day. The weighted standard deviation is also calculated for each day and used to determine [confidence intervals](https://en.wikipedia.org/wiki/Confidence_interval).[^1]
 
-[^2]: This works due to the Central Limit Theorem - as a certain question or election is polled more, the distribution of toplines for that question or election will approach the normal distribution.
+[^1]: This works due to the Central Limit Theorem - as a certain question or election is polled more, the distribution of toplines for that question or election will approach the normal distribution.
 
 In addition to these weights, I apply four different adjustments to each poll result, each of them calculated by a [mixed effects model](https://en.wikipedia.org/wiki/Mixed_model). These adjustments are calculated relative to the average calculated from the previous steps. The adjustments are as follows:
 
@@ -67,6 +65,7 @@ These adjustments are summed to get the total adjustment for each poll, which is
 
 # Updates
 
+-   **August 20, 2026**: I have taken the additional step of banning The Public Sentiment Institute from usage in my averages, due to a [recent admission](https://blog.fiftyplusone.news/p/suspending-two-pollsters-data-falsification-undisclosed-partisan-work) that they fabricated topline data by changing the electoral preferences of certain respondents in their polls on the Florida GOP gubernatorial primary. Any pollster that fakes data will not be accepted in my averages, and now that includes TPSI. The averages have been recalculated to exclude TPSI.
 -   **August 19, 2026**: The Public Sentiment Institute, a new pollster on the block, has been marked as a Republican-affiliated partisan pollster due to the [recent revelation](https://x.com/MaxNordau/status/2066526459020120127?s=20) that one of TPSI's polls on the Florida GOP gubernatorial election was clandestinely paid for by James Fishback's campaign. This casts TPSI's other polls in doubt, as we now can't know whether they were truly independent, non-partisan polls or if they were commissioned by a partisan sponsor or as an internal for a campaign; thus I have marked all TPSI polls in my database as Republican partisan polls to be safe.
 -   **June 12, 2026**: Added Iran war approval averages.
 -   **May 26, 2026**:

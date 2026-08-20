@@ -210,7 +210,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">August 19, 2026</p>
+      <p class="date-modified">August 20, 2026</p>
     </div>
   </div>
     
@@ -225,14 +225,14 @@ ul.task-list li input[type="checkbox"] {
 <p>The source code for all poll aggregation models can be found at the <a href="https://github.com/Hackquantumcpp/snoutcounter-backend">GitHub repo</a>. If you find a bug in the code, or have useful feedback to report, then feel free to do so by opening an issue on GitHub.</p>
 <section id="methodology" class="level1 page-columns page-full">
 <h1>Methodology</h1>
-<p>SnoutCounter aggregates polls via a weighted average. I include all professional polls, with the exceptions of those conducted by pollsters that have been banned from usage in SnoutCounter averages. I do not consider synthetic polls (i.e.&nbsp;“polls” with AI respondents) as legitimate professional polls, and thus any poll with synthetic responses are excluded from usage in my averages. The following pollsters are excluded from usage in our averages due to methodological misconduct, lack of transparency, or other reasons:</p>
+<p>SnoutCounter aggregates polls via a weighted average. I include all professional polls, with the exceptions of those conducted by pollsters that have been banned from usage in SnoutCounter averages. I also prohibit the usage of any and all pollsters that <a href="https://aapor.org/announcements/aapor-responds-to-fabricated-polling-data/">fake data</a>, whether it is topline data or the raw respondent data itself. This includes pollsters and polls that include synthetic (AI-generated) responses. The following pollsters are excluded from usage in our averages due to methodological misconduct, lack of transparency, or other reasons:</p>
 <ul>
 <li>Rasmussen Reports (for all cycles after 2014, the last cycle where <a href="https://en.wikipedia.org/wiki/Scott_Rasmussen">Scott W. Rasmussen</a> was president)</li>
 <li>Trafalgar Group</li>
 <li>ActiVote</li>
-<li>Median Strategies<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></li>
+<li>The Public Sentiment Institute</li>
 </ul>
-<div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;Median Strategies is not actually a legitimate pollster, but rather a company that released fake polls as part of what they called a “social experiment.” They technically don’t count as a pollster for the purposes of this list, but I include them anyway as a banned pollster for posterity.</p></div></div><p>Additionally, the following pollsters have been assigned an “F” quality rating from Silver Bulletin and thus are also excluded:</p>
+<p>Additionally, the following pollsters have been assigned an “F” quality rating from Silver Bulletin and thus are also excluded:</p>
 <ul>
 <li>Strategic Vision LLC</li>
 <li>Pharos Research Group</li>
@@ -253,8 +253,8 @@ ul.task-list li input[type="checkbox"] {
 <li><strong>Time since poll was conducted</strong>: Of course, polls which were conducted more recently are more likely to be reflective of the state of public opinion. I utilize an exponential function as a weight for recency, with the function being more aggressive with more frequently polled topics (e.g.&nbsp;general approval, versus issue-specific approval).</li>
 <li><strong>Multiple polls in short window</strong>: If there are multiple polls from the same pollster and sponsor in a two week window, each poll is downweighted, based on the number of polls from that pollster/sponsor in this window. This is to ensure that one pollster/sponsor doesn’t dominate the averages just out of frequency, and to counter pollsters who attempt to “flood the zone.” The formula utilized for this is borrowed from <a href="https://www.gelliottmorris.com/p/democrats-lead-house-generic-ballot">Strength In Numbers’ polling averages</a>; it is calculated as 1 over the square root of the number of polls from the pollster within a two-week window.</li>
 </ul>
-<p>All these weights are combined into a final weight, calculated as the product of these four weights. The weights are normalized to sum to 1. This is then used to calculate a weighted average for each rating or variable we are trying to measure, and for each day. The weighted standard deviation is also calculated for each day and used to determine <a href="https://en.wikipedia.org/wiki/Confidence_interval">confidence intervals</a>.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
-<div class="no-row-height column-margin column-container"><div id="fn2"><p><sup>2</sup>&nbsp;This works due to the Central Limit Theorem - as a certain question or election is polled more, the distribution of toplines for that question or election will approach the normal distribution.</p></div></div><p>In addition to these weights, I apply four different adjustments to each poll result, each of them calculated by a <a href="https://en.wikipedia.org/wiki/Mixed_model">mixed effects model</a>. These adjustments are calculated relative to the average calculated from the previous steps. The adjustments are as follows:</p>
+<p>All these weights are combined into a final weight, calculated as the product of these four weights. The weights are normalized to sum to 1. This is then used to calculate a weighted average for each rating or variable we are trying to measure, and for each day. The weighted standard deviation is also calculated for each day and used to determine <a href="https://en.wikipedia.org/wiki/Confidence_interval">confidence intervals</a>.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;This works due to the Central Limit Theorem - as a certain question or election is polled more, the distribution of toplines for that question or election will approach the normal distribution.</p></div></div><p>In addition to these weights, I apply four different adjustments to each poll result, each of them calculated by a <a href="https://en.wikipedia.org/wiki/Mixed_model">mixed effects model</a>. These adjustments are calculated relative to the average calculated from the previous steps. The adjustments are as follows:</p>
 <ul>
 <li><strong>House effect adjustment</strong>: Many pollsters have unique biases stemming from differences in fielding, weighting, question wording, etc, that may not be captured by other adjustments calculated. Thus, I calculate the “house effect” of each pollster. Like all other adjustments, house effects are calculated relative to the weighted average of all polls, rather than the biases of each pollster relative to election results - this is because systematic, industry-wide polling bias (and, by corollary, the biases of many pollsters relative to actual results) are not predictable and change from cycle to cycle.</li>
 <li><strong>Mode adjustment</strong>: The choice of how a pollster chooses to field will often have a significant effect on the results of the poll, as different fielding methods will often reach different audiences and different types of people. For example, online panels often reach a younger demographic compared to live phone surveys, and probability panels often present significantly different results compared to non-probability based methods. I correct for this by introducing an adjustment for methodology.</li>
@@ -266,6 +266,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="updates" class="level1">
 <h1>Updates</h1>
 <ul>
+<li><strong>August 20, 2026</strong>: I have taken the additional step of banning The Public Sentiment Institute from usage in my averages, due to a <a href="https://blog.fiftyplusone.news/p/suspending-two-pollsters-data-falsification-undisclosed-partisan-work">recent admission</a> that they fabricated topline data by changing the electoral preferences of certain respondents in their polls on the Florida GOP gubernatorial primary. Any pollster that fakes data will not be accepted in my averages, and now that includes TPSI. The averages have been recalculated to exclude TPSI.</li>
 <li><strong>August 19, 2026</strong>: The Public Sentiment Institute, a new pollster on the block, has been marked as a Republican-affiliated partisan pollster due to the <a href="https://x.com/MaxNordau/status/2066526459020120127?s=20">recent revelation</a> that one of TPSI’s polls on the Florida GOP gubernatorial election was clandestinely paid for by James Fishback’s campaign. This casts TPSI’s other polls in doubt, as we now can’t know whether they were truly independent, non-partisan polls or if they were commissioned by a partisan sponsor or as an internal for a campaign; thus I have marked all TPSI polls in my database as Republican partisan polls to be safe.</li>
 <li><strong>June 12, 2026</strong>: Added Iran war approval averages.</li>
 <li><strong>May 26, 2026</strong>:
