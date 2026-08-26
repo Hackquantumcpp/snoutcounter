@@ -31,8 +31,16 @@ website:
     right:
       - href: index.qmd
         text: Home
+      - text: Projects
+        menu:
+        - text: Trump Approval
+          href: posts/president-approval.qmd
+        - text: Generic Ballot Average
+          href: posts/2026-elections.qmd
       - href: about.qmd
         text: About
+      - icon: bluesky
+        href: https://bsky.app/profile/snoutcounter.bsky.social
       - icon: github
         menu:
           - text: Model code
