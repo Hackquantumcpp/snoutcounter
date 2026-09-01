@@ -32,7 +32,7 @@
     "href": "index.html",
     "title": "SnoutCounter",
     "section": "",
-    "text": "Order By\n      Default\n      \n        Title\n      \n      \n        Date - Oldest\n      \n      \n        Date - Newest\n      \n      \n        Author\n      \n    \n  \n\n\n\n\n\n\n\n\n\n\n2026 Midterm Elections Portal\n\n\n\nPolling Averages\n\n2026 Elections\n\n\n\nPolling averages for the 2026 midterms\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPresidential Approval Portal\n\n\n\nPolling Averages\n\n\n\nPolling averages measuring Trump’s approval\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReleasing Our 2026 House Forecast\n\n\n\n2026 Elections\n\nMethodology\n\nForecasts\n\n\n\nHow the SnoutCounter House Forecast works\n\n\n\n\n\n\nSep 1, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\n2026 House Forecast\n\n\n\n2026 Elections\n\nForecasts\n\n\n\nWho will win the House in November?\n\n\n\n\n\n\nSep 1, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nTracking the 2026 California governor primary\n\n\n\nPolling Averages\n\n2026 Elections\n\n\n\nPolling average to track who is on their way to the governor’s mansion\n\n\n\n\n\n\nMar 27, 2026\n\n\n\n\n\n\n\n\n\n\n\nMethodology for Our Polling Averages\n\n\n\nMethodology\n\nStatistics\n\n\n\nHow we calculate (most of) our polling averages\n\n\n\n\n\n\nMar 26, 2026\n\n\n\n\n\n\nNo matching items"
+    "text": "Order By\n      Default\n      \n        Title\n      \n      \n        Date - Oldest\n      \n      \n        Date - Newest\n      \n      \n        Author\n      \n    \n  \n\n\n\n\n\n\n\n\n\n\n2026 Midterm Elections Polling Portal\n\n\n\nPolling Averages\n\n2026 Elections\n\n\n\nPolling averages for the 2026 midterms\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPresidential Approval Portal\n\n\n\nPolling Averages\n\n\n\nPolling averages measuring Trump’s approval\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReleasing Our 2026 House Forecast\n\n\n\n2026 Elections\n\nMethodology\n\nForecasts\n\n\n\nHow the SnoutCounter House Forecast works\n\n\n\n\n\n\nSep 1, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\n2026 House Forecast\n\n\n\n2026 Elections\n\nForecasts\n\n\n\nWho will win the House in November?\n\n\n\n\n\n\nSep 1, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nTracking the 2026 California governor primary\n\n\n\nPolling Averages\n\n2026 Elections\n\n\n\nPolling average to track who is on their way to the governor’s mansion\n\n\n\n\n\n\nMar 27, 2026\n\n\n\n\n\n\n\n\n\n\n\nMethodology for Our Polling Averages\n\n\n\nMethodology\n\nStatistics\n\n\n\nHow we calculate (most of) our polling averages\n\n\n\n\n\n\nMar 26, 2026\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "about.html",
@@ -44,7 +44,7 @@
   {
     "objectID": "posts/2026-elections.html",
     "href": "posts/2026-elections.html",
-    "title": "2026 Midterm Elections Portal",
+    "title": "2026 Midterm Elections Polling Portal",
     "section": "",
     "text": "This page serves as the home for SnoutCounter’s generic ballot averages, tracking electoral intent for what is set to be one of the most contentious midterm elections in recent history. This average will update regularly over the course of the year. As the midterms approach, I will also be constructing and releasing a predictive model for the House, Senate, and governor’s races.\nYou can read how our polling averages work here. You can find the underlying polling data and model code at the GitHub repo."
   },
