@@ -37,6 +37,8 @@ website:
           href: posts/president-approval.qmd
         - text: Generic Ballot Average
           href: posts/2026-elections.qmd
+        - text: 2026 House Forecast
+          href: posts/2026-house-forecast.qmd
       - href: about.qmd
         text: About
       - icon: bluesky

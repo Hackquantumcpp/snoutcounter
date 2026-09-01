@@ -1,0 +1,61 @@
+---
+title: "2026 House Forecast"
+description: "Who will win the House in November?"
+date: "9/1/2026"
+date-modified: "9/1/2026"
+image: "../assets/blog-images/EarlyVotingNC-Getty.jpg"
+execute:
+  echo: false
+format:
+  html:
+    toc: false
+    toc-location: right
+categories:
+  - 2026 Elections
+  - Forecasts
+---
+
+This page hosts the 2026 SnoutCounter House forecast. A blue wave in the House is widely expected as Trump's approval continues to crater and sentiment on the economy and the direction of the country worsens. Despite extensive mid-decade redistricting, which has generally benefitted Republicans, Democrats are still favored to win the House.
+
+You can read about how the model that powers this forecast works [here](2026-house-forecast-release-article.qmd). The source code is publicly available on [GitHub](https://github.com/Hackquantumcpp/snoutcounter-midterms-2026-model).
+
+Below you can find a map of seat chances and projections, as well as some overall summary stats.
+
+```{=html}
+<iframe title="Who is going to win the House?" aria-label="Choropleth map" id="datawrapper-chart-P0IE0" src="https://datawrapper.dwcdn.net/P0IE0/2/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="699" data-external="1"></iframe><script type="text/javascript">(function(){function e(){window.addEventListener(`message`,function(e){if(e.data[`datawrapper-height`]!==void 0){var t=document.querySelectorAll(`iframe`);for(var n in e.data[`datawrapper-height`])for(var r=0,i;i=t[r];r++)if(i.contentWindow===e.source){var a=e.data[`datawrapper-height`][n]+`px`;i.style.height=a}}})}e()})();</script>
+
+<iframe title="2026 House Forecast - Summary Statistics" aria-label="Small multiple donut chart" id="datawrapper-chart-VUiWZ" src="https://datawrapper.dwcdn.net/VUiWZ/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="303" data-external="1"></iframe><script type="text/javascript">(function(){function e(){window.addEventListener(`message`,function(e){if(e.data[`datawrapper-height`]!==void 0){var t=document.querySelectorAll(`iframe`);for(var n in e.data[`datawrapper-height`])for(var r=0,i;i=t[r];r++)if(i.contentWindow===e.source){var a=e.data[`datawrapper-height`][n]+`px`;i.style.height=a}}})}e()})();</script>
+```
+
+The histogram below displays seat outcomes of all 20,000 simulations drawn from the model's posterior distribution.
+
+```{python}
+import plotly.express as px
+import joblib
+
+sims_hist = joblib.load('../../snoutcounter-midterms-2026-model/prediction/house/display_data/sims_histogram.pkl')
+sims_hist.show()
+```
+Below you can find a table displaying the output of the House model, including some additional information not shown above.
+
+```{=html}
+<iframe title="2026 SnoutCounter House Forecast - Model Output Table" aria-label="Table" id="datawrapper-chart-vplC0" src="https://datawrapper.dwcdn.net/vplC0/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="578" data-external="1"></iframe><script type="text/javascript">(function(){function e(){window.addEventListener(`message`,function(e){if(e.data[`datawrapper-height`]!==void 0){var t=document.querySelectorAll(`iframe`);for(var n in e.data[`datawrapper-height`])for(var r=0,i;i=t[r];r++)if(i.contentWindow===e.source){var a=e.data[`datawrapper-height`][n]+`px`;i.style.height=a}}})}e()})();</script>
+```
+
+And below, you can find time series charts showing how the forecast has changed over time.
+
+```{python}
+import plotly.express as px
+import joblib
+
+chance_time_ser = joblib.load('../../snoutcounter-midterms-2026-model/prediction/house/display_data/chance_time_ser.pkl')
+chance_time_ser.show()
+```
+
+```{python}
+import plotly.express as px
+import joblib
+
+seats_time_ser = joblib.load('../../snoutcounter-midterms-2026-model/prediction/house/display_data/seats_time_ser.pkl')
+seats_time_ser.show()
+```
