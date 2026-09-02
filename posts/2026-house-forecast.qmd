@@ -2,7 +2,7 @@
 title: "2026 House Forecast"
 description: "Who will win the House in November?"
 date: "9/1/2026"
-date-modified: "9/1/2026"
+date-modified: "9/2/2026"
 image: "../assets/blog-images/EarlyVotingNC-Getty.jpg"
 execute:
   echo: false
@@ -15,7 +15,7 @@ categories:
   - Forecasts
 ---
 
-This page hosts the 2026 SnoutCounter House forecast. A blue wave in the House is widely expected as Trump's approval continues to crater and sentiment on the economy and the direction of the country worsens. Despite extensive mid-decade redistricting, which has generally benefitted Republicans, Democrats are still favored to win the House.
+This page hosts the 2026 SnoutCounter House forecast. A blue wave in the House is widely expected as Trump's approval continues to crater and sentiment on the economy and the direction of the country worsens. Despite extensive mid-decade redistricting, which has generally benefited Republicans, Democrats are still favored to win the House.
 
 You can read about how the model that powers this forecast works [here](2026-house-forecast-release-article.qmd). The source code is publicly available on [GitHub](https://github.com/Hackquantumcpp/snoutcounter-midterms-2026-model).
 
