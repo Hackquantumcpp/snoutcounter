@@ -2,7 +2,7 @@
 title: "2026 House Forecast"
 description: "Who will win the House in November?"
 date: "9/1/2026"
-date-modified: "9/4/2026"
+date-modified: "9/5/2026"
 image: "../assets/blog-images/EarlyVotingNC-Getty.jpg"
 execute:
   echo: false
