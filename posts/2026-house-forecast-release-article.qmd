@@ -42,6 +42,6 @@ And that's about it! I don't plan on making any major changes to my model, unles
 
 ## Updates
 
--   **September 7, 2026**: The string fuzzy matching for Mike Kelly in Pennsylvania's 16th district was wrong, meaning that the model did not take fundraising into account for Kelly. I have fixed that. This fix does not notably change the overall topline model chances or the chances for any other district. We regret the error.
+-   **September 7, 2026**: The fuzzy string matching for Mike Kelly in Pennsylvania's 16th district was wrong, meaning that the model did not take fundraising into account for Kelly. I have fixed that. This fix does not notably change the overall topline model chances or the chances for any other district. We regret the error.
 -   **September 1, 2026**: I corrected some case inconsistencies in candidate names in the training set (which affect candidate random intercepts) and have re-trained the model accordingly. This only has a very small effect on the forecast.
 -   **August 31, 2026**: I found a bug that incorrectly marked AZ-04 as having a Republican incumbent instead of the current Democratic incumbent, Greg Stanton. That error has been fixed.
