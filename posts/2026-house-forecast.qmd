@@ -10,6 +10,9 @@ format:
   html:
     toc: false
     toc-location: right
+    embed-resources: false
+filters:
+  - shinylive
 categories:
   - 2026 Elections
   - Forecasts
@@ -58,4 +61,64 @@ import joblib
 
 seats_time_ser = joblib.load('../../snoutcounter-midterms-2026-model/prediction/house/display_data/seats_time_ser.pkl')
 seats_time_ser.show()
+```
+
+Additionally, you can see how the forecasted odds and vote shares have changed for each individual congressional seat below.
+
+```{shinylive-python}
+#| standalone: true
+import plotly.express as px
+import pandas as pd
+from shiny import *
+from shiny.express import input, render, ui
+from shinywidgets import render_widget
+
+output_ts = pd.read_csv('../../snoutcounter-midterms-2026-model/prediction/house/model_output/output_over_time.csv')
+
+output_ts = output_ts[output_ts['type'].isin(['chance', 'y_pred', 'ci_low', 'ci_hi'])]
+
+seats = dict(zip(output_ts['geo'], output_ts['geo']))
+
+app_ui = ui.page_fluid(
+  ui.layout_columns(
+    ui.input_selectize(
+      "cd",
+      "Congressional District:",
+      seats
+    ),
+    ui.input_radio_buttons(
+      "type_disp",
+      "",
+      {"1": "Win probability", "2": "Vote share"}
+    ),
+    col_widths=[6, 6]
+  ),
+  ui.output_plot("plot")
+)
+
+def server(input, output, session):
+  @output
+  @render_plotly
+  def plot():
+    disp_output = output_ts[(output_ts['geo'] == input.cd()) & (output_ts['type'] == input.type_disp())]
+    disp_output['Republicans'] = disp_output['y'].map(lambda x: 100 - x)
+    disp_output = disp_output.rename({'y': 'Democrats'}, axis=1)
+    
+    disp_yaxis = "Win Probability" if input.type_disp() == "Win probability" else "Vote Share"
+    
+    chart = px.line(disp_output, x='date', y=['Democrats', 'Republicans'], template='plotly_white', color_discrete_map={'Democrats': '#004b97', 'Republicans': '#c71e1d'})
+    chart = chart.update_traces(hovertemplate="%{y:.1f}%")
+    chart.update_layout(
+      xaxis=dict(range=[disp_output['date'].min(), pd.to_datetime('2026-11-10')]),
+      yaxis=dict(range=[0, 100]),
+      xaxis_title='Date',
+      yaxis_title=f'{disp_yaxis} (%)',
+      title=dict(text=f"{input.cd()} {disp_yaxis} Over Time"),
+      hovermode="x",
+      showlegend=False
+    )
+    
+    return chart
+
+app = App(app_ui, server)
 ```
