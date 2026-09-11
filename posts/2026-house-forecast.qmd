@@ -67,58 +67,108 @@ Additionally, you can see how the forecasted odds and vote shares have changed f
 
 ```{shinylive-python}
 #| standalone: true
+#| viewerHeight: 600px
 import plotly.express as px
+import plotly.graph_objects as go
 import pandas as pd
 from shiny import *
 from shiny.express import input, render, ui
 from shinywidgets import render_widget
 
-output_ts = pd.read_csv('../../snoutcounter-midterms-2026-model/prediction/house/model_output/output_over_time.csv')
+output_ts = pd.read_csv('https://raw.githubusercontent.com/hackquantumcpp/snoutcounter-midterms-2026-model/main/prediction/house/model_output/output_over_time.csv')
 
 output_ts = output_ts[output_ts['type'].isin(['chance', 'y_pred', 'ci_low', 'ci_hi'])]
 
+output_ts = output_ts[output_ts['geo'] != 'US House']
+
+output_ts['date'] = pd.to_datetime(output_ts['date'])
+
 seats = dict(zip(output_ts['geo'], output_ts['geo']))
 
-app_ui = ui.page_fluid(
-  ui.layout_columns(
-    ui.input_selectize(
-      "cd",
-      "Congressional District:",
-      seats
-    ),
-    ui.input_radio_buttons(
-      "type_disp",
-      "",
-      {"1": "Win probability", "2": "Vote share"}
-    ),
-    col_widths=[6, 6]
-  ),
-  ui.output_plot("plot")
-)
 
-def server(input, output, session):
-  @output
-  @render_plotly
-  def plot():
-    disp_output = output_ts[(output_ts['geo'] == input.cd()) & (output_ts['type'] == input.type_disp())]
-    disp_output['Republicans'] = disp_output['y'].map(lambda x: 100 - x)
-    disp_output = disp_output.rename({'y': 'Democrats'}, axis=1)
+ui.input_selectize(
+    "cd",
+    "Congressional District:",
+    seats
+  )
+ui.input_radio_buttons(
+    "type_disp",
+    "",
+    {"chance": "Win probability", "y_pred": "Vote share"}
+  )
+
+
+@render_widget
+def plot():
+  disp_output = output_ts[(output_ts['geo'] == input.cd()) & (output_ts['type'] == input.type_disp())]
+  ci_output = output_ts[(output_ts['geo'] == input.cd()) & (output_ts['type'].isin(['ci_low', 'ci_hi']))]
+  disp_output['Republicans'] = disp_output['y'].map(lambda x: 100 - x)
+  disp_output = disp_output.rename({'y': 'Democrats'}, axis=1)
     
-    disp_yaxis = "Win Probability" if input.type_disp() == "Win probability" else "Vote Share"
+  disp_yaxis = "Win Probability" if input.type_disp() == "chance" else "Vote share"
     
-    chart = px.line(disp_output, x='date', y=['Democrats', 'Republicans'], template='plotly_white', color_discrete_map={'Democrats': '#004b97', 'Republicans': '#c71e1d'})
-    chart = chart.update_traces(hovertemplate="%{y:.1f}%")
-    chart.update_layout(
-      xaxis=dict(range=[disp_output['date'].min(), pd.to_datetime('2026-11-10')]),
+  chart = px.line(disp_output, x='date', y=['Democrats', 'Republicans'], template='plotly_white', color_discrete_map={'Democrats': '#004b97', 'Republicans': '#c71e1d'})
+  chart.update_traces(hovertemplate="%{y:.1f}%")
+  chart.update_layout(
+      xaxis=dict(range=[pd.to_datetime('2026-08-30'), pd.to_datetime('2026-11-10')]),
       yaxis=dict(range=[0, 100]),
       xaxis_title='Date',
       yaxis_title=f'{disp_yaxis} (%)',
       title=dict(text=f"{input.cd()} {disp_yaxis} Over Time"),
       hovermode="x",
       showlegend=False
+  )
+  if input.type_disp() == "y_pred":
+    chart.add_traces(
+      [go.Scatter(
+        name = 'dem ci hi',
+        x = ci_output[ci_output['type'] == 'ci_hi']['date'],
+        y = ci_output[ci_output['type'] == 'ci_hi']['y'],
+        mode = 'lines',
+        marker = dict(color='#ffffff'),
+        line = dict(width=0),
+        showlegend = False,
+        hoverinfo = 'skip'
+      ),
+      go.Scatter(
+        name = 'dem ci low',
+        x = ci_output[ci_output['type'] == 'ci_low']['date'],
+        y = ci_output[ci_output['type'] == 'ci_low']['y'],
+        mode = 'lines',
+        marker = dict(color='#ffffff'),
+        line = dict(width=0),
+        showlegend = False,
+        fillcolor = "rgba(87, 158, 230, 0.3)",
+        fill = 'tonexty',
+        hoverinfo = 'skip'
+      )
+      ]
+    )
+    chart.add_traces(
+      [go.Scatter(
+        name = 'rep ci hi',
+        x = ci_output[ci_output['type'] == 'ci_hi']['date'],
+        y = ci_output[ci_output['type'] == 'ci_hi']['y'].map(lambda x: 100 - x),
+        mode = 'lines',
+        marker = dict(color='#ffffff'),
+        line = dict(width=0),
+        showlegend = False,
+        hoverinfo = 'skip'
+      ),
+      go.Scatter(
+        name = 'rep ci low',
+        x = ci_output[ci_output['type'] == 'ci_low']['date'],
+        y = ci_output[ci_output['type'] == 'ci_low']['y'].map(lambda x: 100 - x),
+        mode = 'lines',
+        marker = dict(color='#ffffff'),
+        line = dict(width=0),
+        showlegend = False,
+        fillcolor = "rgba(245, 105, 105, 0.3)",
+        fill = 'tonexty',
+        hoverinfo = 'skip'
+      )
+      ]
     )
     
-    return chart
-
-app = App(app_ui, server)
+  return chart
 ```
