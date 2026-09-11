@@ -60,6 +60,7 @@ format:
     toc: true
     toc-location: right
     include-in-header: header.html
+    embed-resources: false
 
 filters:
   - shinylive
