@@ -70,12 +70,16 @@ Additionally, you can see how the forecasted odds and vote shares have changed f
 #| viewerHeight: 600px
 import plotly.express as px
 import plotly.graph_objects as go
+import io
+from pyodide.http import open_url
 import pandas as pd
 from shiny import *
 from shiny.express import input, render, ui
 from shinywidgets import render_widget
 
-output_ts = pd.read_csv('https://raw.githubusercontent.com/hackquantumcpp/snoutcounter-midterms-2026-model/main/prediction/house/model_output/output_over_time.csv')
+url = 'http://docs.google.com/spreadsheets/d/1PdKfFTxeAU0muYYYT_CeIYp4RxdxgQ5KF1zB1WnWT34/export?format=csv&gid=2019805790'
+csv_text = open_url(url).read()
+output_ts = pd.read_csv(io.StringIO(csv_text))
 
 output_ts = output_ts[output_ts['type'].isin(['chance', 'y_pred', 'ci_low', 'ci_hi'])]
 
