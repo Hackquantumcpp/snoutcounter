@@ -75,7 +75,7 @@ from shiny import *
 from shiny.express import input, render, ui
 from shinywidgets import render_widget
 
-output_ts = pd.read_csv('../datasets/house_forecast_2026_output_over_time.csv')
+output_ts = pd.read_csv('https://raw.githubusercontent.com/Hackquantumcpp/snoutcounter/refs/heads/main/datasets/house_forecast_2026_output_over_time.csv')
 
 output_ts = output_ts[output_ts['type'].isin(['chance', 'y_pred', 'ci_low', 'ci_hi'])]
 
