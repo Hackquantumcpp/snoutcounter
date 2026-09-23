@@ -42,6 +42,7 @@ And that's about it! I don't plan on making any major changes to my model, unles
 
 ## Updates
 
+-   **September 23, 2026**: Fixed a bug in the training of the House model where the demographics for 2014 congressional districts were incorrectly computed (specifically, the model erroneously utilized only male demographics rather than demographics writ large). This has been rectified. This alters the probabilites and projected margins very slightly across the board. As always, we regret the error.
 -   **September 14, 2026**: Fixed a bug in generic ballot average that caused it to be more reactive than intended. This slightly changes the forecast and affects all forecast stats posted on and after 9/10 up to today (9/14). It was due to a bug in a recent change to the generic ballot average to bring it in line with historical generic ballot averages (specifically, one meant to make the generic ballot steadily more reactive post-Labor Day). We regret the error.
 -   **September 10, 2026**: I've updated the forecast to account for the restoration of the 2022 redistricting plan in Missouri.
 -   **September 7, 2026**: The fuzzy string matching for Mike Kelly in Pennsylvania's 16th district was wrong, meaning that the model did not take fundraising into account for Kelly. I have fixed that. This fix does not notably change the overall topline model chances or the chances for any other district. We regret the error.
