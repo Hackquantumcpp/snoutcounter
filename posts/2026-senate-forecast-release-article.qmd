@@ -1,0 +1,36 @@
+---
+title: "Releasing Our 2026 Senate Forecast"
+description: "How the SnoutCounter Senate Forecast works"
+format: html
+date: "9/27/2026"
+image: "../assets/blog-images/1jpy9Astki-gamma_distribution_pdf.png"
+execute: 
+  echo: false
+categories:
+  - 2026 Elections
+  - Methodology
+  - Forecasts
+---
+
+Whoo boy, this was supposed to release earlier. But let's jump right into it.
+
+The Senate races are some of the most watched races every midterm cycle, and this cycle is no different. Whether it be the dream of Blexas potentially finally coming to fruition or the surprising competitiveness of red state Senate seats such as Kansas, each individual Senate race receives arguably far more national attention that any individual House race. With a broad coalition of Democrats contesting in states across the country, from progressives like Abdul El-Sayed and Troy Jackson to moderates like Adam Hamilton and Mary Peltola, the Democratic Party hopes to flip a chamber which only last year was considered by political pundits to likely to stay in the Republican column come November 2026. In the midst of all of this, I have released my [Senate forecast](2026-senate-forecast.qmd) to estimate the chances of each party taking control of the chamber. The Senate is currently a tossup, with Democrats having a 58.5% chance to win the upper house. This is in line with most other forecasts, though individual seat projections differ somewhat - the forecast is notably more bearish for Democrats in Maine and Michigan while being more bullish for Democrats in Alaska and South Carolina. As with the House forecast, I recommend that you track multiple forecasts over the course of this cycle and view them holistically rather than relying just one.
+
+My forecast is powered by a [hierarchical Bayesian linear regression model](https://www.bayesrulesbook.com/chapter-15). The code for this model is fully open source and is available at the [GitHub repo page](https://github.com/Hackquantumcpp/snoutcounter-midterms-2026-model). Below is the specification for the model that powers the SnoutCounter Senate forecast.
+
+$$\begin{aligned}\\
+y_{st} = \beta_1b_{st}+\beta_2F_{st}+\beta_3I_{st}+\beta_4\rho_{t-1}F_{st}+\beta_5\rho_{t-1}I_{st}+\beta_6s_{st}+\beta_7n_{st}p_{st}+\beta_8n_{st}b_{st}+\beta_9n_{st}F_{st}+\\ \beta_{10}n_{st}I_{st}+\beta_{11}n_{st}s_{st}+d_t+r_t+\epsilon_t+\alpha_{st}+\gamma_{rt}+\delta_{ct}+\chi_{ch,t}
+\end{aligned}$$
+
+This is very similar to the specification for my House forecast, which you can read more about [here](2026-house-forecast-release-article.qmd). I will simply go over the modifications to the House forecast below.
+
+- $n_{st}$ and $p_{st}$ are regressors that measure state-level polling for various Senate races. $n_{st}=\sqrt{N_{st}}$, where $N_{st}$ is a measure of the effective number of polls - that is, the number of polls weighted by pollster quality and recency, with internal and partisan-sponsored polls down-weighted and a flood penalty applied. $p_{st}$ is the margin between the Republican and the Democrat in the polling average for the race in question. Unlike with the House forecast, I calculate "fancy" averages for each Senate race with more than two polls in the New York Times polls dataset - the [California gubernatorial primary](ca-gov-primary-2026.qmd) were conducted in a very similar fashion.
+- $\chi_{ch,t}$ is a random intercept term that accounts for idiosyncratic chamber-level trends from cycle-to-cycle. For example, despite there being a blue wave in the House elections in 2018, the [Senate elections](https://en.wikipedia.org/wiki/2018_United_States_Senate_elections) were rather underwhelming for Democrats, with Republicans gaining two seats on net.
+
+I train this model on all House and Senate elections from 2014-2024, excluding seats that were not contested by one party or the other. However, I validated and tested the model solely on Senate elections. Some independents, like Evan McMullin in 2022 and the various red-state independents contesting in 2026 (Dan Osborn, Brian Bengs, etc), are considered as part of one party or the other for the purposes of training and prediction. For states that utilize ranked-choice voting (Alaska since 2022 and Maine since 2018), I utilize the maximum round results in training and validation. I set the priors for the coefficients to auto-scaled student's t distributions, which accounts for outliers and heteroskedasticity, and utilize [Markov chain Monte Carlo](https://en.wikipedia.org/wiki/Markov_chain_Monte_Carlo) sampling to fit the model and generate 20,000 simulations of how the upcoming Senate elections could go.
+
+And that's about it! As with the House model, I don't have any plans on making substantial changes to the Senate model, save for fixing bugs, data errors, or substantial methodological/statistical errors. If you find any bugs or errors, notice that I have failed to cite a source, or have any suggestions, feel free to open an issue on the GitHub repo page. You can view data ackwowledgements on the readme files in the GitHub repo, specifically [here](https://github.com/Hackquantumcpp/snoutcounter-midterms-2026-model/tree/main/data) and [here](https://github.com/Hackquantumcpp/snoutcounter-midterms-2026-model/tree/main/2026_data).
+
+## Updates
+
+None so far! This section will be filled with updates if I make any changes to the underlying source code of the Senate model.

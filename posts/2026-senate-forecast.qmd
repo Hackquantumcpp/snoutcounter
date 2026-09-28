@@ -1,0 +1,178 @@
+---
+title: "2026 Senate Forecast"
+description: "Who will win the House in November?"
+date: "9/27/2026"
+date-modified: "9/27/2026"
+image: "../assets/blog-images/gettyimages-1401415080.jpg"
+execute:
+  echo: false
+format:
+  html:
+    toc: false
+    toc-location: right
+    embed-resources: false
+filters:
+  - shinylive
+categories:
+  - 2026 Elections
+  - Forecasts
+---
+
+See all 2026 midterms forecasts: [House](2026-house-forecast.qmd) / **Senate** / [House methodology](2026-house-forecast-release-article.qmd) / [Senate methodology](2026-senate-forecast-release-article.qmd)
+
+This page hosts the 2026 Senate forecast. The Senate map in 2026 was initially thought of as unfavorable for Democrats, due to what was thought to be limited pickup opportunities and multiple vulnerable swing states held by Democrats. However, the combination of a favorable national environment and high-quality recruitment has caused the chamber to become competitive.
+
+You can read about how the model that powers this forecast works [here](2026-house-forecast-release-article.qmd). The source code is publicly available on [GitHub](https://github.com/Hackquantumcpp/snoutcounter-midterms-2026-model).
+
+Below you can find a map of seat chances and projections, as well as some overall summary stats.
+
+```{=html}
+<iframe title="Who is going to win the Senate?" aria-label="Choropleth map" id="datawrapper-chart-aqBdq" src="https://datawrapper.dwcdn.net/aqBdq/3/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="729" data-external="1"></iframe><script type="text/javascript">(function(){function e(){window.addEventListener(`message`,function(e){if(e.data[`datawrapper-height`]!==void 0){var t=document.querySelectorAll(`iframe`);for(var n in e.data[`datawrapper-height`])for(var r=0,i;i=t[r];r++)if(i.contentWindow===e.source){var a=e.data[`datawrapper-height`][n]+`px`;i.style.height=a}}})}e()})();</script>
+
+<iframe title="2026 Senate Forecast - Summary Statistics" aria-label="Small multiple donut chart" id="datawrapper-chart-5uhkB" src="https://datawrapper.dwcdn.net/5uhkB/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="303" data-external="1"></iframe><script type="text/javascript">(function(){function e(){window.addEventListener(`message`,function(e){if(e.data[`datawrapper-height`]!==void 0){var t=document.querySelectorAll(`iframe`);for(var n in e.data[`datawrapper-height`])for(var r=0,i;i=t[r];r++)if(i.contentWindow===e.source){var a=e.data[`datawrapper-height`][n]+`px`;i.style.height=a}}})}e()})();</script>
+```
+
+
+The histogram below displays seat outcomes of all 20,000 simulations drawn from the model's posterior distribution.
+
+```{python}
+import plotly.express as px
+import joblib
+
+sims_hist = joblib.load('../../snoutcounter-midterms-2026-model/prediction/senate/display_data/sims_histogram.pkl')
+sims_hist.show()
+```
+
+Below you can find a table displaying the output of the House model, including some additional information not shown in the visualizations above.
+
+```{=html}
+<iframe title="2026 SnoutCounter Senate Forecast - Model Output Table" aria-label="Table" id="datawrapper-chart-ZFeAz" src="https://datawrapper.dwcdn.net/ZFeAz/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="623" data-external="1"></iframe><script type="text/javascript">(function(){function e(){window.addEventListener(`message`,function(e){if(e.data[`datawrapper-height`]!==void 0){var t=document.querySelectorAll(`iframe`);for(var n in e.data[`datawrapper-height`])for(var r=0,i;i=t[r];r++)if(i.contentWindow===e.source){var a=e.data[`datawrapper-height`][n]+`px`;i.style.height=a}}})}e()})();</script>
+```
+
+And below, you can find time series charts showing how the forecast has changed over time.
+
+```{python}
+import plotly.express as px
+import joblib
+
+chance_time_ser = joblib.load('../../snoutcounter-midterms-2026-model/prediction/senate/display_data/chance_time_ser.pkl')
+chance_time_ser.show()
+```
+
+```{python}
+import plotly.express as px
+import joblib
+
+seats_time_ser = joblib.load('../../snoutcounter-midterms-2026-model/prediction/senate/display_data/seats_time_ser.pkl')
+seats_time_ser.show()
+```
+
+Additionally, you can see how the forecasted odds and vote shares have changed for each individual congressional seat below.
+
+```{shinylive-python}
+#| standalone: true
+#| viewerHeight: 600px
+import plotly.express as px
+import plotly.graph_objects as go
+import pandas as pd
+from shiny import *
+from shiny.express import input, render, ui
+from shinywidgets import render_widget
+
+output_ts = pd.read_csv('https://raw.githubusercontent.com/Hackquantumcpp/snoutcounter-midterms-2026-model/refs/heads/main/prediction/senate/model_output/output_over_time.csv')
+
+output_ts = output_ts[output_ts['type'].isin(['chance', 'y_pred', 'ci_low', 'ci_hi'])]
+
+output_ts = output_ts[output_ts['geo'] != 'US Senate']
+
+output_ts['date'] = pd.to_datetime(output_ts['date'])
+
+seats = dict(zip(output_ts['geo'], output_ts['geo']))
+
+
+ui.input_selectize(
+    "state",
+    "State:",
+    seats
+  )
+ui.input_radio_buttons(
+    "type_disp",
+    "",
+    {"chance": "Win probability", "y_pred": "Vote share"}
+  )
+
+
+@render_widget
+def plot():
+  disp_output = output_ts[(output_ts['geo'] == input.state()) & (output_ts['type'] == input.type_disp())]
+  ci_output = output_ts[(output_ts['geo'] == input.state()) & (output_ts['type'].isin(['ci_low', 'ci_hi']))]
+  disp_output['Republicans'] = disp_output['y'].map(lambda x: 100 - x)
+  disp_output = disp_output.rename({'y': 'Democrats'}, axis=1)
+    
+  disp_yaxis = "Win Probability" if input.type_disp() == "chance" else "Vote share"
+    
+  chart = px.line(disp_output, x='date', y=['Democrats', 'Republicans'], template='plotly_white', color_discrete_map={'Democrats': '#004b97', 'Republicans': '#c71e1d'})
+  chart.update_traces(hovertemplate="%{y:.1f}%")
+  chart.update_layout(
+      xaxis=dict(range=[pd.to_datetime('2026-08-30'), pd.to_datetime('2026-11-10')]),
+      yaxis=dict(range=[0, 100]),
+      xaxis_title='Date',
+      yaxis_title=f'{disp_yaxis} (%)',
+      title=dict(text=f"{input.cd()} {disp_yaxis} Over Time"),
+      hovermode="x",
+      showlegend=False
+  )
+  if input.type_disp() == "y_pred":
+    chart.add_traces(
+      [go.Scatter(
+        name = 'dem ci hi',
+        x = ci_output[ci_output['type'] == 'ci_hi']['date'],
+        y = ci_output[ci_output['type'] == 'ci_hi']['y'],
+        mode = 'lines',
+        marker = dict(color='#ffffff'),
+        line = dict(width=0),
+        showlegend = False,
+        hoverinfo = 'skip'
+      ),
+      go.Scatter(
+        name = 'dem ci low',
+        x = ci_output[ci_output['type'] == 'ci_low']['date'],
+        y = ci_output[ci_output['type'] == 'ci_low']['y'],
+        mode = 'lines',
+        marker = dict(color='#ffffff'),
+        line = dict(width=0),
+        showlegend = False,
+        fillcolor = "rgba(87, 158, 230, 0.3)",
+        fill = 'tonexty',
+        hoverinfo = 'skip'
+      )
+      ]
+    )
+    chart.add_traces(
+      [go.Scatter(
+        name = 'rep ci hi',
+        x = ci_output[ci_output['type'] == 'ci_hi']['date'],
+        y = ci_output[ci_output['type'] == 'ci_hi']['y'].map(lambda x: 100 - x),
+        mode = 'lines',
+        marker = dict(color='#ffffff'),
+        line = dict(width=0),
+        showlegend = False,
+        hoverinfo = 'skip'
+      ),
+      go.Scatter(
+        name = 'rep ci low',
+        x = ci_output[ci_output['type'] == 'ci_low']['date'],
+        y = ci_output[ci_output['type'] == 'ci_low']['y'].map(lambda x: 100 - x),
+        mode = 'lines',
+        marker = dict(color='#ffffff'),
+        line = dict(width=0),
+        showlegend = False,
+        fillcolor = "rgba(245, 105, 105, 0.3)",
+        fill = 'tonexty',
+        hoverinfo = 'skip'
+      )
+      ]
+    )
+    
+  return chart
+```

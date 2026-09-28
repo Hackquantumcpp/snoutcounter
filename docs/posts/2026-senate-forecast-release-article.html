@@ -6,10 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2026-03-26">
-<meta name="description" content="How we calculate (most of) our polling averages">
+<meta name="dcterms.date" content="2026-09-27">
+<meta name="description" content="How the SnoutCounter Senate Forecast works">
 
-<title>Methodology for Our Polling Averages – SnoutCounter</title>
+<title>Releasing Our 2026 Senate Forecast – SnoutCounter</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -103,14 +103,49 @@ ul.task-list li input[type="checkbox"] {
 
 </script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../styles.css">
-<meta property="og:title" content="Methodology for Our Polling Averages – SnoutCounter">
-<meta property="og:description" content="How we calculate (most of) our polling averages">
+<meta property="og:title" content="Releasing Our 2026 Senate Forecast – SnoutCounter">
+<meta property="og:description" content="How the SnoutCounter Senate Forecast works">
+<meta property="og:image" content="https://snoutcounter.works/assets/blog-images/1jpy9Astki-gamma_distribution_pdf.png">
 <meta property="og:site_name" content="SnoutCounter">
-<meta name="twitter:title" content="Methodology for Our Polling Averages – SnoutCounter">
-<meta name="twitter:description" content="How we calculate (most of) our polling averages">
-<meta name="twitter:card" content="summary">
+<meta property="og:image:height" content="900">
+<meta property="og:image:width" content="1200">
+<meta name="twitter:title" content="Releasing Our 2026 Senate Forecast – SnoutCounter">
+<meta name="twitter:description" content="How the SnoutCounter Senate Forecast works">
+<meta name="twitter:image" content="https://snoutcounter.works/assets/blog-images/1jpy9Astki-gamma_distribution_pdf.png">
+<meta name="twitter:image-height" content="900">
+<meta name="twitter:image-width" content="1200">
+<meta name="twitter:card" content="summary_large_image">
 </head>
 
 <body class="nav-fixed quarto-light">
@@ -200,27 +235,26 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#methodology" id="toc-methodology" class="nav-link active" data-scroll-target="#methodology">Methodology</a></li>
-  <li><a href="#updates" id="toc-updates" class="nav-link" data-scroll-target="#updates">Updates</a></li>
-  <li><a href="#data-download" id="toc-data-download" class="nav-link" data-scroll-target="#data-download">Data Download</a></li>
+  <li><a href="#updates" id="toc-updates" class="nav-link active" data-scroll-target="#updates">Updates</a></li>
   </ul>
-<div class="quarto-code-links"><h2>Code Links</h2><ul><li><a href="https://github.com/Hackquantumcpp/snoutcounter-backend"><i class="bi bi-github"></i>Model Code</a></li></ul></div></nav>
+</nav>
     </div>
 <!-- main -->
-<main class="content page-columns page-full" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Methodology for Our Polling Averages</h1>
+<h1 class="title">Releasing Our 2026 Senate Forecast</h1>
   <div class="quarto-categories">
+    <div class="quarto-category">2026 Elections</div>
     <div class="quarto-category">Methodology</div>
-    <div class="quarto-category">Statistics</div>
+    <div class="quarto-category">Forecasts</div>
   </div>
   </div>
 
 <div>
   <div class="description">
-    How we calculate (most of) our polling averages
+    How the SnoutCounter Senate Forecast works
   </div>
 </div>
 
@@ -231,16 +265,10 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">March 26, 2026</p>
+      <p class="date">September 27, 2026</p>
     </div>
   </div>
   
-    <div>
-    <div class="quarto-title-meta-heading">Modified</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date-modified">August 20, 2026</p>
-    </div>
-  </div>
     
   </div>
   
@@ -249,113 +277,25 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Here you can find the methodology for (most of) SnoutCounter’s polling averages. Some polling averages deviate from this substantially - in those cases the methodology will be listed on the same post as the average.</p>
-<p>The source code for all poll aggregation models can be found at the <a href="https://github.com/Hackquantumcpp/snoutcounter-backend">GitHub repo</a>. If you find a bug in the code, or have useful feedback to report, then feel free to do so by opening an issue on GitHub.</p>
-<section id="methodology" class="level1 page-columns page-full">
-<h1>Methodology</h1>
-<p>SnoutCounter aggregates polls via a weighted average. I include all professional polls, with the exceptions of those conducted by pollsters that have been banned from usage in SnoutCounter averages. I also prohibit the usage of any and all pollsters that <a href="https://aapor.org/announcements/aapor-responds-to-fabricated-polling-data/">fake data</a>, whether it is topline data or the raw respondent data itself. This includes pollsters and polls that include synthetic (AI-generated) responses. The following pollsters are excluded from usage in our averages due to methodological misconduct, lack of transparency, or other reasons:</p>
+<p>Whoo boy, this was supposed to release earlier. But let’s jump right into it.</p>
+<p>The Senate races are some of the most watched races every midterm cycle, and this cycle is no different. Whether it be the dream of Blexas potentially finally coming to fruition or the surprising competitiveness of red state Senate seats such as Kansas, each individual Senate race receives arguably far more national attention that any individual House race. With a broad coalition of Democrats contesting in states across the country, from progressives like Abdul El-Sayed and Troy Jackson to moderates like Adam Hamilton and Mary Peltola, the Democratic Party hopes to flip a chamber which only last year was considered by political pundits to likely to stay in the Republican column come November 2026. In the midst of all of this, I have released my <a href="../posts/2026-senate-forecast.html">Senate forecast</a> to estimate the chances of each party taking control of the chamber. The Senate is currently a tossup, with Democrats having a 58.5% chance to win the upper house. This is in line with most other forecasts, though individual seat projections differ somewhat - the forecast is notably more bearish for Democrats in Maine and Michigan while being more bullish for Democrats in Alaska and South Carolina. As with the House forecast, I recommend that you track multiple forecasts over the course of this cycle and view them holistically rather than relying just one.</p>
+<p>My forecast is powered by a <a href="https://www.bayesrulesbook.com/chapter-15">hierarchical Bayesian linear regression model</a>. The code for this model is fully open source and is available at the <a href="https://github.com/Hackquantumcpp/snoutcounter-midterms-2026-model">GitHub repo page</a>. Below is the specification for the model that powers the SnoutCounter Senate forecast.</p>
+<p><span class="math display">\[\begin{aligned}\\
+y_{st} = \beta_1b_{st}+\beta_2F_{st}+\beta_3I_{st}+\beta_4\rho_{t-1}F_{st}+\beta_5\rho_{t-1}I_{st}+\beta_6s_{st}+\beta_7n_{st}p_{st}+\beta_8n_{st}b_{st}+\beta_9n_{st}F_{st}+\\ \beta_{10}n_{st}I_{st}+\beta_{11}n_{st}s_{st}+d_t+r_t+\epsilon_t+\alpha_{st}+\gamma_{rt}+\delta_{ct}+\chi_{ch,t}
+\end{aligned}\]</span></p>
+<p>This is very similar to the specification for my House forecast, which you can read more about <a href="../posts/2026-house-forecast-release-article.html">here</a>. I will simply go over the modifications to the House forecast below.</p>
 <ul>
-<li>Rasmussen Reports (for all cycles after 2014, the last cycle where <a href="https://en.wikipedia.org/wiki/Scott_Rasmussen">Scott W. Rasmussen</a> was president)</li>
-<li>Trafalgar Group</li>
-<li>ActiVote</li>
-<li>The Public Sentiment Institute</li>
+<li><span class="math inline">\(n_{st}\)</span> and <span class="math inline">\(p_{st}\)</span> are regressors that measure state-level polling for various Senate races. <span class="math inline">\(n_{st}=\sqrt{N_{st}}\)</span>, where <span class="math inline">\(N_{st}\)</span> is a measure of the effective number of polls - that is, the number of polls weighted by pollster quality and recency, with internal and partisan-sponsored polls down-weighted and a flood penalty applied. <span class="math inline">\(p_{st}\)</span> is the margin between the Republican and the Democrat in the polling average for the race in question. Unlike with the House forecast, I calculate “fancy” averages for each Senate race with more than two polls in the New York Times polls dataset - the <a href="../posts/ca-gov-primary-2026.html">California gubernatorial primary</a> were conducted in a very similar fashion.</li>
+<li><span class="math inline">\(\chi_{ch,t}\)</span> is a random intercept term that accounts for idiosyncratic chamber-level trends from cycle-to-cycle. For example, despite there being a blue wave in the House elections in 2018, the <a href="https://en.wikipedia.org/wiki/2018_United_States_Senate_elections">Senate elections</a> were rather underwhelming for Democrats, with Republicans gaining two seats on net.</li>
 </ul>
-<p>Additionally, the following pollsters have been assigned an “F” quality rating from Silver Bulletin and thus are also excluded:</p>
-<ul>
-<li>Strategic Vision LLC</li>
-<li>Pharos Research Group</li>
-<li>Research 2000</li>
-<li>Big Data Poll</li>
-<li>Overtime Politics</li>
-<li>Rethink Priorities</li>
-<li>Blumenthal Research Daily</li>
-<li>CSP Polling</li>
-<li>KG Polling</li>
-<li>OurProgress (The Progress Campaign)</li>
-<li>TCJ Research</li>
-</ul>
-<p>All polls are inputted manually. I generally check the <a href="https://www.natesilver.net/p/trump-approval-ratings-nate-silver-bulletin">Silver Bulletin</a>, <a href="https://fiftyplusone.news/polls/approval/president">FiftyPlusOne</a>, <a href="https://www.nytimes.com/interactive/polls/donald-trump-approval-rating-polls.html">The New York Times</a>, <a href="https://www.realclearpolling.com/">RealClearPolitics</a>, and <a href="https://ropercenter.cornell.edu/">The Roper Center</a>, as well as the Twitter/Bluesky poll collectors <a href="https://bsky.app/profile/usapolling.bsky.social">Polling USA</a>, <a href="https://xcancel.com/iapolls2022">Interactive Polls</a>, and <a href="https://xcancel.com/PollTracker2024/">Politics &amp; Poll Tracker</a> for new polls and anything I missed. For historical approval and generic ballot, polling datasets collated by FiveThirtyEight and RealClearPolitics are utilized. In the case that a poll has surveyed two samples of different population types (for example, one likely voter sample and one registered voter sample), we only use the results of one of these samples being surveyed. “All adult” samples are preferred to registered voter samples, and registered voter samples are preferred to likely voter samples, for the various presidential approval averages. When measuring job approval among registered voters, polls that draw from a sample of all adults, but include crosstab results for registered voters, are included - specifically the results for the registered voter sample. For the generic ballot, likely voter samples are preferred to register voter samples are preferred to “all adult” samples. For horse race polls, if the poll presents two toplines, one with “leaners” (those who lean towards one candidate or the other but have not made up their mind) and one without leaners, the topline with leaners will be used. Tracking polls in our dataset are dynamically selected and weeded out such that all tracking polls from the same pollster are non-overlapping in fielding dates; I always include the most recent tracking poll from each pollster. Our weights are determined by the following four factors:</p>
-<ul>
-<li><strong>Sample size</strong>: Polls with higher sample size are more likely to accurately estimate the population parameter in question, and generally have less uncertainty than polls with smaller sample sizes. However, sample sizes are subject to diminishing returns - a poll with a sample size of 5000 won’t much more accurate than one with a sample size of 3000. I cap sample size at 5000, to avoid polls with particularly large sample sizes from dominating the averages. For generic ballot polls, I additionally <a href="https://en.wikipedia.org/wiki/Winsorizing">winsorize</a> the sample sizes to counter the effect of extreme outlier sample sizes on the sample size weight. The weight function I use is the square root of the sample size over the square root of the median sample size of all polls in the dataset.</li>
-<li><strong>Pollster rating</strong>: Not all pollsters are created equal; some are more reliable in producing accurate and precise results than others. I use the <a href="https://www.natesilver.net/p/pollster-ratings-silver-bulletin">Silver Bulletin’s pollster ratings</a>, specifically the predictive plus-minus, a measure of how accurate a pollster is expected to be, as the input for the pollster rating weight function. For predictive plus-minus, lower is better. Pollsters with a predictive plus-minus above 1 are assigned a flat weight of 0.2, as are pollsters without a predictive plus-minus rating from Silver Bulletin. All other pollsters are assigned a weight according to a square root function.</li>
-<li><strong>Time since poll was conducted</strong>: Of course, polls which were conducted more recently are more likely to be reflective of the state of public opinion. I utilize an exponential function as a weight for recency, with the function being more aggressive with more frequently polled topics (e.g.&nbsp;general approval, versus issue-specific approval).</li>
-<li><strong>Multiple polls in short window</strong>: If there are multiple polls from the same pollster and sponsor in a two week window, each poll is downweighted, based on the number of polls from that pollster/sponsor in this window. This is to ensure that one pollster/sponsor doesn’t dominate the averages just out of frequency, and to counter pollsters who attempt to “flood the zone.” The formula utilized for this is borrowed from <a href="https://www.gelliottmorris.com/p/democrats-lead-house-generic-ballot">Strength In Numbers’ polling averages</a>; it is calculated as 1 over the square root of the number of polls from the pollster within a two-week window.</li>
-</ul>
-<p>All these weights are combined into a final weight, calculated as the product of these four weights. The weights are normalized to sum to 1. This is then used to calculate a weighted average for each rating or variable we are trying to measure, and for each day. The weighted standard deviation is also calculated for each day and used to determine <a href="https://en.wikipedia.org/wiki/Confidence_interval">confidence intervals</a>.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
-<div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;This works due to the Central Limit Theorem - as a certain question or election is polled more, the distribution of toplines for that question or election will approach the normal distribution.</p></div></div><p>In addition to these weights, I apply four different adjustments to each poll result, each of them calculated by a <a href="https://en.wikipedia.org/wiki/Mixed_model">mixed effects model</a>. These adjustments are calculated relative to the average calculated from the previous steps. The adjustments are as follows:</p>
-<ul>
-<li><strong>House effect adjustment</strong>: Many pollsters have unique biases stemming from differences in fielding, weighting, question wording, etc, that may not be captured by other adjustments calculated. Thus, I calculate the “house effect” of each pollster. Like all other adjustments, house effects are calculated relative to the weighted average of all polls, rather than the biases of each pollster relative to election results - this is because systematic, industry-wide polling bias (and, by corollary, the biases of many pollsters relative to actual results) are not predictable and change from cycle to cycle.</li>
-<li><strong>Mode adjustment</strong>: The choice of how a pollster chooses to field will often have a significant effect on the results of the poll, as different fielding methods will often reach different audiences and different types of people. For example, online panels often reach a younger demographic compared to live phone surveys, and probability panels often present significantly different results compared to non-probability based methods. I correct for this by introducing an adjustment for methodology.</li>
-<li><strong>Population adjustment</strong>: Each polling average is trying to measure approval or horse-race standings for a specific population, but often we will have multiple surveys polling different populations for the same measurable variable. To address this, I calculate three population adjustments - likely voter, registered voter, and all adult sample adjustments - and adjust the results of polls surveying different populations towards the population that the average is trying to measure. For general and issue-specific presidential approval, the average attempts to measure approval among all American adults, while for approval among registered voters, the average attempts to measure approval among, well, registered voters. For generic ballot, we measure electoral preferences among likely voters. Thus, the model adjusts results towards the population being measured in each of these cases.</li>
-<li><strong>Partisanship adjustment</strong>: Some pollsters are very explicitly partisan in nature, often working with certain political parties or groups affiliated with political parties, consistently polling for candidates of one party, and/or being funded by a certain party or partisan group. For these pollsters, a partisanship adjustment is applied to correct for potential biases introduced by strong partisan affiliation. As an additional measure to counteract partisanship, I employ a <strong>partisanship downweight</strong> - all else held equal, a poll conducted by a partisan pollster is given 80% of the weight of a poll conducted by a non-partisan pollster.</li>
-</ul>
-<p>These adjustments are summed to get the total adjustment for each poll, which is then added to measured approvals/disapprovals or two-party horse race estimates. After these adjustments are applied, the weighted average and confidence intervals are recalculated to get the final average for each rating/variable.</p>
-</section>
-<section id="updates" class="level1">
-<h1>Updates</h1>
-<ul>
-<li><strong>September 14, 2026</strong>: Fixed a bug in generic ballot average that caused it to be more reactive than intended. It was due to a bug in a recent change to the generic ballot average to bring it in line with historical generic ballot averages (specifically, one meant to make the generic ballot steadily more reactive post-Labor Day). The average has been recalculated.</li>
-<li><strong>August 20, 2026</strong>: I have taken the additional step of banning The Public Sentiment Institute from usage in my averages, due to a <a href="https://blog.fiftyplusone.news/p/suspending-two-pollsters-data-falsification-undisclosed-partisan-work">recent admission</a> that they fabricated topline data by changing the electoral preferences of certain respondents in their polls on the Florida GOP gubernatorial primary. Any pollster that fakes data will not be accepted in my averages, and now that includes TPSI. The averages have been recalculated to exclude TPSI.</li>
-<li><strong>August 19, 2026</strong>: The Public Sentiment Institute, a new pollster on the block, has been marked as a Republican-affiliated partisan pollster due to the <a href="https://x.com/MaxNordau/status/2066526459020120127?s=20">recent revelation</a> that one of TPSI’s polls on the Florida GOP gubernatorial election was clandestinely paid for by James Fishback’s campaign. This casts TPSI’s other polls in doubt, as we now can’t know whether they were truly independent, non-partisan polls or if they were commissioned by a partisan sponsor or as an internal for a campaign; thus I have marked all TPSI polls in my database as Republican partisan polls to be safe.</li>
-<li><strong>June 12, 2026</strong>: Added Iran war approval averages.</li>
-<li><strong>May 26, 2026</strong>:
-<ul>
-<li>Modified recency weights for generic ballot to make the trendline smoother and avoid over-reactivity.</li>
-<li>For generic ballot, polls that don’t reveal their sample size will utilize the median sample size of all generic ballot polls conducted by that pollster. If there are no other generic ballot polls conducted by that pollster that reveal their sample size, I assign the sample size to the median sample size for all generic ballot polls utilizing the same mode as the poll in question; if there is no such poll, I will utilize the median sample size for all generic ballot pollsters.</li>
-<li>Released historical generic ballot averages.</li>
-</ul></li>
-<li><strong>April 12, 2026</strong>: Slightly modified partisan downweight. Now, all else held equal, partisan polls have 80% of the weight of non-partisan polls. Before, they had 70%.</li>
-<li><strong>April 11, 2026</strong>: Modified population adjustment for generic ballot average such that it measures electoral intent among likely voters rather than registered voters. The original rationale for measuring intent among registered voters was that, this early (i.e.&nbsp;before Labor Day, when election season is considered as formally having begun), likely voter screens may not accurately capture the electorate in the midterms, and thus measuring electoral preference among registered voters may be more appropriate. However, various polls practice different methods of implementing the likely voter screen - some simply ask voters how likely they are to vote in November, while others utilize statistical models to determine who is more or less likely to vote in the midterms. The aforementioned rationale applies more to polls with the former screen compared to the latter screen. Thus, to be agnostic to screen, the generic ballot average measures electoral intent among likely voters for the whole time period, rather than just the time period after Labor Day. This should improve accuracy and power of the model.</li>
-<li><strong>February 14, 2026</strong>: Unbanned TIPP Insights from use in SnoutCounter averages. TIPP was initially banned due to an <a href="https://threadreaderapp.com/thread/1844824902198554628.html?utm_campaign=topunroll">incident</a> during the 2024 election cycle where the likely voter model introduced by TIPP in a Pennsylvania poll cut out the vast majority of respondents from Philadelphia, thus leading to results more favorable to Trump in the topline. This was viewed with suspicion by both myself and <a href="https://xcancel.com/lxeagle17/status/1844581842034491471">other poll watchers and analysts</a>, as it was equivalent to a particularly egregious under-sampling of a heavily Democratic area with significant influence over PA election results, thus as a precautionary measure I banned TIPP from use in my averages. As far as I know, however, there haven’t been any subsequent methodological incidents in TIPP’s polling. Thus, I made the decision to allow TIPP polls to be included in our averages. As with all methodological changes, poll averages have been retroactively recalculated to account for this.</li>
-<li><strong>February 8, 2026</strong>: Optimized models to run faster. Also, modified mixed effects model by eliminating the global intercept term.</li>
-<li><strong>February 2, 2026</strong>: Modified mixed effects model used for calculating adjustments. Instead of calculating and applying adjustments to the net/spread, adjustments are calculated for and applied to each individual target feature (e.g.&nbsp;for generic ballot, Democrats and Republicans each have an individual adjustment).</li>
-<li><strong>January 20, 2026</strong>: Fixed bug in model which caused different population screens of the same poll to not be chosen properly.</li>
-<li><strong>January 16, 2026</strong>: Added new, updated generic ballot averages, with new methodology (as part of the methodological overhaul).</li>
-<li><strong>January 14, 2026</strong>: Updated pollster ratings with new 2026 ratings, as per Silver Bulletin.</li>
-<li><strong>January 8, 2026</strong>: Added partisanship downweight.</li>
-<li><strong>January 4, 2026</strong>: Completely overhauled the methodology for polling averages.</li>
-</ul>
-<p>The following updates were made before the methodological overhaul in January 2026.</p>
-<ul>
-<li><strong>September 26, 2025</strong>: Fixed bug in sample size weights where, in calculation of median sample size, poll sample sizes are capped at 2000 instead of the intended 3000.</li>
-<li><strong>September 18, 2025</strong>: Added a new issue to issue-approval poll averages: crime.</li>
-<li><strong>September 16, 2025</strong>:
-<ul>
-<li>Polling averages now include an additional weight to account for multiple polls from the same pollster being conducted in a short window.</li>
-<li>Unrated pollsters are now assigned a flat pollster quality weight of 0.2 instead of 0.1.</li>
-</ul></li>
-<li><strong>July 22, 2025</strong>: Added a new issue to issue-approval poll averages: healthcare policy.</li>
-<li><strong>July 21, 2025</strong>: Added graphs measuring presidential job approval among registered voters.</li>
-<li><strong>June 23, 2025</strong>: Started including polls from pollsters without a Silver Bulletin pollster rating. For these pollsters, a flat pollster quality weight of 0.1 is assigned.</li>
-<li><strong>June 21, 2025</strong>: Unbanned McLaughlin, for similar reasons to the recent unbanning of other partisan pollsters. While McLaughlin is a particularly extreme case of partisanship, I am unaware of any significant methodological concerns beyond their bias, which can be rectified via house effect adjustment.</li>
-<li><strong>June 20, 2025</strong>: Unbanned OnMessage Inc.&nbsp;and North Star from use by SnoutCounter averages, for similar reasons to the unbanning of Civiqs and co/efficient.</li>
-<li><strong>June 17, 2025</strong>:
-<ul>
-<li>Tweaked time weights for presidential approval polling (both overall and issue-specific) to be more aggressive. This should make the averages more responsive.</li>
-<li>Unbanned co/efficient and Civiqs from use by SnoutCounter averages. These are both partisan pollsters, whose partisan bias is already largely rectified via house effect adjustment, and there really isn’t much wrong with these polling outfits besides the aforementioned partisanship.</li>
-</ul></li>
-<li><strong>June 16, 2025</strong>: Slightly tweaked population type weighting for generic ballot polling. This would lead to slight decrease in weights for polls utilizing all adult samples.</li>
-<li><strong>June 15, 2025</strong>: Added a “Featured Charts” section, so I can show other neat visualizations without cluttering up the main sections.</li>
-<li><strong>May 31, 2025</strong>: Modified code for calculating population weights for generic ballot polling averages. As generic ballot polling aims to measure voting intent, it makes more sense to value LV &gt; RV &gt; A.</li>
-<li><strong>May 20, 2025</strong>: Added a chart tracking net presidential approval rating.</li>
-<li><strong>May 13, 2025</strong>: Added a new issue to issue-approval poll averages: trade and tariffs.</li>
-<li><strong>May 10, 2025</strong>: Fixed bug in pipeline function that caused registered voter samples in polls to be chosen over all adult samples.</li>
-<li><strong>April 19, 2025</strong>: Added chart showcasing net issue-specific approval ratings.</li>
-<li><strong>April 18, 2025</strong>: Adjusted pollster quality weights to be slightly less aggressive, thus lowering the chance that an unduly small number of polls dominate the averages.</li>
-<li><strong>April 17, 2025</strong>: Adjusted the linear time weight to be somewhat more aggressive. This helps averages be more responsive and less sluggish, especially the Congressional and SCOTUS approval averages.</li>
-</ul>
-</section>
-<section id="data-download" class="level1">
-<h1>Data Download</h1>
-<p>All polling data and averages can be downloaded at the <a href="https://github.com/Hackquantumcpp/snoutcounter-backend">GitHub repo</a>. You can find the data in the following links:</p>
-<ul>
-<li>Polling data: <a href="https://github.com/Hackquantumcpp/snoutcounter-backend/tree/main/data">here</a></li>
-<li>Poll averages: <a href="https://github.com/Hackquantumcpp/snoutcounter-backend/tree/main/averages">here</a></li>
-</ul>
+<p>I train this model on all House and Senate elections from 2014-2024, excluding seats that were not contested by one party or the other. However, I validated and tested the model solely on Senate elections. Some independents, like Evan McMullin in 2022 and the various red-state independents contesting in 2026 (Dan Osborn, Brian Bengs, etc), are considered as part of one party or the other for the purposes of training and prediction. For states that utilize ranked-choice voting (Alaska since 2022 and Maine since 2018), I utilize the maximum round results in training and validation. I set the priors for the coefficients to auto-scaled student’s t distributions, which accounts for outliers and heteroskedasticity, and utilize <a href="https://en.wikipedia.org/wiki/Markov_chain_Monte_Carlo">Markov chain Monte Carlo</a> sampling to fit the model and generate 20,000 simulations of how the upcoming Senate elections could go.</p>
+<p>And that’s about it! As with the House model, I don’t have any plans on making substantial changes to the Senate model, save for fixing bugs, data errors, or substantial methodological/statistical errors. If you find any bugs or errors, notice that I have failed to cite a source, or have any suggestions, feel free to open an issue on the GitHub repo page. You can view data ackwowledgements on the readme files in the GitHub repo, specifically <a href="https://github.com/Hackquantumcpp/snoutcounter-midterms-2026-model/tree/main/data">here</a> and <a href="https://github.com/Hackquantumcpp/snoutcounter-midterms-2026-model/tree/main/2026_data">here</a>.</p>
+<section id="updates" class="level2">
+<h2 class="anchored" data-anchor-id="updates">Updates</h2>
+<p>None so far! This section will be filled with updates if I make any changes to the underlying source code of the Senate model.</p>
 
 
 </section>
-
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

@@ -7,3 +7,7 @@
 - `Donald_Trump_takes_the_oath_of_office_(2025)_(alternate).jpg` - Ike Hayman, U.S. Congress. [Source link][https://commons.wikimedia.org/wiki/File:Donald_Trump_takes_the_oath_of_office_(2025)_(alternate).jpg]
 
 - `Student_t_pdf.png` - Skbkekas on Wikimedia Commons. [Source link](https://commons.wikimedia.org/wiki/File:Student_t_pdf.svg)
+
+- `gettyimages-1401415080.jpg` - Penn State University, originally from adamkaz/Getty Images. [Source link](https://www.psu.edu/news/research/story/ask-expert-voting-electoral-college-and-2024-presidential-election)
+
+- `1jpy9Astki-gamma_distribution_pdf.png` - Cburnett on Wikimedia Commons. [Source link](https://commons.wikimedia.org/wiki/File:Gamma_distribution_pdf.png)

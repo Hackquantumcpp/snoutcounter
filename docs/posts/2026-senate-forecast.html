@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.36">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2026-09-27">
+<meta name="description" content="Who will win the House in November?">
+
+<title>2026 Senate Forecast – SnoutCounter</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script><script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../assets/images/snoutcounter-favicon.ico" rel="icon">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-a0f9fd0d421825b736dc1bbcbcba2219.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<meta name="shinylive:serviceworker_dir" content="..">
+<script src="../site_libs/quarto-contrib/shinylive-0.10.14/shinylive/load-shinylive-sw.js" type="module"></script>
+<script src="../site_libs/quarto-contrib/shinylive-0.10.14/shinylive/run-python-blocks.js" type="module"></script>
+<link href="../site_libs/quarto-contrib/shinylive-0.10.14/shinylive/shinylive.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/shinylive-quarto-css/shinylive-quarto.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<!-- Privacy-friendly analytics by Plausible -->
+
+<script async="" src="https://plausible.io/js/pa-xsWSTFm39O9SSkI9MGgt2.js"></script>
+
+<script>
+
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+
+  plausible.init()
+
+</script>
+
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+
+<script src="https://cdn.jsdelivr.net/gh/ncase/nutshell/nutshell.js"></script>
+
+<script>
+
+        Nutshell.setOptions({
+
+            startOnLoad: true, // Start Nutshell on load? (default: true)
+
+            lang: 'en', // Language (default: 'en', which is English)
+
+            dontEmbedHeadings: true, // If 'true', removes the "embed this as a nutshell" option on headings
+
+        });
+
+</script>
+<script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+<script type="text/javascript">
+window.PlotlyConfig = {MathJaxConfig: 'local'};
+if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}
+</script>
+<script type="module">import "https://cdn.plot.ly/plotly-3.1.0.min"</script>
+
+
+
+<link rel="stylesheet" href="../styles.css">
+<meta property="og:title" content="2026 Senate Forecast – SnoutCounter">
+<meta property="og:description" content="Who will win the House in November?">
+<meta property="og:image" content="https://snoutcounter.works/assets/blog-images/gettyimages-1401415080.jpg">
+<meta property="og:site_name" content="SnoutCounter">
+<meta name="twitter:title" content="2026 Senate Forecast – SnoutCounter">
+<meta name="twitter:description" content="Who will win the House in November?">
+<meta name="twitter:image" content="https://snoutcounter.works/assets/blog-images/gettyimages-1401415080.jpg">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+
+<body class="nav-fixed fullcontent quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../assets/images/snoutcounter.png" alt="" class="navbar-logo light-content">
+    <img src="../assets/images/snoutcounter.png" alt="" class="navbar-logo dark-content">
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-projects" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Projects</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-projects">    
+        <li>
+    <a class="dropdown-item" href="../posts/president-approval.html">
+ <span class="dropdown-text">Trump Approval</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../posts/2026-elections.html">
+ <span class="dropdown-text">Generic Ballot Average</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../posts/2026-house-forecast.html">
+ <span class="dropdown-text">2026 House Forecast</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../posts/2026-senate-forecast.html">
+ <span class="dropdown-text">2026 Senate Forecast</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://bsky.app/profile/snoutcounter.bsky.social"> <i class="bi bi-bluesky" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-bi-github" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+      <i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-bi-github">    
+        <li>
+    <a class="dropdown-item" href="https://github.com/Hackquantumcpp/snoutcounter-backend/tree/main">
+ <span class="dropdown-text">Model code</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://github.com/Hackquantumcpp/snoutcounter/tree/main">
+ <span class="dropdown-text">Website code</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">2026 Senate Forecast</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">2026 Elections</div>
+    <div class="quarto-category">Forecasts</div>
+  </div>
+  </div>
+
+<div>
+  <div class="description">
+    Who will win the House in November?
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">September 27, 2026</p>
+    </div>
+  </div>
+  
+    <div>
+    <div class="quarto-title-meta-heading">Modified</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date-modified">September 27, 2026</p>
+    </div>
+  </div>
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>See all 2026 midterms forecasts: <a href="../posts/2026-house-forecast.html">House</a> / <strong>Senate</strong> / <a href="../posts/2026-house-forecast-release-article.html">House methodology</a> / <a href="../posts/2026-senate-forecast-release-article.html">Senate methodology</a></p>
+<p>This page hosts the 2026 Senate forecast. The Senate map in 2026 was initially thought of as unfavorable for Democrats, due to what was thought to be limited pickup opportunities and multiple vulnerable swing states held by Democrats. However, the combination of a favorable national environment and high-quality recruitment has caused the chamber to become competitive.</p>
+<p>You can read about how the model that powers this forecast works <a href="../posts/2026-house-forecast-release-article.html">here</a>. The source code is publicly available on <a href="https://github.com/Hackquantumcpp/snoutcounter-midterms-2026-model">GitHub</a>.</p>
+<p>Below you can find a map of seat chances and projections, as well as some overall summary stats.</p>
+<iframe title="Who is going to win the Senate?" aria-label="Choropleth map" id="datawrapper-chart-aqBdq" src="https://datawrapper.dwcdn.net/aqBdq/3/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="729" data-external="1"></iframe><script type="text/javascript">(function(){function e(){window.addEventListener(`message`,function(e){if(e.data[`datawrapper-height`]!==void 0){var t=document.querySelectorAll(`iframe`);for(var n in e.data[`datawrapper-height`])for(var r=0,i;i=t[r];r++)if(i.contentWindow===e.source){var a=e.data[`datawrapper-height`][n]+`px`;i.style.height=a}}})}e()})();</script>
+
+<iframe title="2026 Senate Forecast - Summary Statistics" aria-label="Small multiple donut chart" id="datawrapper-chart-5uhkB" src="https://datawrapper.dwcdn.net/5uhkB/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="303" data-external="1"></iframe><script type="text/javascript">(function(){function e(){window.addEventListener(`message`,function(e){if(e.data[`datawrapper-height`]!==void 0){var t=document.querySelectorAll(`iframe`);for(var n in e.data[`datawrapper-height`])for(var r=0,i;i=t[r];r++)if(i.contentWindow===e.source){var a=e.data[`datawrapper-height`][n]+`px`;i.style.height=a}}})}e()})();</script>
+<p>The histogram below displays seat outcomes of all 20,000 simulations drawn from the model’s posterior distribution.</p>
+<div id="191763ba" class="cell" data-execution_count="1">
+<div class="cell-output cell-output-display">
+<div>            <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_SVG"></script><script type="text/javascript">if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}</script>                <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script charset="utf-8" src="https://cdn.plot.ly/plotly-3.1.0.min.js" integrity="sha256-Ei4740bWZhaUTQuD6q9yQlgVCMPBz6CZWhevDYPv93A=" crossorigin="anonymous"></script>                <div id="853a97b3-08a4-4d28-9924-559394749f64" class="plotly-graph-div" style="height:525px; width:100%;"></div>            <script type="text/javascript">                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("853a97b3-08a4-4d28-9924-559394749f64")) {                    Plotly.newPlot(                        "853a97b3-08a4-4d28-9924-559394749f64",                        [{"bingroup":"x","hovertemplate":"Winner=Democrats\u003cbr\u003eSeats won by Democrats=%{x}\u003cbr\u003ecount=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"Democrats","marker":{"color":"#004b97","pattern":{"shape":""}},"name":"Democrats","nbinsx":52,"orientation":"v","showlegend":false,"x":{"dtype":"i1","bdata":"NjY1NDU4OjM1MzM1MzQ3Mzc2Nzc1NTQ0NTg1NzYzMzQzNTU2Njo6OjU0OTs7Ojs3OTU1MzM2NTQ1NTU3Nzg5NzU0Nzc4Mzo2MzQ2OTs2NDczNTU1NzczMzQ4OTc4Njc1OjQzNDU0NzUzMzMzMzU1ODc5Nzk2MzQ0NTYzNDY5Ozg3Mzc2ODY3NTM3OTM5NzU2MzczND06OjU0NDY1OTc5Ojk6NTg3OTk2PDg7OTU1NjczNzg2Nzo1Nzc3MzU4NDQ0ODo5Njk2MzQ1OTQ0ODk5OTM8NTQ2Njk3NzM3NTM6Mzg3MzM0NTo1MzM2NTM2Mzg1ODw7NzY0MzU1Nzg5OTk7OTM1Njg2Mzc6OzU1NjQ1MzY1NjU0MzU2MzU4MzY4NDQzNTM3ODc3NjMzMzg5NjY3Njk3ODo3MzY2NjU0Njc4Nzk2NzUzPDs6OTU1ODM1NzU0NTozMzY1NTs5NTk1Nzg1NjQ3NzUzNzk1Mzo5ODg8ODk2NDM0NDY2Nzs8OzM9OjU0NTs2OTU3NzY1NjgzNjUzNDM6PTQ2NTs6Ozk1NDMzMzMzOjM1ODg0NzQ2MzQ2OTg1ODUzNDc3OTUzNzY7NDQ2NTMzNTk5PDo1NTk0NjQ0NzM0MzU3MzU2NDQ1OTg5OjM3MzU0OT05OTs7OTc1NDQzNDc0OTgzNDQzNjM4NTMzODc4NjM2MzM4NzQ1NjM1NjU6OTczNTQ2OzY0NTk2MzY4NzYzMzgzNTQzNjUzMzQ5NDk5ODM1NDc2NTg1Mzg0NDM0NTc0OjQ3NDQ1MzczNTM2MzQ2OTQ3MzMzNTU0NjM4NjM4OTQ1MzU2Mzc3NzczODgzODc2MzY2NTQ5NTM0MzY0NTY2NzY2NTMzMzM0MzM6Njg0NTkzODo3NzYzOjs4OTMzNzQzNDY2NzM0Mzg3NzYzNzc1NzQ1NTMzNjU0NTU0NTYzMzQ0Njc3NDc2NjQzODY0NjMzODc5MzQ1NTQ2NjM1Njg4NjM6ODQ5Nzc4NzY4NzU1NzQ1NjQ5Nzg4NTYzNDQ1NDU0Nzg3NzU4NDUzMzc1ODc3OTs7ODk2ODU3OTc2MzMzMzczNjY4OTM0NzY4Mzc1NjM1NDM0NDQ3Nzg1NDg7NTg4OjU0NTQ2ODY0NDU2NzM0OjU5OjU6ODc2NTY0MzM2NjUzODk1ODY4Ozo3NTc0NDM1NTQ3ODQ1MzM1NDQ3MzU1Mzg0NDU0MzYzMzM4Mzg3NDk6OTY1NDU3Njg5NTc3ODU1NDY1NTMzNjM5OjUzNjU4Ojs4ODY4NDUzOD02NjU2NTMzOTM2ODM3MzY4NjUzMzo1OTM4NTgzNDY3NjM1NzQ5ODk3NDYzNzM6MzU2NTU5Njk4NTc2NDM6OTo3ODU7NjU0NDk4NDo3NzQ2Mzk3NDM4OTk1OjkzOTM3NTQ1NjU0Mzg1NDM3MzU0NjMzNDg6OTg3PDo5NzkzNjkzOzc5NTM0NTc1NDM4NTU1NTM2NzM1NDM0OTs2MzY1NTU6NDY3NjM1NTU0OTg0MzU3NjY3Nzo5NDQ0MzM1Nzk3NTQ5NTQzNDc0Nzg5Ojg4ODc4NzY5NjQ2Mzk2OTM6OjY2MzQ1NjQ5NjUzMzQ4ODg6NDczOjY6OTc3OjM1NzYzNTY4NjU0NzczNjUzMzc4Ozo2MzMzNDM3OTQ2NjY5NjM4MzU2MzY1ODg0Njs8Ozo5NDQ2OTQ0NTMzOjQzMzUzNTU2NTU4NTQ6Mzg5OzU1NzY4NTM6OTQzNjM3NTQ2OTQ0NDM3NDg3ODM0MzQ0MzQ2Nzg2OTM4NjUzNjY4OTk2Mzc1OjU3NjU1OTc3NjozNjM4MzY1NDc6MzY6OTU0NTU2NDY6Nzc5NDQ6Nzc0Njg4OTc5MzQzMzQ5Njo4OzQ1NDc1Nzg0MzUzODczNDk0NjQ0NTc4NTUzOTk5NTY0Mzc3NDM1ODUzMzg2MzozMzo1ODo3NzY1NzU0MzQ3Njc4NzY4NzQ2NDM0PDU0OTM2OjgzNDM1ODU1NDM4NDM1NjczMz88OjQ1NzU0OjozNDU1NDU6NTg1MzQ4NDQ0NjY0NDc1ODc1NDQ0NTY4Mzg0NTk2OjQzNjQzNDs6ODc4OTg4NjczOzk3OTU1MzM5NjM6MzQ1MzgzNTU2NDM0Nzc0Ozc5Nzc0Njs4NTYzNDQ4NTQ5OTg1NTg2NzM4NDg7Ozo1OTUzMzM0NDY1NTQzOTc3NjU0NzM0NTU0ODM0OTg4NDU5MzQzMzY5OjM1MzU0MzU4NTMzNjg3MzU3Nzg5ODQ2ODM2NzQ0NDM2ODQ0NzQzNDM5Njk7NDczNDU1Mzg7OTM4NDQ5MzY1NTM2Mzc0Njc5NjU3NjM2NDk7ODg0NzU0NTczODc3NDU0MzQ2ODUzNzU5NDU3NjkzMzQ2MzQ0OTM2NzczMzU1MzY0Nzk1NTU1NDY0NTgzNjQzNjQ6Ojo1NTk4MzMzMzU1OjM2ODw1NjUzNjc3ODg5OzY2NjU2OTY5NTQ2NTY1ODU3NTQ0OTM0NTUzNTMzNDc1NTY1NTM8OTo0NDY1NjQ5NTg1NTk5NTc3NjU1ODM0NjU2MzM1PDk7NzMzNzU2NDQzMzQ0MzYzOTUzOTg4OTU1NjM3ODU3OTY0NzY2NTU4NjgzNjc3OTUzMzc1ODo1ODgzNTgzNjQ3NDM4MzQ4NjM1MzQ0NjQ0NDQ7ODY0NDQ2ODM4Mzg2NjUzNTo0NDQ3MzM1NTQ1Njc2NzUzNjk5NTk2Njg6ODU4NDk7MzY2NDU2OjM1NTc1ODU4NzUzMzY1NzU4OTU3NDk3MzQ5Nzo4ODc5NjM2ODw6NTYzNTg5NTM5ODo2ODQzMzY3Nzk2NDk1NjY1MzM0NDc4OTQzNDM1Nzg2ODM2ODM4NTY3ODc1NTo7NDM4MzgzNTY0Nzk3NjU3PTg0MzY6NTM3Njk2NzQ2NzU6Njo5Mzg4NTg1ODs6Ozk3Njc1NjMzNjM1Njc5NzU0MzU0MzQzMzQ3PDU4OTQ0MzQ2NjY2Nzk3NTg5NjU5NDU1Mzc1ODY8OTU1NjM5NDk5OTg4OjY5NzQ1NTo6NzQ6NTMzNzc4ODYzMzc0MzU0NzkzNDM0NDY1Nzk0MzYzNDY0NTc0NDc1Njo0OTYzNDM0NTU0NTM2NzU1NDc5Njc5NDY1ODY0NDQ6NTQ7NTQ3OTY4NjYzMzY1NTM3MzU4OTo0NDU1NjY7PD02NzQ1NDQ1Ozk1NDU5Nzc4Ozk0ODM3NDU5ODgzNTg1ODgzNzQzOTc6OTYzNTo1NDczNjY0Mzg0NTYzOTM0MzQ1OTY1Nzc2Ozs6Mzg5MzMzMzU0Mzo3NjY2OTc5Ojg3NDc2ODk3NDc4Mzg0MzU2ODQ3Nzc3NjY2Mzg1OjY2OTY2NTM0NDQ0NDY1MzM3NzkzMzc6Njg2NDg1NDM0Ojo1MzY0NDg3Nzc5OTw7NjMzMzc4NjU1NDw4ODY2OTU8MzM2MzU1MzM7Ozg4NDM6MzM7Nzg1Njk0NDQ6Nzs1MzY0NzQ3NTg5NTU4OTg5OTg2MzY3NDU1MzQzNjQzNTU0MzY4NTUzNDY3NjgzNjQ5NjU0ODkzNzk4NzM3NDU1OTkzODc2NDY5ODk6ODUzNDg3Nzo0NTo3NDg0NDU2MzQ0NDYzMzc1Njc5ODQ1NjU1Mzc2MzgzNTU3NDQzODY6OzQ1NTc0NjUzNTMzNjMzNTU3MzQ0NzUzNzQ1Mzk2NDo8Njk4NzQ3Mzw6NDU1Mzo5MzY3NTQ2Ojk8NzU4ODo3Njg2Nzk2ODM2NTU3OTc0Mzc3NTQ4OTQzNzQ0Ojo5OTM5NzY0NTk6NTY4NDY3MzY7Njg1ODQ4Ojg1Njo6OzM1NTU4NDM5Njc5Njg1NjYzMzY3NTQzNjQ0NjQzNDY1MzUzNDM2MzM3MzY6NTU2NTU2NDY2MzM0NjU6Mzo0ODozMzY5OjQ0NDU2NTg0NjM2NDY6NTQ1MzU4MzM2Njk0NjM1MzQ2Mzk3OTM2Nzc1NzY1MzQ8OjM4NTY2Nzc1PDs4NTg0NzczNjM2MzU5NTU3NzY1NDQ2Mzk4NDc0NzM3Njg1ODk6NzQ3ODU3MzY5OTg3NDU5Nzg3ODk2MzY1Nzg0Njg4ODc1NjQ1MzQ0Nzk2Nzc1NTM0NDM1Njk3NDMzNDU6OTM6OzM0NDU7ODg4MzM3NzQ3NTM1NzM1OTc4NjY5OTk0NDQ2OTYzNjUzOTczNzY2Ozg0NDc1MzU3NDQ2NDQ1NjM0Nzg0NDY6ODY1OTw2ODkzNTU3Ojc5NDU3NzU2NTM6MzkzODg0ODk2Njk2NjUzOTg5NzczOzQ5Mzc1ODg5Mzc5NzQ2NTM3NzQ2NjM1Nzg0Nzg0NjU0NDYzNDYzOjc0MzU2Mzw1Nzs0Ozk1Nzc2ODc0OTk3OTQ1MzYzNDM4NzQ1NTgzNTU4MzY0NzQ4NjM5OTg0ODg3MzU2MzUzNzQ2OTM0ODgzODc5NDQzNTM2ODczNjQ1NjozMzU0OzM2Mzg4ODM0NjU0NjozMzQ3NjY2NjczOjo3NDM1NTg3NjQ2Mzo7MzQ1NzM3NzM0MzQ2ODQ2NTQ2NzY4OjgzOjQ3NDY4MzY0NjQzNjM1NTY3NzY1Mzk0NzM5OTgzMzc1NzQ1NjY0ODk3OTYzOTM3NDUzMzU1NDM2OzY4ODU0ODc0NDU0MzQzNTUzNjYzMzc4NDUzNzUzMzU3NTY2NjY5NDM1Mzc4NjUzNzY0NzQ0NjQ8NDU1OjczOTg2NTs0NDMzMzU2NDY2NTUzMzc6NTQ5OTg2NzY2Mzs7Nzk2ODk5NDU2NjM0NTQ3NzkzNDQ5Ozg0Njk6Nzs4NjY1ODU0OTs4OzY1NjM3NDM1NjU5MzM2Njk4NzU3MzY2Ozo4NTc1OTY2NTg4ODQ5OTY4MzQ1NDUzMzU1MzY2MzM3MzM2NTMzNjQ0NzgzMzY3Njo0Ojw2OTQ4NDc6MzM1NzU0MzM0NDc1Ozg5NTczOjo3NTM5Oj00NzY1NDY0Nzc0NTk7ODM2NTMzNDY7OTo5Mzc0MzM1NzUzNDY2NDMzNDc2NTU7NDk8Pjw5OzkzNDc3NDY5NDM1MzY1Mzs1ODY2OzQ0MzQ1ODM6OTozOTc0OjQ5NzQ0NDUzNTQ3Ozo2OjU3MzQzNTg3Mzc6OTMzODY2NTMzNDU1NDQ2ODk0ODM5NTc0NDc4ODY0NTU1Ojc5NDQ2NTc5OTszNzc4NDM1NTM0ODY1Mzc3NzMzMzQ3NDM3Ojc2Njc5OTY6Mzg3Mzg0Mzg4NTM0MzU0NzU5ODU3Ojg0NDQ1Mzc4NTQ1NTg3Nzc3NTM3ODY2PDgzNDYzNTg3NzkzNDg1NDMzNjc8Pjw5OTY1Nzs6NjU2NzM1Ojg7Njk4NTM5NjY2ODc5Mzg3MzY2NTg1ODozMzc2OTg4ODU4NDQ0NDU7ODg5NjU3NTc1OzUzMzU4NTg2ODc6Ojc4NTUzNDc5NzM2NjU4Njo3PTo4MzU5MzMzNDMzNTM3NTYzNDY2NjM4OjQzNDczNzc7MzU5ODQ0NDQ1ODUzNTc2MzgzNTQzNzU0Ozo5NTU5NTQ4Nzc0NDY1Nzc3Nzg4NTo3NjQzNTU3Ojg1Mzc1MzMzNzY2NzY0Nzg3Mzc2NDM0NjQ1ODk2MzY2NDQ3NjY1ODQ3Mzo6OTc7NTY1ODk6Pzo5Mzg0NTQ0OTY1NjkzNzk6NTM2NDU5OjU5Ojc2Mzc5NDc0NDgzMzc7OTY1NTM3NDMzNzc3Njo3Njg0NDUzNzo4OTg5Ojc4Njc1NDQzNjk4Mzc2Njc3Nzg1NzQ2MzQ4NDQ3NjU5MzU4MzM0NDM3NDg4NDY0NzY3NTgzNTQ0NTQzNTY3Njk0NjU1NDY1MzQ7NDY0Nzk2OTk6MzY5ODY2NDc0NTM4NDg6ODQ4Nzc1NDc5NzQ1OTg6ODk5Mzc6NzQ3Nzk4OzM0NTU2NTU1NDc1MzMzOTM2Mzk2Ojo3NTk6Mzc1NjM3NjQ0ODQ5NDQ4OTU0Njo0NzU1ODc0NTQ1OTc0NjU9PDc1MzQ2MzU1NDc0PDc4NjU5NTk9OTM5NzgzNjc1MzQ1NDY5OTY6OTs4ODM1NzQ0Nzg1ODg4PDwzMzg2ODM5NzM3NDM0NDc0NjU1NTc7NTY0OTQzNTg5Nzs4NDo9NTM0NDc2Mzc0NDM1Nzw3NTMzOjg5NzU2NTM3Nzc3NTk4OzczOTc5Nzk4ODc4OjgzODY2ODg3ODYzNjU0NzQzNDQzNTQ4ODY0ODM0NTc6ODg3NzY0OTM5Mzk0NTU3NTg7Ojg3NzU4OTgzNTk2NTg2NjMzMzMzODQ3NDU2NDM8ODY3Njc0OTU2NzU2Mzg2NTM1OjM3NDM6Ozc5NDQ6NTY5NjU1MzQ1NQ=="},"xaxis":"x","yaxis":"y","type":"histogram"},{"bingroup":"x","hovertemplate":"Winner=Republicans\u003cbr\u003eSeats won by Democrats=%{x}\u003cbr\u003ecount=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"Republicans","marker":{"color":"#c71e1d","pattern":{"shape":""}},"name":"Republicans","nbinsx":52,"orientation":"v","showlegend":false,"x":{"dtype":"i1","bdata":"LjAuLjAwMS8yMS4uLy4xMjIxMjEvMDAxMS8xMjEuMCwxMjIsMTAvKjAvMjEwLTEvMDAsMi4wLjEuMTEvMTAwLywxMjEvMjAwMjAxMTEyMjIyMjIyLS0tMDIvLzEuMS8xLjIyLTAvLzAsLTAwLiwuLiwtLywyLjIuMSwyLzEwMjIuLTAwMC8yLSwyMiwtLi0xKy8vLTEuMTAwMTIvLjIvMDAwMjIxMjIvMDIwMDExMSwwMC8vMjErKi4uLy4wLC4yMC4vLzExMjAuLS8wMC0uLy4xLiwwLzEyMjAxMDEvMi8tMCwxLCwwMCwxLDEuMS8tLS8yMjIyLS0tMS8yMTEtLi0tLi8yMjIyLzAyLCwsMCwwMTAyMDEwMTIuKyoyMTErLS8vMS4vKy8yLzExLzExMC4vLTExLzIxMS0tLy8yLystMTIyLS0xMi8yMTIyMjEvLy8xMi8vLi0tKy8xMTIyMi0wMjAvMjAwLS4wMTIyMjItMSwvMiwwMi4yLzIyMDIwMC0yLy0wLzEyLjAwMCwrLjEyLjAvLzAxMjIuMTEyMTIwMS0xMDExLzEyLy4yLy8wLjEyLDIxLzAuMDIxMDEwMjIwKzEyMDIvLC0xLzIwMi4rMjItLy4yLC4vMDAyLy4tMi8xMjAyMS8uMjAyMTIsLjAxMDEuMTEwMSwwLzAxMjIxLy8yLy4yLzIvKy0wMjEvMi4vLzAvLC8xMjAwMjEuLy0xMTEyLy8vMC0uMC0xLy8tMjIyKy8rMDAvMjIwMjIyLSwxLTEyLi8sLi4wLy8yMTIvMTIyMjIvLi8yLy0uMjIxMi4wLy8vLTIwLjExLi8wMTIuLjAtLzItMjEwMi0tLzEuMC4yMjIyLy8sMTEvMTIxLTIwLC4wMisyMTAyMjIvMDEuLzIxMi4xKzEvLy4vMC8wLjAwLS8tMTAyLDIyKzIuLjIuLzAuLzAxMjIvMS8yMS8tMi8xMjAxMTEwMC4yMDEyMC0vLS0rLiwvMDArMC0wLjIyLjIuLS0xMTIxLi8xMTIuMS4tMTIyMS8vLDAxMDEuLC4wLS0vMjExMS8tLDExMCwtLC8vMC8yLzEuMDEvLDAyLS4vMS4wMTAyMi4vKi8wMTAxLTIwMC4yMjIxMC0vLy8wLy8tKzIyLi4vLTAyLzAyMjEwMTExMDAuLzExLi4xMS8wMC8vLS8vLTEwLC0rMS8wMC8uMTIvMTAyMC0wLzAxMi8xMS4vMTIvMjIyLzEwMS4yMjAtLi8yMTEwMTAyLCwwMjEtMi8uLzEwMTAyMSwxMTEyMDIwMTIxMTExLTEvMC8tLC0xMS8yLy0uLi4tMjEvMS8xMC8wLjEwMC4xMi4rKi0sMjAxLjIxMDIyMjEyLS8wLi4vLjEvMisyMS0yMjIwMC8xMDEtLCsyMS4wMDEuLy4wMDEpMjEuLS8vMS8uMTIxMDAwLjAvMC0wMTEvLzAwKC0uLiwuLjAtMCssKy8wMi8yMjEtMjAwMi8yLy8rMTAyMSwuLzEyLzIvLiwuMTIsKzEvMDAvMTAuLzIyLTIxMCwuMC4xLjIuLzIxLzIyMTIxMS8tMDEyMC8vMS4tLjAwMi8xMjIwLzEuMTEyMC4vMC8wMSsyLy4yMDEwMS0sKy0yMDEyLDIyMS8xMjEyMjIwMCwwMDEvMTAtMjAtLy8yMjItMTAxMDExMjEvMTEwLzExMTEwMC8vMjIwMjIwLS8yMS8xLjAwMS8vLDAxMTExLywtMDEvMTIxMi4tMjEvLy4xMC8uLi4yMi4uLDEvMS4vLC8yLzIyMDEvLjIvMC8xMDIxLzEuLi8yMTEyMjIyLSssMjAvMTExMjAsMDIwLy0yMDAwMTAyMjAxMjAwLzEuMi8yMi0wMjAvLi4sMTIxLTIwMS4vLS8xMTEvMS0sLzExKy8wLjEyMjAxMjAxMisuMi0yMS4tMDIyMDIuMTAxLjAwMTAwLzIsLzIvLjAwLC4vMTItMS0tKzIvMS4vLC0vMS8yLzEwMTAwMTExMjIxMTEyLTAwLi8vLTEyLy4vLjAtLzEtLzAvLy8vLi4uLzAwMC4vKzExMS4tLjAvMDExMTIvLzIyLzAxMi8uLS8yMTIxLy8vMi8vLjIyMTIvMDEwMCorLzEyMTEtMDAyLDEvLzItLDItMTAyMTAxMDAuMDAuMjEwLi8xLC4xMjIxMDIxMjEwMjExMTIxLjIxLTIyMC4vMjIuLTAxMTIxMDIwLTAxLi4vMS8yLjEwMDEvMi4wLysyMCwvLzItLisrLS4yLTAxMC4vLiwsLTAwLi8tLzAyMTIsMS4yMi4yMi8wMS0uMiwrMS0xMjIyLi4tMjEvLi0tLCouMjExLy4wMi4wMDAwMTEvLTAxMTIyMTEvMTAuLi8xMjIsLjIyLy4tKy0tMS8wMS4vLyorLC8rLy8yMTExLjIrKywuMDEsLzIyMjAuMC8uMi8vMC8vLi0uMjIwMDEwMC8wLzAsMTEuMjItMC4uLDEuMS4sLCswMTAwMTEyMjIwMC4rMDEtLjEvMTAxLy8sLzAwLzAwLTAxMC4tMTIwLDAyLzIxLSwyMjEvMi4wMTExLC8wLTIwMDExMjIxMTIuMDEtMjIrKzIvLS8tLzEvLC8yMjAuMTIvLzIuLjAvLzIyMi8yLDIxMjEyMioqLzEuMjIyLjEyMS8rMjExMi4wMS4yMjAwLi4uLDEyMTIvMS0uMC8wMS8tLzEwMjAuMTIxMTAyLTIvMTAyLy0xMTIuLy0uLjAtLy4xMi0xMjEyMi8uMDExMi0xLjExMSssMi4xMS8xMTIxMS0uMDAxKzAyLzEtMjAxMSstLy0uMDAuLC4sLzIxMjIxMTAvLzIxMDEtLi0wMTEvMSwtJzEtMSwxMjExLS4xMTIyMS4vMTAsLDAvMi8wMi8yLzExLy4rLiYrLDAxMjIwMS0vMjEyMDIwMTIxMC4wMDIwLi8wLy8vMDEtLS0vMTItMjIwMTAuLjEwKzAvMS4wKy0xMDAxMi0wMi0sMDAwMTAyMS8wMjIwMC0tMS4xLy8wMTArMDExMDEvLiwsLzEvMjEyMTEwLy0wLjIwMDAxMDEyMS8vMjAvMjEvMDAuMC0sKy4yLjEyLy0yLjIwLjEuLC8yLjAyMi4wMDIwLTEwLy0vLjEvMC0wMDAxLDIyMTEtMjIyMjIxMC8xLDEvMC8yMi0yLi0tLjItMDAuLTIyMTAyLjEwMjIwMjIvMjEyLjAuMTEsMDIvLjEwMjEsMjIyMjAvLy4yLDAvMDAuLDIvMjEwMjEyLzEyLzAuMCwsMTEwMjExLzEuLywvMjAtMS4uLS4xLjIuLi8yLzItLi0wMi8yMiwwMiswLC4vLTAxMTAyMTAvMTEyLS0xMTIwLzItLTEuMS0vMTIxMi0vLywxMDIwMjAvMS0uLi8yMTIyLCwuMi8xMjAuMjAyLjAvMDEwMDEvMCwxMi0sLi0tMDEwMDEwMjArMjEvMiwsLy4yMTIyMS4xMSswMS0uMC4yMTEuMjIwMDIsMDIsLjEsLDAyLi0rLTAyMS0vLCsvMTIxMDAvMC4vLjIyLi4tMTEsMjIxLTIuLDEtMDIxMS4tMS4xMS8wMjIyMDIwMDAxLS0yLS8tLjExMDEuLy0wMTAwLy4vMC4vMi0yMTEtLy8wMiwtLzEwMjAtMjAuMTEvMjIxLywuMSwxKigrLTEyMS8rMC8xLysqLjEyMS8yMTAwLSwxMCsxLzAyMjIsLjExMi4tLjIxLjIuLywuLzIvMS8vMDEvLTIwLTEvMi8uMC4vMjExLzIvLS4yLS8wMjAxMTAxLzIxLjAxLi8yMTAsLjIsMjEtMS4xLzExLSwxMDIyMC0xMjAtLywtMTEtLzExMi4xLy4tMS4vMjAwMjIxMi4wMjAyMjExLjEvMi8xMjIvLi8tLTIxLjEwLTAsLi0xMTIxMi8uLjEyLjAuLS8uMjIyMi8xLTIxMC0vMi0xMjAsMTIxMDEuLzEuLjItMDIxMTExMS8wMTAwLTEtMi0yLzExMjIxMC0wMjIuMC8wLzAyLjEwMDEyMDEpLS0yMDAsLDEuLC4sLi0sMS0tKTAxMiwxLSwsLS4yLjAxLy4tLS8xMC4uMTEvLjIwLjIyLTIyMDAwLi4tLC4xMi8vMjIvMDEwMDIuMjAxMTEyMDAxLzAvMS4wMjExLygrLDAyLzAuMDEwMi4tMDErMDAvMTItMS8yMDIrLy4sKyoyMDExMC8vMC4rKzIxLi0wMTIwLjIwMTAxLCwwLS4uLC4vLjIwMTAsMS4xMjEyMDAtLjEwLy8xMi0sKy8wLTEyLSwwLCsrKy0yMjAuMTAyLS0uLTIyMS8vLy8wMjExKy4xMjEyMi8vLjIyMTIvLSsqLzEtMTAwMjIxMDEvLS8uLy0tMDAtMi4xMS4wLjIyMC8wMS4vMjAuLTAsMC8xMC0uLi4wMg=="},"xaxis":"x","yaxis":"y","type":"histogram"}],                        {"annotations":[{"showarrow":false,"text":"51 seats required for Dem majority","x":50.5,"xanchor":"left","xref":"x","y":1,"yanchor":"top","yref":"y domain"}],"barmode":"relative","legend":{"title":{"text":"Winner"},"tracegroupgap":0},"margin":{"t":60},"shapes":[{"line":{"color":"black","width":1},"type":"line","x0":50.5,"x1":50.5,"xref":"x","y0":0,"y1":1,"yref":"y domain"}],"template":{"data":{"barpolar":[{"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"#C8D4E3","linecolor":"#C8D4E3","minorgridcolor":"#C8D4E3","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"#C8D4E3","linecolor":"#C8D4E3","minorgridcolor":"#C8D4E3","startlinecolor":"#2a3f5f"},"type":"carpet"}],"choropleth":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"choropleth"}],"contourcarpet":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"contourcarpet"}],"contour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"contour"}],"heatmap":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"heatmap"}],"histogram2dcontour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2dcontour"}],"histogram2d":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2d"}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"mesh3d":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"mesh3d"}],"parcoords":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"parcoords"}],"pie":[{"automargin":true,"type":"pie"}],"scatter3d":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatter3d"}],"scattercarpet":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattercarpet"}],"scattergeo":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergeo"}],"scattergl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergl"}],"scattermapbox":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattermapbox"}],"scattermap":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattermap"}],"scatterpolargl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolargl"}],"scatterpolar":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolar"}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"scatterternary":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterternary"}],"surface":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"surface"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}]},"layout":{"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"autotypenumbers":"strict","coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]],"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]},"colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"geo":{"bgcolor":"white","lakecolor":"white","landcolor":"white","showlakes":true,"showland":true,"subunitcolor":"#C8D4E3"},"hoverlabel":{"align":"left"},"hovermode":"closest","mapbox":{"style":"light"},"paper_bgcolor":"white","plot_bgcolor":"white","polar":{"angularaxis":{"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":""},"bgcolor":"white","radialaxis":{"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":""}},"scene":{"xaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"},"yaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"},"zaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"ternary":{"aaxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""},"baxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""},"bgcolor":"white","caxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""}},"title":{"x":0.05},"xaxis":{"automargin":true,"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":"","title":{"standoff":15},"zerolinecolor":"#EBF0F8","zerolinewidth":2},"yaxis":{"automargin":true,"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":"","title":{"standoff":15},"zerolinecolor":"#EBF0F8","zerolinewidth":2}}},"xaxis":{"anchor":"y","domain":[0.0,1.0],"title":{"text":"Seats won by Democrats"}},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"text":"count"}}},                        {"responsive": true}                    ).then(function(){
+                            
+var gd = document.getElementById('853a97b3-08a4-4d28-9924-559394749f64');
+var x = new MutationObserver(function (mutations, observer) {{
+        var display = window.getComputedStyle(gd).display;
+        if (!display || display === 'none') {{
+            console.log([gd, 'removed!']);
+            Plotly.purge(gd);
+            observer.disconnect();
+        }}
+}});
+
+// Listen for the removal of the full notebook cells
+var notebookContainer = gd.closest('#notebook-container');
+if (notebookContainer) {{
+    x.observe(notebookContainer, {childList: true});
+}}
+
+// Listen for the clearing of the current output cell
+var outputEl = gd.closest('.output');
+if (outputEl) {{
+    x.observe(outputEl, {childList: true});
+}}
+
+                        })                };            </script>        </div>
+</div>
+</div>
+<p>Below you can find a table displaying the output of the House model, including some additional information not shown in the visualizations above.</p>
+<iframe title="2026 SnoutCounter Senate Forecast - Model Output Table" aria-label="Table" id="datawrapper-chart-ZFeAz" src="https://datawrapper.dwcdn.net/ZFeAz/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="623" data-external="1"></iframe><script type="text/javascript">(function(){function e(){window.addEventListener(`message`,function(e){if(e.data[`datawrapper-height`]!==void 0){var t=document.querySelectorAll(`iframe`);for(var n in e.data[`datawrapper-height`])for(var r=0,i;i=t[r];r++)if(i.contentWindow===e.source){var a=e.data[`datawrapper-height`][n]+`px`;i.style.height=a}}})}e()})();</script>
+<p>And below, you can find time series charts showing how the forecast has changed over time.</p>
+<div id="7f25dbce" class="cell" data-execution_count="2">
+<div class="cell-output cell-output-display">
+<div>            <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_SVG"></script><script type="text/javascript">if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}</script>                <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script charset="utf-8" src="https://cdn.plot.ly/plotly-3.1.0.min.js" integrity="sha256-Ei4740bWZhaUTQuD6q9yQlgVCMPBz6CZWhevDYPv93A=" crossorigin="anonymous"></script>                <div id="fddc8500-f7bf-4b62-80db-84af3dd7a1ba" class="plotly-graph-div" style="height:525px; width:100%;"></div>            <script type="text/javascript">                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("fddc8500-f7bf-4b62-80db-84af3dd7a1ba")) {                    Plotly.newPlot(                        "fddc8500-f7bf-4b62-80db-84af3dd7a1ba",                        [{"hovertemplate":"%{y:.1f}%","legendgroup":"Democrats","line":{"color":"#004b97","dash":"solid"},"marker":{"symbol":"circle"},"mode":"lines","name":"Democrats","orientation":"v","showlegend":true,"x":["2026-09-27"],"xaxis":"x","y":{"dtype":"f8","bdata":"ZmZmZmZGTUA="},"yaxis":"y","type":"scatter"},{"hovertemplate":"%{y:.1f}%","legendgroup":"Republicans","line":{"color":"#c71e1d","dash":"solid"},"marker":{"symbol":"circle"},"mode":"lines","name":"Republicans","orientation":"v","showlegend":true,"x":["2026-09-27"],"xaxis":"x","y":{"dtype":"f8","bdata":"mpmZmZm5REA="},"yaxis":"y","type":"scatter"}],                        {"hovermode":"x","legend":{"title":{"text":"variable"},"tracegroupgap":0},"margin":{"t":60},"showlegend":false,"template":{"data":{"barpolar":[{"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"#C8D4E3","linecolor":"#C8D4E3","minorgridcolor":"#C8D4E3","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"#C8D4E3","linecolor":"#C8D4E3","minorgridcolor":"#C8D4E3","startlinecolor":"#2a3f5f"},"type":"carpet"}],"choropleth":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"choropleth"}],"contourcarpet":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"contourcarpet"}],"contour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"contour"}],"heatmap":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"heatmap"}],"histogram2dcontour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2dcontour"}],"histogram2d":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2d"}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"mesh3d":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"mesh3d"}],"parcoords":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"parcoords"}],"pie":[{"automargin":true,"type":"pie"}],"scatter3d":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatter3d"}],"scattercarpet":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattercarpet"}],"scattergeo":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergeo"}],"scattergl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergl"}],"scattermapbox":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattermapbox"}],"scattermap":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattermap"}],"scatterpolargl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolargl"}],"scatterpolar":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolar"}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"scatterternary":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterternary"}],"surface":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"surface"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}]},"layout":{"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"autotypenumbers":"strict","coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]],"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]},"colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"geo":{"bgcolor":"white","lakecolor":"white","landcolor":"white","showlakes":true,"showland":true,"subunitcolor":"#C8D4E3"},"hoverlabel":{"align":"left"},"hovermode":"closest","mapbox":{"style":"light"},"paper_bgcolor":"white","plot_bgcolor":"white","polar":{"angularaxis":{"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":""},"bgcolor":"white","radialaxis":{"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":""}},"scene":{"xaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"},"yaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"},"zaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"ternary":{"aaxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""},"baxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""},"bgcolor":"white","caxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""}},"title":{"x":0.05},"xaxis":{"automargin":true,"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":"","title":{"standoff":15},"zerolinecolor":"#EBF0F8","zerolinewidth":2},"yaxis":{"automargin":true,"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":"","title":{"standoff":15},"zerolinecolor":"#EBF0F8","zerolinewidth":2}}},"title":{"text":"House Win Probability Over Time"},"xaxis":{"anchor":"y","domain":[0.0,1.0],"range":["2026-09-27T00:00:00","2026-11-10T00:00:00"],"title":{"text":"Date"}},"yaxis":{"anchor":"x","domain":[0.0,1.0],"range":[0,100],"title":{"text":"Win Probability (%)"}}},                        {"responsive": true}                    ).then(function(){
+                            
+var gd = document.getElementById('fddc8500-f7bf-4b62-80db-84af3dd7a1ba');
+var x = new MutationObserver(function (mutations, observer) {{
+        var display = window.getComputedStyle(gd).display;
+        if (!display || display === 'none') {{
+            console.log([gd, 'removed!']);
+            Plotly.purge(gd);
+            observer.disconnect();
+        }}
+}});
+
+// Listen for the removal of the full notebook cells
+var notebookContainer = gd.closest('#notebook-container');
+if (notebookContainer) {{
+    x.observe(notebookContainer, {childList: true});
+}}
+
+// Listen for the clearing of the current output cell
+var outputEl = gd.closest('.output');
+if (outputEl) {{
+    x.observe(outputEl, {childList: true});
+}}
+
+                        })                };            </script>        </div>
+</div>
+</div>
+<div id="ede47569" class="cell" data-execution_count="3">
+<div class="cell-output cell-output-display">
+<div>            <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_SVG"></script><script type="text/javascript">if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}</script>                <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script charset="utf-8" src="https://cdn.plot.ly/plotly-3.1.0.min.js" integrity="sha256-Ei4740bWZhaUTQuD6q9yQlgVCMPBz6CZWhevDYPv93A=" crossorigin="anonymous"></script>                <div id="5e85212f-b27c-457c-b387-0c3b910178e8" class="plotly-graph-div" style="height:525px; width:100%;"></div>            <script type="text/javascript">                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("5e85212f-b27c-457c-b387-0c3b910178e8")) {                    Plotly.newPlot(                        "5e85212f-b27c-457c-b387-0c3b910178e8",                        [{"hovertemplate":"%{y:.1f}","legendgroup":"Democrats","line":{"color":"#004b97","dash":"solid"},"marker":{"symbol":"circle"},"mode":"lines","name":"Democrats","orientation":"v","showlegend":true,"x":["2026-09-27"],"xaxis":"x","y":{"dtype":"f8","bdata":"LbKd76esSUA="},"yaxis":"y","type":"scatter"},{"hovertemplate":"%{y:.1f}","legendgroup":"Republicans","line":{"color":"#c71e1d","dash":"solid"},"marker":{"symbol":"circle"},"mode":"lines","name":"Republicans","orientation":"v","showlegend":true,"x":["2026-09-27"],"xaxis":"x","y":{"dtype":"f8","bdata":"001iEFhTSEA="},"yaxis":"y","type":"scatter"}],                        {"hovermode":"x","legend":{"title":{"text":"variable"},"tracegroupgap":0},"margin":{"t":60},"showlegend":false,"template":{"data":{"barpolar":[{"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"#C8D4E3","linecolor":"#C8D4E3","minorgridcolor":"#C8D4E3","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"#C8D4E3","linecolor":"#C8D4E3","minorgridcolor":"#C8D4E3","startlinecolor":"#2a3f5f"},"type":"carpet"}],"choropleth":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"choropleth"}],"contourcarpet":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"contourcarpet"}],"contour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"contour"}],"heatmap":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"heatmap"}],"histogram2dcontour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2dcontour"}],"histogram2d":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2d"}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"mesh3d":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"mesh3d"}],"parcoords":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"parcoords"}],"pie":[{"automargin":true,"type":"pie"}],"scatter3d":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatter3d"}],"scattercarpet":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattercarpet"}],"scattergeo":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergeo"}],"scattergl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergl"}],"scattermapbox":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattermapbox"}],"scattermap":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattermap"}],"scatterpolargl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolargl"}],"scatterpolar":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolar"}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"scatterternary":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterternary"}],"surface":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"surface"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}]},"layout":{"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"autotypenumbers":"strict","coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]],"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]},"colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"geo":{"bgcolor":"white","lakecolor":"white","landcolor":"white","showlakes":true,"showland":true,"subunitcolor":"#C8D4E3"},"hoverlabel":{"align":"left"},"hovermode":"closest","mapbox":{"style":"light"},"paper_bgcolor":"white","plot_bgcolor":"white","polar":{"angularaxis":{"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":""},"bgcolor":"white","radialaxis":{"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":""}},"scene":{"xaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"},"yaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"},"zaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"ternary":{"aaxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""},"baxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""},"bgcolor":"white","caxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""}},"title":{"x":0.05},"xaxis":{"automargin":true,"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":"","title":{"standoff":15},"zerolinecolor":"#EBF0F8","zerolinewidth":2},"yaxis":{"automargin":true,"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":"","title":{"standoff":15},"zerolinecolor":"#EBF0F8","zerolinewidth":2}}},"title":{"text":"Projected Seats Over Time"},"xaxis":{"anchor":"y","domain":[0.0,1.0],"range":["2026-09-27T00:00:00","2026-11-10T00:00:00"],"title":{"text":"Date"}},"yaxis":{"anchor":"x","domain":[0.0,1.0],"range":[0,100],"title":{"text":"Average Seats Over All Simulations"}}},                        {"responsive": true}                    ).then(function(){
+                            
+var gd = document.getElementById('5e85212f-b27c-457c-b387-0c3b910178e8');
+var x = new MutationObserver(function (mutations, observer) {{
+        var display = window.getComputedStyle(gd).display;
+        if (!display || display === 'none') {{
+            console.log([gd, 'removed!']);
+            Plotly.purge(gd);
+            observer.disconnect();
+        }}
+}});
+
+// Listen for the removal of the full notebook cells
+var notebookContainer = gd.closest('#notebook-container');
+if (notebookContainer) {{
+    x.observe(notebookContainer, {childList: true});
+}}
+
+// Listen for the clearing of the current output cell
+var outputEl = gd.closest('.output');
+if (outputEl) {{
+    x.observe(outputEl, {childList: true});
+}}
+
+                        })                };            </script>        </div>
+</div>
+</div>
+<p>Additionally, you can see how the forecasted odds and vote shares have changed for each individual congressional seat below.</p>
+<pre class="shinylive-python" data-engine="python"><code>#| '!! shinylive warning !!': |
+#|   shinylive does not work in self-contained HTML documents.
+#|   Please set `embed-resources: false` in your metadata.
+#| standalone: true
+#| viewerHeight: 600px
+import plotly.express as px
+import plotly.graph_objects as go
+import pandas as pd
+from shiny import *
+from shiny.express import input, render, ui
+from shinywidgets import render_widget
+
+output_ts = pd.read_csv('https://raw.githubusercontent.com/Hackquantumcpp/snoutcounter-midterms-2026-model/refs/heads/main/prediction/senate/model_output/output_over_time.csv')
+
+output_ts = output_ts[output_ts['type'].isin(['chance', 'y_pred', 'ci_low', 'ci_hi'])]
+
+output_ts = output_ts[output_ts['geo'] != 'US Senate']
+
+output_ts['date'] = pd.to_datetime(output_ts['date'])
+
+seats = dict(zip(output_ts['geo'], output_ts['geo']))
+
+
+ui.input_selectize(
+    "state",
+    "State:",
+    seats
+  )
+ui.input_radio_buttons(
+    "type_disp",
+    "",
+    {"chance": "Win probability", "y_pred": "Vote share"}
+  )
+
+
+@render_widget
+def plot():
+  disp_output = output_ts[(output_ts['geo'] == input.state()) &amp; (output_ts['type'] == input.type_disp())]
+  ci_output = output_ts[(output_ts['geo'] == input.state()) &amp; (output_ts['type'].isin(['ci_low', 'ci_hi']))]
+  disp_output['Republicans'] = disp_output['y'].map(lambda x: 100 - x)
+  disp_output = disp_output.rename({'y': 'Democrats'}, axis=1)
+    
+  disp_yaxis = "Win Probability" if input.type_disp() == "chance" else "Vote share"
+    
+  chart = px.line(disp_output, x='date', y=['Democrats', 'Republicans'], template='plotly_white', color_discrete_map={'Democrats': '#004b97', 'Republicans': '#c71e1d'})
+  chart.update_traces(hovertemplate="%{y:.1f}%")
+  chart.update_layout(
+      xaxis=dict(range=[pd.to_datetime('2026-08-30'), pd.to_datetime('2026-11-10')]),
+      yaxis=dict(range=[0, 100]),
+      xaxis_title='Date',
+      yaxis_title=f'{disp_yaxis} (%)',
+      title=dict(text=f"{input.cd()} {disp_yaxis} Over Time"),
+      hovermode="x",
+      showlegend=False
+  )
+  if input.type_disp() == "y_pred":
+    chart.add_traces(
+      [go.Scatter(
+        name = 'dem ci hi',
+        x = ci_output[ci_output['type'] == 'ci_hi']['date'],
+        y = ci_output[ci_output['type'] == 'ci_hi']['y'],
+        mode = 'lines',
+        marker = dict(color='#ffffff'),
+        line = dict(width=0),
+        showlegend = False,
+        hoverinfo = 'skip'
+      ),
+      go.Scatter(
+        name = 'dem ci low',
+        x = ci_output[ci_output['type'] == 'ci_low']['date'],
+        y = ci_output[ci_output['type'] == 'ci_low']['y'],
+        mode = 'lines',
+        marker = dict(color='#ffffff'),
+        line = dict(width=0),
+        showlegend = False,
+        fillcolor = "rgba(87, 158, 230, 0.3)",
+        fill = 'tonexty',
+        hoverinfo = 'skip'
+      )
+      ]
+    )
+    chart.add_traces(
+      [go.Scatter(
+        name = 'rep ci hi',
+        x = ci_output[ci_output['type'] == 'ci_hi']['date'],
+        y = ci_output[ci_output['type'] == 'ci_hi']['y'].map(lambda x: 100 - x),
+        mode = 'lines',
+        marker = dict(color='#ffffff'),
+        line = dict(width=0),
+        showlegend = False,
+        hoverinfo = 'skip'
+      ),
+      go.Scatter(
+        name = 'rep ci low',
+        x = ci_output[ci_output['type'] == 'ci_low']['date'],
+        y = ci_output[ci_output['type'] == 'ci_low']['y'].map(lambda x: 100 - x),
+        mode = 'lines',
+        marker = dict(color='#ffffff'),
+        line = dict(width=0),
+        showlegend = False,
+        fillcolor = "rgba(245, 105, 105, 0.3)",
+        fill = 'tonexty',
+        hoverinfo = 'skip'
+      )
+      ]
+    )
+    
+  return chart</code></pre>
+
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/snoutcounter\.works");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link" href="../about.html">
+<p>About</p>
+</a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="https://github.com/Hackquantumcpp/snoutcounter/blob/main/LICENSE">
+<p>License</p>
+</a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="https://ko-fi.com/hackquantumcpp">
+<p>Ko-Fi</p>
+</a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="../index.xml">
+      <i class="bi bi-rss" role="img">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/Hackquantumcpp/snoutcounter/tree/main">
+      <i class="bi bi-github" role="img">
+</i> 
+    </a>
+  </li>  
+</ul>
+    </div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
