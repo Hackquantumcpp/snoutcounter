@@ -1,6 +1,6 @@
 ---
 title: "2026 Senate Forecast"
-description: "Who will win the House in November?"
+description: "Who will win the Senate in November?"
 date: "9/27/2026"
 date-modified: "9/28/2026"
 image: "../assets/blog-images/gettyimages-1401415080.jpg"
