@@ -22,7 +22,7 @@ See all 2026 midterms forecasts: [House](2026-house-forecast.qmd) / **Senate** /
 
 This page hosts the 2026 Senate forecast. The Senate map in 2026 was initially thought of as unfavorable for Democrats, due to what was thought to be limited pickup opportunities and multiple vulnerable swing states held by Democrats. However, the combination of a favorable national environment and high-quality recruitment has caused the chamber to become competitive.
 
-You can read about how the model that powers this forecast works [here](2026-house-forecast-release-article.qmd). The source code is publicly available on [GitHub](https://github.com/Hackquantumcpp/snoutcounter-midterms-2026-model).
+You can read about how the model that powers this forecast works [here](2026-senate-forecast-release-article.qmd). The source code is publicly available on [GitHub](https://github.com/Hackquantumcpp/snoutcounter-midterms-2026-model).
 
 Below you can find a map of seat chances and projections, as well as some overall summary stats.
 
@@ -67,7 +67,7 @@ seats_time_ser = joblib.load('../../snoutcounter-midterms-2026-model/prediction/
 seats_time_ser.show()
 ```
 
-Additionally, you can see how the forecasted odds and vote shares have changed for each individual congressional seat below.
+Additionally, you can see how the forecasted odds and vote shares have changed for each individual Senate seat below.
 
 ```{shinylive-python}
 #| standalone: true
