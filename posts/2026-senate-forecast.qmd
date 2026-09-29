@@ -43,7 +43,7 @@ sims_hist = joblib.load('../../snoutcounter-midterms-2026-model/prediction/senat
 sims_hist.show()
 ```
 
-Below you can find a table displaying the output of the House model, including some additional information not shown in the visualizations above.
+Below you can find a table displaying the output of the Senate model, including some additional information not shown in the visualizations above.
 
 ```{=html}
 <iframe title="2026 SnoutCounter Senate Forecast - Model Output Table" aria-label="Table" id="datawrapper-chart-ZFeAz" src="https://datawrapper.dwcdn.net/ZFeAz/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 850px !important; border: none;" height="623" data-external="1"></iframe><script type="text/javascript">(function(){function e(){window.addEventListener(`message`,function(e){if(e.data[`datawrapper-height`]!==void 0){var t=document.querySelectorAll(`iframe`);for(var n in e.data[`datawrapper-height`])for(var r=0,i;i=t[r];r++)if(i.contentWindow===e.source){var a=e.data[`datawrapper-height`][n]+`px`;i.style.height=a}}})}e()})();</script>
