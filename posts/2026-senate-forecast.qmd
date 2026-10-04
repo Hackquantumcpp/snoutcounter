@@ -113,7 +113,7 @@ def plot():
   chart = px.line(disp_output, x='date', y=['Democrats', 'Republicans'], template='plotly_white', color_discrete_map={'Democrats': '#004b97', 'Republicans': '#c71e1d'})
   chart.update_traces(hovertemplate="%{y:.1f}%")
   chart.update_layout(
-      xaxis=dict(range=[pd.to_datetime('2026-08-30'), pd.to_datetime('2026-11-10')]),
+      xaxis=dict(range=[pd.to_datetime('2026-09-27'), pd.to_datetime('2026-11-10')]),
       yaxis=dict(range=[0, 100]),
       xaxis_title='Date',
       yaxis_title=f'{disp_yaxis} (%)',
