@@ -117,7 +117,7 @@ def plot():
       yaxis=dict(range=[0, 100]),
       xaxis_title='Date',
       yaxis_title=f'{disp_yaxis} (%)',
-      title=dict(text=f"{input.cd()} {disp_yaxis} Over Time"),
+      title=dict(text=f"{input.state()} {disp_yaxis} Over Time"),
       hovermode="x",
       showlegend=False
   )
