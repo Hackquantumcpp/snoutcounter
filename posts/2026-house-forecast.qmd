@@ -2,7 +2,7 @@
 title: "2026 House Forecast"
 description: "Who will win the House in November?"
 date: "9/1/2026"
-date-modified: "10/18/2026"
+date-modified: "10/19/2026"
 image: "../assets/blog-images/EarlyVotingNC-Getty.jpg"
 execute:
   echo: false
@@ -41,6 +41,7 @@ import joblib
 sims_hist = joblib.load('../../snoutcounter-midterms-2026-model/prediction/house/display_data/sims_histogram.pkl')
 sims_hist.show()
 ```
+
 Below you can find a table displaying the output of the House model, including some additional information not shown above.
 
 ```{=html}
