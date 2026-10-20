@@ -33,4 +33,4 @@ And that's about it! As with the House model, I don't have any plans on making s
 
 ## Updates
 
-None so far! This section will be filled with updates if I make any changes to the underlying source code of the Senate model.
+-   **October 20, 2026**: I have banned Wedgewood Polls from the calculated polling averages due to the [recent admission](https://x.com/PollTracker2024/status/2112670761164943782) that all but their Nebraska Senate poll was fake. All polls from Wedgewood, _including_ the Nebraska Senate poll, will be excluded from usage in the polling averages for the House and Senate forecasts.
