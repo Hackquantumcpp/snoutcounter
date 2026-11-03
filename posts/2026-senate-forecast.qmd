@@ -20,6 +20,8 @@ categories:
 
 See all 2026 midterms forecasts: [House](2026-house-forecast.qmd) / **Senate** / [House methodology](2026-house-forecast-release-article.qmd) / [Senate methodology](2026-senate-forecast-release-article.qmd)
 
+**This page has been locked as of 10 PM PT on November 2, 2026 (1 AM ET on Nov 3). All forecast results on this page are final.**
+
 This page hosts the 2026 Senate forecast. The Senate map in 2026 was initially thought of as unfavorable for Democrats, due to what was thought to be limited pickup opportunities and multiple vulnerable swing states held by Democrats. However, the combination of a favorable national environment and high-quality recruitment has caused the chamber to become competitive.
 
 You can read about how the model that powers this forecast works [here](2026-senate-forecast-release-article.qmd). The source code is publicly available on [GitHub](https://github.com/Hackquantumcpp/snoutcounter-midterms-2026-model).
