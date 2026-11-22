@@ -6,6 +6,7 @@ date: "9/1/2026"
 image: "../assets/blog-images/Student_t_pdf.png"
 execute: 
   echo: false
+  freeze: auto
 categories:
   - 2026 Elections
   - Methodology

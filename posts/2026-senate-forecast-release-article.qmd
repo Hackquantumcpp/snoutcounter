@@ -6,6 +6,7 @@ date: "9/27/2026"
 image: "../assets/blog-images/1jpy9Astki-gamma_distribution_pdf.png"
 execute: 
   echo: false
+  freeze: auto
 categories:
   - 2026 Elections
   - Methodology
