@@ -1,5 +1,6 @@
 ---
 title: "SnoutCounter"
+subtitle: "A blog for statistics, elections, and whatever else comes to mind"
 listing:
   contents: posts
   sort: "date desc"
