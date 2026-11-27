@@ -23,7 +23,7 @@ website:
       - icon: rss
         href: index.xml
       - icon: github
-        href: https://github.com/Hackquantumcpp/snoutcounter/tree/main
+        href: https://github.com/Hackquantumcpp
   navbar:
     title: false
     logo: "assets/images/snoutcounter.png"
@@ -45,12 +45,6 @@ website:
         text: About
       - icon: bluesky
         href: https://bsky.app/profile/snoutcounter.bsky.social
-      - icon: github
-        menu:
-          - text: Model code
-            href: https://github.com/Hackquantumcpp/snoutcounter-backend/tree/main
-          - text: Website code
-            href: https://github.com/Hackquantumcpp/snoutcounter/tree/main
       
 
 format:

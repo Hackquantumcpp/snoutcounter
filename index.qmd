@@ -9,6 +9,7 @@ listing:
   sort-ui: true
   filter-ui: false
   feed: true
+title-block-banner: true
 
 format:
   html:
